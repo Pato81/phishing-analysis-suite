@@ -1,0 +1,16 @@
+From: "Heise Newsletter" <newsletter@heise.de>
+To: kunde@example.de
+Subject: Ihre woechentliche Zusammenfassung
+Authentication-Results: mx.example.de; spf=pass smtp.mailfrom=heise.de; dkim=pass; dmarc=pass
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="b1"
+
+--b1
+Content-Type: text/plain; charset="utf-8"
+
+Hallo, hier sind die Nachrichten der Woche. Viele Gruesse.
+--b1
+Content-Type: text/html; charset="utf-8"
+
+<html><body><p>Hallo, hier sind die <a href="https://www.heise.de/news">Nachrichten</a>.</p></body></html>
+--b1--

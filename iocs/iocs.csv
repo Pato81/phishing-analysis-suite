@@ -1,0 +1,17 @@
+type,value_defanged,mail,role,first_seen_utc,confidence
+ipv4,45.89.60[.]94,2,Aufrufer des PHP-Mailers (Angreifer-Infrastruktur),2026-10-01T10:18:40Z,high
+ipv4,217.154.61[.]83,1,Versandserver (Plesk-VPS),2026-09-21T14:25:31Z,high
+ipv4,159.89.53[.]82,2,Versandserver (kompromittiertes Shared Hosting),2026-10-01T10:18:40Z,high
+hostname,brave-ganguly.217-154-61-83.plesk[.]page,1,Versandserver,2026-09-21T14:25:31Z,high
+hostname,web04.dinardi[.]com[.]ar,2,Versandserver,2026-10-01T10:18:40Z,high
+domain,xn--inos-0nd.xn--om-dma,1,Lookalike From-Domain (iοnos.čom),2026-09-21T14:25:31Z,high
+domain,xn--inos-0nd.xn--om-ula,2,Lookalike From-Domain (iοnos.ćom),2026-10-01T10:18:40Z,high
+domain,theprintfranchise[.]com,1,Envelope-/DKIM-Domain (missbraucht),2026-09-21T14:25:31Z,medium
+domain,organicaf[.]com[.]ar,2,Kompromittierte Website / Envelope-Domain,2026-10-01T10:18:40Z,high
+email,bvacanhshbfhjjv@theprintfranchise[.]com,1,Envelope-From,2026-09-21T14:25:31Z,high
+email,jzwnzojirosrshrjcyp@organicaf[.]com[.]ar,2,Envelope-From,2026-10-01T10:18:40Z,high
+email,noreply@xn--inos-0nd.xn--om-dma,1,Header-From,2026-09-21T14:25:31Z,high
+email,noreply@xn--inos-0nd.xn--om-ula,2,Header-From,2026-10-01T10:18:40Z,high
+url,hxxps://swage-coral-5829ab63.s3.ap-northeast-2.amazonaws[.]com/wBi2,1,Phishing-Link (S3-Bucket),2026-09-21T14:25:31Z,high
+url,hxxps://organicaf[.]com[.]ar/e556b83c/m340d483a.php,2,PHP-Mailer-Skript,2026-10-01T10:18:40Z,high
+url,hxxps://www.google[.]com/goto?url=CAESVwHrOzAVcK0cRs5xGM5JQiRENfBWlY97FE5pbuIvRu3L_FNBY1CXClLB5a-trU0VJHesTz4mrzIiimD0ySTxruk95oq7cp7rMa5V59wPn_WiXOgee4pGng,2,Phishing-Link (Google-Redirect),2026-10-01T10:18:40Z,high
