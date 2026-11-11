@@ -125,14 +125,23 @@ Der vollständige Tool-Doku liegt unter [`phishscan/README.md`](phishscan/README
 cd phishscan
 
 # eine Datei
-python3 phishscan.py verdaechtig.eml
+python3 Phishscan_Pato_v2.0.py verdaechtig.eml
 
 # mehrere Dateien oder ein ganzer Ordner
-python3 phishscan.py mails/
+python3 Phishscan_Pato_v2.0.py mails/
 
 # maschinenlesbar / ohne Farben (für Logs/Pipes)
-python3 phishscan.py verdaechtig.eml --json
-python3 phishscan.py verdaechtig.eml --no-color
+python3 Phishscan_Pato_v2.0.py verdaechtig.eml --json
+python3 Phishscan_Pato_v2.0.py verdaechtig.eml --no-color
+
+# nur Findings ab einer Stufe anzeigen (Score/Urteil bleiben unberührt)
+python3 Phishscan_Pato_v2.0.py verdaechtig.eml --min-severity high
+
+# Integritäts-Selbsttest der Kernfunktionen (ohne Datei-/Netzzugriff)
+python3 Phishscan_Pato_v2.0.py --selftest
+
+# Größen-Guard je .eml konfigurieren (Default 25 MB, 0 = aus)
+python3 Phishscan_Pato_v2.0.py mails/ --max-size-mb 50
 ```
 
 Ausgabe je Mail: **Urteil** (`CLEAN` · `LOW RISK` · `SUSPICIOUS` · `HIGH RISK`), Score und die einzelnen Findings mit Schweregrad. Der **Exit-Code** ist `1`, sobald mindestens eine Mail als `SUSPICIOUS`/`HIGH RISK` eingestuft wird — praktisch für Skripte.
@@ -140,7 +149,7 @@ Ausgabe je Mail: **Urteil** (`CLEAN` · `LOW RISK` · `SUSPICIOUS` · `HIGH RISK
 ### Beispiel
 
 ```
-$ python3 phishscan.py samples/phish-example.eml
+$ python3 Phishscan_Pato_v2.0.py samples/phish-example.eml
 ================================================================
 PhishScan-Report: samples/phish-example.eml
 ================================================================
@@ -162,10 +171,12 @@ Die mitgelieferten Beispiele liegen unter [`phishscan/samples/`](phishscan/sampl
 
 - **Dispatch über 11 eigenständige Heuristik-Funktionen** – jede klar abgegrenzt und einzeln erweiterbar
 - **Rein offline** – keinerlei Netzwerkcode, nachprüfbar im Quelltext
-- **Robustes Parsing** über die `email`-Standardbibliothek mit `policy.default`
-- **Unicode-Confusable-Erkennung** für Homoglyph-Domains (H1/H5)
-- **HTML-Analyse** über einen eigenen `HTMLParser` – sichtbarer vs. versteckter Text, Anchor-vs-Href
-- **JSON-Ausgabe** und sprechender **Exit-Code** für die Einbindung in Pipelines
+- **Robustes Parsing** über die `email`-Standardbibliothek (mit `policy.compat32`-Fallback bei defekten Mails); jede Heuristik ist einzeln gekapselt, eine kaputte Mail stoppt die Analyse nicht
+- **Unicode-Confusable-Erkennung** für Homoglyph-Domains (H1/H5), inkl. **Punycode-Dekodierung** des Lookalikes
+- **Korrekte IP-Herkunft (H9)** über das `ipaddress`-Modul – nur global routbare **IPv4/IPv6** werden gemeldet, private/CGNAT/Loopback/Doku-Präfixe sauber aussortiert
+- **RTLO-/Bidi-Erkennung** in Anhangsnamen (H8) + Steuerzeichen werden in der Ausgabe sichtbar gemacht
+- **DoS-Guard** (Größen-/Part-/Text-Limits) gegen bewusst präparierte Mails
+- **Selbsttest** (`--selftest`, 44 In-Memory-Prüfungen), **JSON-Ausgabe** und sprechender **Exit-Code** für die Einbindung in Pipelines
 
 ---
 
@@ -180,10 +191,10 @@ Die mitgelieferten Beispiele liegen unter [`phishscan/samples/`](phishscan/sampl
 │   └── iocs.csv                # alle IOCs maschinenlesbar (entschärft)
 ├── artifacts/                  # bereinigte Artefakte, Screenshots
 ├── reports/                    # Word-Berichte (Blue Team + Red Team)
-└── phishscan/                  # das abgeleitete Tool
-    ├── phishscan.py            # passive .eml-Analyse-CLI (stdlib-only)
-    ├── samples/                # fiktive Beispiel-Mails (clean / phish)
-    └── README.md               # vollständige Tool-Dokumentation
+└── phishscan/                      # das abgeleitete Tool
+    ├── Phishscan_Pato_v2.0.py      # passive .eml-Analyse-CLI (stdlib-only)
+    ├── samples/                    # fiktive Beispiel-Mails (clean / phish)
+    └── README.md                   # vollständige Tool-Dokumentation
 ```
 
 ---
