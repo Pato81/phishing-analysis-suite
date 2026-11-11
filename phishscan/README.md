@@ -35,16 +35,25 @@ strukturiert und immer gleich prüfen lassen, statt jedes Mal von vorn.
 ## Nutzung
 ```bash
 # eine Datei
-python3 phishscan.py verdaechtig.eml
+python3 Phishscan_Pato_v2.0.py verdaechtig.eml
 
 # mehrere Dateien oder ein ganzer Ordner
-python3 phishscan.py mails/
+python3 Phishscan_Pato_v2.0.py mails/
 
 # maschinenlesbar
-python3 phishscan.py verdaechtig.eml --json
+python3 Phishscan_Pato_v2.0.py verdaechtig.eml --json
 
 # ohne Farben (für Logs/Pipes)
-python3 phishscan.py verdaechtig.eml --no-color
+python3 Phishscan_Pato_v2.0.py verdaechtig.eml --no-color
+
+# nur Findings ab einer Stufe anzeigen (Score/Urteil bleiben unberührt)
+python3 Phishscan_Pato_v2.0.py verdaechtig.eml --min-severity high
+
+# Integritäts-Selbsttest der Kernfunktionen (ohne Datei-/Netzzugriff)
+python3 Phishscan_Pato_v2.0.py --selftest
+
+# Größen-Guard je .eml konfigurieren (Default 25 MB, 0 = aus)
+python3 Phishscan_Pato_v2.0.py mails/ --max-size-mb 50
 ```
 
 Ausgabe je Mail: **Urteil** (`CLEAN` · `LOW RISK` · `SUSPICIOUS` · `HIGH RISK`), Score und die
@@ -53,7 +62,7 @@ einzelnen Findings mit Schweregrad. Der **Exit-Code** ist `1`, wenn mindestens e
 
 ## Beispiel
 ```
-$ python3 phishscan.py samples/phish-example.eml
+$ python3 Phishscan_Pato_v2.0.py samples/phish-example.eml
 ================================================================
 PhishScan-Report: samples/phish-example.eml
 ================================================================
@@ -75,12 +84,18 @@ Doku-IP-Adressen, enthalten keine echten Indikatoren).
 - **Python 3.9+** – nur Standardbibliothek, **keine Installation von Paketen nötig**.
 
 ## Engineering-Highlights
-- **Dispatch über 11 eigenständige Heuristik-Funktionen** – jede klar abgegrenzt und einzeln erweiterbar
+- **Dispatch über 11 eigenständige Heuristik-Funktionen** – jede klar abgegrenzt, einzeln gekapselt (eine kaputte Mail stoppt die Analyse nicht)
 - **Rein offline** – keinerlei Netzwerkcode, nachprüfbar im Quelltext
-- **Robustes Parsing** über die `email`-Standardbibliothek mit `policy.default`
-- **Unicode-Confusable-Erkennung** für Homoglyph-Domains (H1/H5)
-- **HTML-Analyse** über einen eigenen `HTMLParser` – sichtbarer vs. versteckter Text, Anchor-vs-Href
+- **Robustes Parsing** über die `email`-Standardbibliothek, mit `policy.compat32`-Fallback bei defekten Mails
+- **Unicode-Confusable-Erkennung** für Homoglyph-Domains (H1/H5) inkl. **Punycode-Dekodierung** des Lookalikes
+- **Korrekte IP-Herkunft (H9)** via `ipaddress` – nur global routbare **IPv4/IPv6**, private/CGNAT/Loopback/Doku-Präfixe raus
+- **RTLO-/Bidi-Erkennung** in Anhangsnamen (H8), Steuerzeichen in der Ausgabe sichtbar gemacht
+- **DoS-Guard** (Größen-/Part-/Text-Limits) + **`--selftest`** (44 In-Memory-Prüfungen)
 - **JSON-Ausgabe** und sprechender **Exit-Code** für die Einbindung in Pipelines
+
+## Changelog
+- **1.1.0** – H9 über `ipaddress` korrigiert (172.16.0.0/12-Bug behoben) + IPv6; H8 keine Doppel-Findings mehr + RTLO-Erkennung; H4 wertet alle Auth-Header aus (schlechtester Wert zählt); DoS-Guards; Punycode-Dekodierung; neue Flags `--selftest` / `--min-severity` / `--max-size-mb`; Sammel-Übersicht bei mehreren Mails.
+- **1.0.0** – Erstveröffentlichung (H1–H11).
 
 ## Rechtliches & Scope
 Nur zur Analyse von Mails, die dir gehören oder die du autorisiert erhalten hast. PhishScan
