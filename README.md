@@ -17,10 +17,22 @@
 ![Mails](https://img.shields.io/badge/analysierte%20Mails-2%20(real)-informational?style=flat-square)
 ![Heuristiken](https://img.shields.io/badge/PhishScan-11%20Heuristiken-success?style=flat-square)
 ![Netzwerk](https://img.shields.io/badge/Tool-100%25%20offline-success?style=flat-square)
+![Selftests](https://img.shields.io/badge/Selftests-48%2F48-success?style=flat-square)
 
 </div>
 
 ---
+
+## ⚡ Quickstart
+
+```bash
+cd phishscan
+python3 Phishscan_Pato_v2.0.py --selftest        # 48/48 Checks
+python3 Phishscan_Pato_v2.0.py samples/*.eml      # 14 Beispielfälle
+python3 Phishscan_Pato_v2.0.py verdaechtig.eml    # eigene .eml prüfen
+```
+
+📂 Beispiel-Galerie aller Fälle: [`phishscan/samples/BEISPIELE.html`](phishscan/samples/BEISPIELE.html)
 
 ## 📖 Über dieses Repository
 
