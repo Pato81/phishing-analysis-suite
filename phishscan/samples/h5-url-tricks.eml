@@ -1,0 +1,25 @@
+From: Shop <shop@shop.example>
+To: opfer@example.com
+Subject: Links
+Date: Wed, 11 Nov 2026 09:00:00 +0100
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============5140999061904715178=="
+
+--===============5140999061904715178==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Bitte Browser oeffnen.
+
+--===============5140999061904715178==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body><a href=3D"http://ionos.de@evil.example/login">Userinfo</a> <a hr=
+ef=3D"http://8.8.8.8/login">IP-Link</a> <a href=3D"https://bit.ly/xyz123">Sho=
+rtener</a> <a href=3D"https://xn--pypal-4ve.example.com/">Punycode</a> <a hre=
+f=3D"http://evil.example/pay">www.ionos.de</a></body></html>
+
+--===============5140999061904715178==--

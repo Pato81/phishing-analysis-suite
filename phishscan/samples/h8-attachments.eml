@@ -1,0 +1,46 @@
+From: Rechnung <billing@billing.example>
+To: opfer@example.com
+Subject: Rechnung
+Date: Wed, 11 Nov 2026 09:00:00 +0100
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="===============3060334599942529980=="
+
+--===============3060334599942529980==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Siehe Anhang.
+
+--===============3060334599942529980==
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="setup.exe"
+MIME-Version: 1.0
+
+TVo=
+
+--===============3060334599942529980==
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="rechnung.pdf.exe"
+MIME-Version: 1.0
+
+JVBERg==
+
+--===============3060334599942529980==
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename*=utf-8''rechnung%E2%80%AEgpj.exe
+MIME-Version: 1.0
+
+ZGF0YQ==
+
+--===============3060334599942529980==
+Content-Type: application/zip
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="unterlagen.zip"
+MIME-Version: 1.0
+
+UEs=
+
+--===============3060334599942529980==--

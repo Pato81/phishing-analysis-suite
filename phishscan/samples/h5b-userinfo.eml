@@ -1,0 +1,23 @@
+From: Bank <info@bank.example>
+To: opfer@example.com
+Subject: Login
+Date: Wed, 11 Nov 2026 09:00:00 +0100
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============7575519103847223072=="
+
+--===============7575519103847223072==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Bitte einloggen.
+
+--===============7575519103847223072==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body><a href=3D"https://sparkasse.de@zugang.example/login">Sicher anme=
+lden</a></body></html>
+
+--===============7575519103847223072==--

@@ -1,0 +1,2220 @@
+Return-Path: <msprvs1=20775z9M5d0oZ=bounces-1898-1013@travel.mail.flixbus.com>
+Authentication-Results: web.de; dkim=pass header.i=@travel.mail.flixbus.com
+ header.s=scph0624; spf=pass smtp.mailfrom=
+ msprvs1=3D20775z9M5d0oZ=3Dbounces-1898-1013@travel.mail.flixbus.com;
+ dmarc=pass header.from=travel.mail.flixbus.com policy.dmarc=none; iprev=pass
+ policy.iprev=137.22.240.161
+Received: from iljecegg.travel.mail.flixbus.com ([137.22.240.161]) by
+ mx-ha.web.de (mxweb006 [212.227.15.154]) with ESMTPS (Nemesis) id
+ 1MKvST-1xAqUn3Jjp-00SOT4 for <kunde@example.com>; Wed, 11 Nov 2026 15:33:44
+ +0100
+X-MSFBL: wg4/AcgPQMELufxUMI9KkUQEEgl0jnBYegYw4vgy8wU=|eyJzdWJhY2NvdW50X2l
+	kIjoiMTAxMyIsInRlbmFudF9pZCI6InNwY2V1IiwiY3VzdG9tZXJfaWQiOiIxODk
+	4IiwibWVzc2FnZV9pZCI6IjZhZjRjODdjZjQ2YTc2MDY2MTRhIiwiciI6InAubWF
+	5LjE5ODFAd2ViLmRlIn0=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=travel.mail.flixbus.com; s=scph0624; t=1794407624;
+	i=@travel.mail.flixbus.com;
+	bh=2qSe5V2a91viLUb20YFxRW+d37mdxX9zLM2aD9dq6bA=;
+	h=To:Message-ID:Date:Content-Type:From:List-Unsubscribe-Post:
+	 Subject:List-Unsubscribe:From:To:Cc:Subject:Feedback-Id;
+	b=J3AMcuuMgQa85PaqdpwBZXW6w44mL5vltZAWdSDt+VC+Xix+e3fJVn9uAEpOy/zBU
+	 DplZTwn+dH7vz2H0x8Yt7uaAYTM+C0BFEdarL85BdcUiswLATRr0/v+/aQO38/Dz9Y
+	 bkkyQ+ejIxq9RT+KxJqgvD16tky0PlYvPMFbaxic=
+Received: from [10.95.202.204] ([10.95.202.204])
+	by i-03863fe85411e7df7.mta3vrest.sd.prd.sparkpost (ecelerity 5.3.0.76611 r(msys-ecelerity:tags/5.3.0.37)) with REST
+	id A4/1E-24500-8CC74FA6; Wed, 11 Nov 2026 14:33:44 +0000
+To: kunde@example.com
+Message-ID: <A4.1E.24500.8CC74FA6@i-03863fe85411e7df7.mta3vrest.sd.prd.sparkpost>
+Date: Wed, 11 Nov 2026 14:33:44 +0000
+Content-Type: multipart/alternative; boundary="_----cTH3NcbxVy5n2XVYZ+k/XA===_04/1E-24500-8CC74FA6"
+MIME-Version: 1.0
+From: "FlixBus" <noreply@travel.mail.flixbus.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Subject: =?utf-8?B?RXJsZWJlIGRpZXNlIFppZWxlIG5hY2ggU29ubmVudW50ZXJnYW5n?=
+	=?utf-8?B?IPCfjIbwn4yg?=
+List-Unsubscribe: <>
+Envelope-To: <kunde@example.com>
+UI-InboundReport: unknown:2;M01:P0:EWn0uDYICEs=;ICuZQ5oj2q/tjiUEnrKxhIkkuRV5
+ 0awodLR6euDNp+wFaNlY/MhHRZhc4YFcF7Dcj5dZmcYxlT8jzIy+z60NTbwrBYTKxoF5a9ly7
+ dapxG4MMz9Ec5KfCW1PIzraPRcmVe5KWdB4R+Qs1wFvpgDWnYGREs1WWX9/Sf0tC5vv/sX2dC
+ aEZUQKJ2kZv68y451CZxCxOFRnkBITKArubW2/j1pLXKAozAPWXjVtQ0GFN8j1rYcm+SntzUd
+ OGYUQvzap8iMdqyrUDup9CdhKdDPhshMnbuuSYrB23OHj4UbVNOwXpyVnLhnza4G0SDaZIOk9
+ RcaHbTqeqgwr4ETmBJbXD5PJU0VkhHwfb4JyGPbcUHf5LK7sRIJHty3a1PJH9Be+xASqTXcXt
+ OIjWQuDXLfu5NM8qgf7V7H+rBpv2cd5CzTHr9fAy8Da82gSwyWiP7N26WgM1D96ZaqOocuo5e
+ GENOfCsVzZswAZhriDNC8druK8yyg3wH+dmcpYMYbUR0T5xdmjUSnLPhtkvoPFitd/fRwM1YG
+ Fk8lJDI6NSs26XHv9BYyR9hBipxDI5v8bh31qbOYwVzBt96spy1NwLD0SCDgmQ7vfa8DgdFJc
+ JJaBsex9C+gcM03JnOQnSLYCaW4H+YwAZTE8PfO3brKMdMcqAkMu8+HeL8YZ4Qp/+WDnjlWCf
+ 3R7iarPU/7DL3BkMu3ly094vQFez4gVa9aceLUmJbyXAq9mxF7InoluYib/1uGSeliZ59+Rhs
+ VzPFpR3MF8Gt8WK11smVGKs+NdkIjsFCSMvDeI8OlRijjLUgM/To9Mam3YyK80tfIMfvJwMkG
+ dPg2vxwRhAPsjwRYBdkM3bBWCjjaWtpayk1WL/swGTjqDGuO/j5VvEVrrzGnwbzLmc64b0XQo
+ wg1Pamvz+qE2iUWV0SfDfKzzZh/UA8WoV1JW1Z/bO+6hKIP3pXOtcOebhWfeli/vmixu1KPEH
+ rOquHpNTCXZ0Q0u1xIS+DLA/evprh+ZvBBUEUPFy93ZEGrIrZDIXDba698TXKrfCQ5ktJNdOo
+ YnIqzEhYvtVW8aGitwurVejnzkiFHzC9TmTlLuG84/kFO78c61ueDn4W5qajv1PWM8/uc26hZ
+ +oNfptZZ3i/OHX0rn+t0yzSbUs1RjVbfSiG3r8RV8E/dROJY8fL3Cy4kYwvGIhTNYxtUbdDyP
+ LCM+/wdXyciKCkditVfJEdGylXGfIlwY90pcu6roibxrhoi2gI+asfy7FdO87wE1yXa/ic3eE
+ 4gMhCy2A3jf94VcAbUrWgACfIVseZC8cYQAKj6QZDlB3emcoYme+i4/RUZCx0jSe9bi+8Tt9U
+ /QjWqYRGRF0+SJamCNOzySy1iVoXflMv2YVCwZxVH4/I29mhfC/7MyRUMODD5UBx9Ay1sqf9h
+ msj5iY2oY7zOiye4W0mozcHzp3ZV7QRqcKlZ6O1zrj1JbIVtrMRx4W8IVTKouDaaeWH/97ksF
+ zPQTrPf+zf8G024sgICNj82rPj0svh5IPoU91MTeO5tO5nbYC6xOQWWgMoS8bymuGE/1xXmhr
+ ASyhE3hUMi8+DP/QSCbgJ+xEpLypTLVHKT3AHZMhJIO4tWpSyhxwgmdXcPiXOOU3y2y3gHWKg
+ GylT58EAulkbfr7yJy53Wj4oD7/VRpVMvL8eqrALCGZelT4oLauGYm2t6RNJEA5nc+3b5Nk0h
+ 72cd8Vezyu3PHPWMdDTYTAKf9pnudTHtoio9LdhPyAYu9dxx46UBWiCfr3t6bu+oIqyCS7ZXD
+ zbwYxqCummG6g4O1sWQkwFEoyBGG1WEia+j4YZmlG2A/BsFKr5OOjUR4Eu69VB/f42wxJDXGo
+ NSC5B8Vi7MOLRUxhPsYB83XkozNA8ENmM8rnI+9VC27amC+jVsnzgYX8uHaL/ouaJ/MBqyDPb
+ LM9UEePNBY+GjK9vRw7rAlZeCTqrjICYZ2uS1Jnp2FgiKlcBk/1EKe0+/jw+0w6ayjdmz+Gqy
+ 12KwWHlZGVxqX3TXeHwv2QwNUcuVTLIYsg2gBAfoxnpNBIvuZ9jeP2OFbnVrH5m/2NqWzPGz0
+ Ob7ppxsMlZMMa/rxinKMwMgAK4jquuNyCXbwQupld89bCik5LenSnrt7LD/n63HXLOi2e/vDA
+ 4ljVrhAlxYpViecLShYbhlXz1c9/q0RE0oGG0POsqRaDixh0d4HJiiF6re2dMptKL9bv8zaSO
+ gcYCDyiR3c80bBoF4IDd6/kEFGSoa/S6N7XvWPbNWQSpIAPfllC8En/Bk90HTYn2aKkUJgTdz
+ 13IUplg7IqpLoF/8x9f0fDRK3ZGQyYebLTfXQEGkGUgr7VsagjGEg+nPGm3aCQBgl1gJ0fruA
+ 8WajIR0cjOSWfbs1CxdiIGN0riryYhCKO7gNCXHTKQ2YbhIeBZo20uAGGd8tJE7ga8rteT+Nx
+ 3UfE4qDZbH3hhSqBMDoNYzXFvn/Q4xzmyB3mIQxpqPZrq0obJJ4G0+xYIMbLF2cG4DBGHllbN
+ XlR883Xl9OCybPeWZtBJWEgk8JKOzsc0pHAQnBVjfPKOUIJZtfb3fc5YZgM+w4O3BqQ8yEoR6
+ jfzqCixpy8VJlHBpKOfrGBnI5olMePWHoqHBNhFxorOU6sNX2A/aVzJD5j8qSPkm346NNjQjc
+ PHqwhgeZC2od6gHP6x+vW3wkDvBR0Wdh0F17V3S6zawxZUkkaox4eLuXbwNI6dEKuXTft7eU3
+ UGS+MDTo/1S7qquOy4ugzR4atv9K+039/pdctT+zFuuLPlhgfxZ7pz4F2NkKsiol3xMUW9klC
+ xjPnu5KBm1jNNd9tEVmOvwBGtE2fZMmIe4z6/oJ32HOZ/A+D4GQoekMb2zOwFWeuEIYWSODnU
+ 1dxPo4YExWYL7aaseDvYVy/8dXfoMq65fZBKwMI5CVcZ7Y7YRDQ+9lx/8PVfbfnUxAXV40DzM
+ cOlnVzQLUBYyuPbwJN5XgWq83XtRluiIhzD1aa5E00og6/LbMKcF2a4o/ZIMxYPQO29Sq4j7t
+ VtEEXP4Bt4J+/QvAJkvMwy/58OzoZ8cIW51TRiZLOe5mG74IPH2ummqrH1mWxruk9lz5oHy0h
+ gEnbXg+SKzVrGM6ym9ZCsAJeuT4CAIRuqO2dEq6al5SI4A/+ooITH2euhlRH5OjTY64OD4Ztu
+ mS5fOzhIaZnLdAYzkpety7ROSIZyNMtQzq0mPWj4vpokPA7c3Y41NuDVDisCYdk3NK+OsNG8z
+ 7GMEUtW9kAvHQZfpTtM0ujjd7MZlpDUUUWobvMWHymCCL8Sl83/bLR0ycUfPwYY3tnZH6swLi
+ ehiI8Zdr8Cr6qVfy5ZbC4bvbwnJmJGb0+EPaacF+Q41z2CQ1x3JyL37B95PLctd0puh2CUf0h
+ ML/Hdmaqs2ZS+LKpMV2YUPtG86EA4vmZgu8bAFYnfg4NBFgLFKJZMk3n5A9/h45WA99/+tqvg
+ QBVxsHdQPbv75jjsr33tyCCJ/J2rGQ2G4svBf+/H931+GUUr9b9/awNc8l5ZwysIXRPaDr/gd
+ 6grRKw3t7/zybWpWqBsMsbWvQwQIeADReMNe7/CqjTPcyupp8Wj4zKeX3+qlQ3rcd3pZOXqei
+ aEZwwsQxF0dp1RwoPGraIbOYWX+lUy+nBdPfXeKyGjbwrriX5na5XuTYhIBIB4t/Ino234Tpm
+ m8X5fMZxxkLnHP3In5UfGgaMLaHd3XsT6fsaZwsRCLDQu70oA/5CG8h0NtaE2yrTepwz5j1KE
+ 7Fwix5WmszcTUuSEdwsGu9HSYZWoGw5voiBr5zUUo9xE3MHS3EEyZnV37ijVWDpp9+VogqIhf
+ wNUg6aSu4fnObJ7fG37rFF0AAcPDcS7/2+pr0kiTGDGiIQmJiGz+vJO7tl6Lbqhvr3WjUNpTO
+ VcMz/7G2p751y8mMYZfORd2Wye+py0Yqsl4zjexocHCEHjyPS9qviSjxBD3iSLysu3QLYhdDl
+ +HgXxqy/4x4Jn8ZzRW7n8wwE/ajmGdHhJMkLODBa5wkkl2r7GclOhj8SQGwWCkRtINj2c5ora
+ zNgc+9UyimLONRZqvwizgX36TKDHhM8UfGLvGj8b8572u3NjCqRS7U01yjr32w8PqFQCv3dZ8
+ MfRPIlTNqi1+zUnmbeYiXx0X0Sg9XRMhymNAd6dDBgE9QxZlrTMAHIMBtYnVgEBzskv/WwB4i
+ G8cTMJIn0G1rhO+9j3yyA3pk/j51dgT3EyU9+C4b0i+PpvovMnecHmrPOl9+V3AdJo3MO0SbG
+ Zq2WeBERzElbXhhsvwNT8SWnHMWsBRjqIa2KltWIUPjFwSXjPkF5RhoGgUVxs7SDNHBLu357X
+ YfXTOuQ26bNv5ZKpDm/wHcDwdVeO14x0U2zTc1OGMruMU20R+r1nCkEwQMbtQWd50qVyIFsHa
+ 0LoeF9SeNu6BILqcnf7i3fT36pFeMsatRdlZUcr4DGV3zTgl6VYE5ZUgCxfcmXt84Q23V/xG0
+ 3BcUa2sE06pAwzLlsS+XSviFI972b25A6ur27C0uSEKtwfyG9k08hWmpYM0vabeJeqpZLl8rP
+ G5pDXVNzvUpWk3fGgYQMiDSfBpSA1fuJociKwfKS5J6Px3PQk40mUKNZ51u35FEqKNHm0pG4O
+ RV/Kt1PNV/hnWHakTGgc/v3mhOWQDq4HJJ+bJWB2n9bGabzfLLM2fyc7OJISuJPgysBWAHMen
+ /vnhktk8n2kiSTZYe6M8aZEaBhw0CGCC4bhaiVhkbgUwvDM0O+uR5NGKxhszEXnR8CYsMc4V0
+ qCj9hmZ3naYroscw0V8Dq/+nAhyYNWFnhdmcCaGB9Ee/KWqhhUE7X+VaBub6kMJ3R8EQhxNv9
+ cyNRJDWdgGxMyQxWxCVEbnDygci3swoSBpAExSE0PE7hAUpDwiL9TJfz5qZAnrRfhyIiviPlk
+ ac1W3ubEvz5Psu78D0UMeJmW9s+iIPXtDYRylIqjJgKEoknqeV1t3uu6jG7ESmo6KIcQycgDb
+ xC50YvJfOqRWrQm3Y7lv/h2+iFktwHz1VVidmKgNsKFLvEyHwzqq29mWNKGRiXcTS/GOaAP46
+ De0j0miRZxBKhZZaFiKEtfq4q3rSVHAu0e4zJMiEtB9BJ19AR0bhrkJxrHEIGwZQnfSBeqztw
+ fvkPiPvLuTl1FAQFdR1b5r7rs84TY6uzM+sYM5eUuAgWTsFOU2JSuiTBEpALGkamM1Xsn5j9Z
+ OEOUcyBR5kx4Xf6S1x3yVhHi4BnMzyze3PnSVLH4ONxlqpNCWUyhHi3Z8TEv+4C/5XJwHizMn
+ 3zls3YPTJYaOrT+nFFERS6pWGbX331C5cgPe0DEoTr2S6n2HTw9yjVipQt9xsiI8RepXiQLqU
+ umTKQiTneWXFK1khRYLs8JCH8Qw7EmyeMrwRDMpXqVC2JdtudQ45T5DgTitmqrscQ4aecxgKH
+ lbZBOsw1BsRDNFpAzX6LQ/J9ALpJx4b3odbW8NmsOvgMfC6J1u79QNZudAo9UZu7rXKjxQrCc
+ Yu64yWMyz+DJ5QmT9PtWr3/nU3bE/ROs5d7H58G0+BTAn/5B7ftl4Pkq2eDcCXJ5dRysZMi8u
+ cMFHDUNAqvZFTpZiTlL52r9OkCfmIs7uBHJH0Of6C9zPqtvsoyvJskhHhxv6F4/KvmUFCgUGV
+ +3w6zU+YDi4Zn3PjcbUAPUzJ3GfEM7J0fiuuz2koR3xJCc9mhCWbwgcTfGoUGgJH+zp6OpL6M
+ VbkBSTvkMe9yizt0pmuZeom49hODW0tpza6HIpm2WEn52QboH1vGro0WtbtOxq2HNOjT5UzOt
+ uBqSXKsH6d6zq17lKVhDZQXG8gG9//4KkPqu+D+v5thkqxNh9/OU6tC8Gzcn+Z1WMV6ZNC37p
+ bKg9CkelLIPokP7h9GSX3ClsbYYpEya641ysjiWKLxpGtYaKwcHmWdrRmG8CymKqtr1ZuZ4Pq
+ Lc3umCw3aMY43q7cCGJCuSft8dh/b/SiIgzKw+If7NGMzq6pc988Pf19btU3N84zu1f4dlql4
+ oh7Oyd17J+2EUlkQtMUIfokfYKkne49T4qXqgL/m5Fhlkrg/lBr+GYjo6YVR6NOeSVwgmQJ2C
+ yenqiJIZyiJiMsFje0bUMl6f8MwVEuX4q0iP74MutS5MyphCilqW9+TfVkEYDSvxp8T/xCoP2
+ +095Vybd5PrtQcM1GqM1CShYx2DAJELd9Ot7dzX6ht/ps3ZZQJ2l65x1k1EUVI8OZnOMYZh7O
+ fz66lh2ZA9tGxO6NpY3KXEwGHFhfEsq9/jZEiMzqD/Sg8iG+GpyADyUd8wcgm5VUM1Z9xBvD3
+ hU+25IydxlbvM9eRLE/A2rNewPKpbBhOxIacnMjJ/bI4EQ8FNo16pwQDv0NvEjdpIrC7v4nPU
+ +wI34jK6G3n2Phb3tNvsUmnwxnoNq+od9QGoSnnWPX4BYbUpJZ0rdOZ7iKQcn+CDSiU2w8RWt
+ Sd5t0OhGf5lKynV/jZ2UD07TEENkFMYG6BNgqSJhSm6LcfqBhMAhGC1vd4RsxG9HLaL5ja/Lx
+ +z3pq76ibGc5kdoKLK3oF0FjB9FdtHEZPFqn46P+Pyt46OjnAg6ZET3hz85cDwVGgD4cHhl7Q
+ NqqBSgQ6P9B18da7ONrB7ckx01dwHPQnsog5HRNlrVXYAZUgHxhZnX8TGyMpc5DU8J8d6Lzf7
+ nU1N2biiON9Zkc1BHpgE/bMdXEisd69Z+evmCO9e96vUWsEkA0sUfRrvUFRkGz8oe3i9Qc6Ja
+ HGsH38rQVjyctWGESqsqTLbq5zCfQR/19hfQVEUNeDYNTJJJPFGWQsnPkP5VzJsojQRshlMNz
+ Nber+JZgm0oACUdyuwyLHDD0JJgvYbT553mIRb+fpJdHXaQxCErKogQP1ACyAeEiHVF3V5JPX
+ 6yJbE+XPWkCDU0nj70Si4Rv4eGQlCjOLtgGCvi5EU0EPzBT39didp13XH0vsOdpLfgs0X3kYq
+ VgPMiVLrZIH0Bdrl5+uQ856jRmE9peCwgeiQr4rlt8JUpdyRTS00j5Fo7MABRbcbED7OWyiuu
+ PK0CghMbC8xnOZFo7dE9MPB19phFlhCUfpwb/l7KE/xdQqeL1WUMrP2Yc2hIALNwyRIckvPFF
+ 1W49AR6uOOi3J917keXWo6UTYTFpGEoSQWXg6PPaQlqKYWaDMzGvQGvecbUI4sW4hhqG9HAv5
+ poeJ0sc+s1yn/lnRrMJhODxUXLrA9R+BSlA8cJBSwTuL1cSQHgmSJc3wfRWXXUw9KevL4Se1i
+ GoeKy92vtz17bdDE3Cilnr8X126l+AGkbGwB8u+O5LcA/cMgraZRszWjXNv5UOuViER39oza9
+ tZlzyy5cBsac4itlrCyLF2ZZnGy4NaJr3vc09xtWqG5y0nLULvwjWIhycYcvwX0k+fijVmLrI
+ ZW1XQfkjuVT7fy8NKUKpF2tNDuWZsSKytf6Du+1vTN8gkRkr2r/xq7naO7wckt9I9b57VNQ8d
+ ifltFrdRmxoQp8MysE32fjcrxVg/eO51CNKHx9j8sIltQ6TZA7xRYLXfxrZFaCBGfutlUaK6Y
+ apA1GIMKgcE1XtI+tsv2MiB/O6yZBmoRCCBNSHMt/qiVTQdaJk/gvWwKCk9w4lQp3O28/YRec
+ 1uXsq6XXSHDmW5Kd/XRgKcT9SUe3K+GQfDMdmaOPBcAiiCiiVneLpVd7ZNM4VS3YY2TRXv3kv
+ DsrO2QtBsubfUF0iCw3I5fIDyhMA8HkJMI58ozlgHNDZvzhM4IZCmkxHq8oKrWK8P1uajG3qL
+ Q2TfF59h7h165cJU0W5Tij1hvUlTxG/d2vemQRoMOQMxkVU+JDoQQk3+J6gq1/AmsEDhspWFw
+ tibn7Z9xtgX/MXEqsHLQocqO//UHRGFMbtFvhTaprbwYrpcef6Zq85WLZP8Dz+qEro4xU5nZC
+ a+CqOMcwfV59VqLZhvu83BCutUqjDK5cujYraam6uW1qnc/4X6HAqtJ8Ww/BVWES5VNGoEZh1
+ sYqTUlZgETdppcCv+Nlbq6bWO9rfb/hRUHpSmkS9LHS+21PfYruk6PFZORq9kkelNiC7/v3C+
+ DggY89ZESAWNLvS8ERoeK6Sd9rLZ0+Lvr7Mbg8L1OBk3g/GtG1xE3sF6kq7y1HEY1QnUN4rIq
+ hO9kFd5GU5t5uUuxtdpxkPwbIcri17Xv3636M3cI1jehp/coSKwTy/JwaqlZaJkgGjGHXtpR/
+ jhrPHcfL7UVEIf3/40BLu0bQpoBaSkFlB8tIfJxo0FTO0swC8rNRBvaNd+hX+QaChidG4Mq6o
+ D6tRFlssVqaMPZZRVHE+mDIsJQx2UyjuKzt14rxqPv9mptFYo6I6pXi4+NIa84ff1VIZCQXbp
+ JWP2A1HkrHTBk1SOLj3kEh2nEEZZYFi6X7Xv51D3qhwYmqQYGH34MCmCTPJvWEnCgQoXdJCZ6
+ /v2mHaXU3xVRWuaQijJb72Bq619nQ7oAy2pXyrBhxpYoNz3zD1Ol38LBFkEqf+ySfYIaQP94q
+ ZaWraE3M9l7KjU3CxLymvlpeXGfMo+7sLwcaPfsK8kjadsnYFeK5GLz7RbXR4bkRID1V/rWJz
+ +XiBt5uUZX9bzpU7mUTGauH0IV3x9qrI129kDRtUuVmg3LV2B1sxSLySr08uk7DGnMW8/km37
+ ImUI1Z7XN/P/GXL/u5C/Yd6oR7ndXSuVjBgPVV6DPQX2hiQby73Lg+4VRXT6+/8661253vA1y
+ ix/aTCaq4n3eRtq0w3zP+2L2pK9KN5kQ17JbbpdcWGpkYjBEV0SvVBSkDWsY/isM45dGiL/7C
+ IPJelwyGOUDLw2MMaoySMfQFd7iRxo9TzsZJPUScKuh4Txy0ic/puxlvM9FXRfpaHNbc75U1g
+ dLS2puAiWvCPj21XC6DrtwcpBIuyxyWI4x9QjYcin8z166oMUzbul/MYDKolVLx+WpENY3Bp6
+ Z7zyMZjUC3RrCPPez41KWBWn1c1hcf1zaT9vbG3mUYRwMs1cFZPXiWbZjuU7tLd7vE/E6RO9K
+ FVEFnDM3FSIvpxiCDRXbrRwdSteXYAv6areKL7lkIfLh7/XtXw/uy1Q4Ekkxcsj8Wz/ajSMlK
+ pLyHKjraylYtofIEA7mpU5fk7VaEK8BMUfKnTwADW0f7QhPEwoI8Dx2ba6Qcj8lzIJ+opHdCI
+ VRuxBK6uJrUHkSjN46DpEubVi5exitwN/wHP58d3XxeI44iW6PYKgfRHKgvGk4mmcrspE/LUB
+ 7k5FiRl5R+MRUpfZOUrIKXC5lCAl5vw7F5UTvlVKMbaRi8V2LyKbPpH9gyPTdH376EORic2ID
+ e7HIZbF6/2skOGMWKbc92u15UN2pUhWT+gzzI8dNRsHhK13oDoRQcvB7yYgyevOcbNSlIw1OR
+ Urb59Ku+wt+ldFy6BGHINaVlmHwKlKqmEySATuqFPhm8726vKhf9BzKc5OsAgoNk41a0/U9OG
+ at3JLRCO0B9/c5+/aHiK2nRZNH+rPtEYpRCm2nWTdWf7+SUMP+MT9UWpixK09u76H85S1wSig
+ 9Ht8Huk+f6T4s3YjyLmaWDFnNduh82Qikw6IYtdbJlsdVVY4mUaeRv1fBFySmgBBPVXHa40++
+ OTxDdWEud/PoyswxRg6ABk6d5CWUBakr7cqdNvmxnQ0NkCZjeJHzURrZwsktpMdMdizp0myUa
+ fRrxvDC5iM0C0KJJohTlKVqoio0CrLXOfj0secb7tL4vY9JygLxKa+0fP/LbiWHNz7ViM6wIV
+ 9EgAwZKM+ZQZZCYDjCJgcz2EgWlHso4HwwPxM7bZ2l936ag928ZwlC4o+iofpbVG5MnxAKuEa
+ Slfz0ynzvzeZvpSOQXIHJaip4AA9b2Ez/tNWrs/q8zGBRj7Fezq7ilxiIz/3kZbrtz5g94f1r
+ mMTkGJMRtcw9FsPgb3xNVefwUG9XZivVEauBESwB4aHDkR9Elvy9DIbXAUx7XfMwOvgCePzLg
+ a8gEjJQXO3xTOWkZFrj4eIkt1i2i8IJtSyPvjIFQQzIPRO5BrLwggt/KR/FDzRKTO0eg9jdo8
+ g2+umKvKpZN7oYjKDPLAKvjVPot4jEledvTJr8CVbwiBarM2JJltPd2ikiJBx23OpBp0ntBHa
+ VrYWGcat+vjDipwM9bkT26LEyQ4lq1rGw6noCI6xXzNWssnl/iTYBDNMkl8gJ0S3eyPt+Y3mE
+ +jxo+FcnKvoZr5S/AnGMfY61EsYizUMG92tbEXuU/574nTMCr9QZkq+P9n48sZp34rzmjfjKE
+ GM7bgssp6ilG3czmVqRV/U2vAPUoRZpWfcHziCMNwrL8QsCqEykLwD3tO5QNeUcHWryoz82t5
+ 2vNnKJdxkJ9IW4zX2uHtw7++Izs8i45tJgs8jC3gDlV9RJr/qcsgly+K13d4XK8cPVRLX0gfF
+ 4af4AUACEIl84ElSVKS5fFoUaxc4omit2mckSQrGrq3yxYECFTbSZqjJUYcTmlNLgs6aEl7oP
+ Aw8YhWyL2WMOMW41WCbwwKsYGSopZ
+
+--_----cTH3NcbxVy5n2XVYZ+k/XA===_04/1E-24500-8CC74FA6
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+96    body, table, td, div, p, span, a, strong, h1, h2, h3, h4,=0Ah5, h6 { =
+font-family: Arial, sans-serif !important;=0Amso-hyphenate:none; } table { =
+border-spacing: 0; } table, td {=0Aborder-collapse: collapse !important; ms=
+o-table-lspace: 0pt;=0Amso-table-rspace: 0pt; } sup { font-size:100% !impor=
+tant; }=0A.resetUnderline a { text-decoration: none !important; }=0A.outloo=
+k-btn { margin:9px !important; } .linkReset a {=0Acolor:inherit !important;=
+ text-decoration: none !important; }=0AGlitzernde Seeufer, Umrisse der Berg=
+e und St=C3=A4dte, die bei Eintritt der Dunkelheit anfangen zu leuchten.=CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F =
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=0A=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F =E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+ =E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F =E2=80=8C =CD=8F=E2=80=8C=
+ =CD=8F=E2=80=8C =CD=8F =E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F =
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C=0A=CD=8F=E2=80=8C=
+ =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F =E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F =E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C=0A=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C=
+ =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F =E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C=0A=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C=0A=0A=0A=0A=0A=0A=
+=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A FlixBus log=
+o=0A=0A (=0Ahttps://clicks.mail.flixbus.com/f/a/uUWF3cEj-fEGVIGGT0h_nA~~/AA=
+AHahA~/rueg3ugEoNyrkpq1vORGDz9BzUgf2kZmQkiE77qVhFt-5dcfNfMmRpqLpKL-iZw0jJA9=
+z8PeQDL70ruJTpeVupVu3D0sILSMznSKr2ZfZOxmkrnxgjGqoJY5tfM29TK83k0_fO0uca5q1R3=
+ClWOMAJ6J8kgSwADDnaq_N5tp8Tn7-lGcLTxExf2Xa_JHFDWd2hHjgsZBmEDw4XibVEqMY_ViAJ=
+LoSv9p23P4Es8QUN1f2PWWQeDHc10gkqFhUOw8jeCPeNxgixKyq-ySgTI0jyZ6GcvSUP4gKy_AM=
+gkVQ2z8-cDf01yX_al1Z9NasUHqdU1n9EgWNuGJCbEhRiJGHnu5AsYEcEjhFyzf33VNPIa8DPhJ=
+8EuNnopHYrnUTXF_xdMeF5PDXSSgZty6hNd5TQxAmFYSlXEO0bD8Fwb1gaEhOyhI93xHP_9gAvR=
+skPKB6AeBk4CzfCBK5SljBaJUyrPM4pP1-cs_Zt1mm3nw3C2kmn7yESG1jRCOSQ4MPeRBh1D9P6=
+93_nV3F7jeswcXkm4UcvM4HyhEkWmDBdcoJROriZ5n34YcGJ6oYSoXpEs6g_JJwy45S1RfVKLz-=
+WLSKPerGBVDrkx8cJH5h9OsUr3x9ZSyjHmaS4VgPfxiGwlXrGe60Ovh9uRE3Tue3auET___-aSD=
+U2xcd_8Dd7MqSbMh2cUbwqb8j178BBqGnvB-ckhdP0OSbGIqbLLKhqK0JmeLfu68E8kGC267akg=
+S_vg~ )=0A**********************************=0AAuch die Nacht hat ihren Cha=
+rme =0A**********************************=0A=0ADie Tage werden zwar k=C3=BC=
+rzer, aber die Aussichten fangen gerade erst an. Denk an glitzernde Seeufer=
+, daran, wie sich Bergketten mit dem Abendhimmel vermischen und an bezauber=
+nde St=C3=A4dte, die nach Sonnenuntergang anfangen zu leuchten. Bereit solc=
+h eine Sch=C3=B6nheit live zu sehen=3F=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=
+=0A=0A=0A=0A=0A=0A=0A=0AJetzt buchen (=0Ahttps://clicks.mail.flixbus.com/f/=
+a/xrHPrlbLvfU12jsKUfoo2A~~/AAAHahA~/rueg3ugEoNyrkpq1vORGDz9BzUgf2kZmQkiE77q=
+VhFt-5dcfNfMmRpqLpKL-iZw0jJA9z8PeQDL70ruJTpeVupVu3D0sILSMznSKr2ZfZOxmkrnxgj=
+GqoJY5tfM29TK83k0_fO0uca5q1R3ClWOMAJ6J8kgSwADDnaq_N5tp8Tn7-lGcLTxExf2Xa_JHF=
+DWd2hHjgsZBmEDw4XibVEqMY_ViAJLoSv9p23P4Es8QUN1f2PWWQeDHc10gkqFhUOw8jeCPeNxg=
+ixKyq-ySgTI0jyZ6GcvSUP4gKy_AMgkVQ2z8-cDf01yX_al1Z9NasUHqdU1n9EgWNuGJCbEhRiJ=
+GHnu5AsYEcEjhFyzf33VNPIa8DPhJ8EuNnopHYrnUTXF_xdMeF5PDXSSgZty6hNd5TQxAmFYSlX=
+EO0bD8Fwb1gaEhOyhI93xHP_9gAvRskPKB6AeBk4CzfCBK5SljBaJUyrPM4pP1-cs_Zt1mm3nw3=
+C2kmn7yESG1jRCOSQ4MPeRBh1D9P693_nV3F7jeswcXkm4UcvM4HyhEkWmDBdcoJROriZ5n34Yc=
+GJ6oYSoXpEs6g_JJwy45S1RfVKLz-WLSKPerGBVDrkx8cJH5h9OsUr3x9ZSyjHmaS4VgPfxiGwl=
+XrGe60Ovh9uRE3Tue3auET0_Mj8LrF8M4KomZBsOFQZd0IYXOhSxeJNgp2V0f6jFSq2bKiKkdfe=
+5AvCkjrD5w8hDzMyUz53d7-55f4_Kdkdo~ )=0A=0A---------------------------------=
+-=0AEntdecke Orte, die in der D=C3=A4mmerung anfangen zu strahlen:=0A------=
+----------------------------=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A (=0A=
+=0Ahttps://clicks.mail.flixbus.com/f/a/tZWo6fY8pmhEIluW8Hix3w~~/AAAHahA~/ub=
+pTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c6=
+6CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGl=
+iHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt=
+0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXCO=
+h8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeJBW209r5b0__nKK94nNm3yc6ePYtMpA-yxxn=
+zLs-sotVZAh-lyZWwB1SLtseXRqGn5LPWxhARMNop7FwlEjSR6B1TXA_5fAxyC1ShMt57rswzg8=
+V3W6jn4fSAPdQrZadqhcTtfARPg0k9Dz2r6bSmvCFMu-e8CG8zp4HNT0AZbhktorvPA5Ks5pvuy=
+JTdgsXIxlQraaJWRrurnluxi54U3cW6hbYXUjbSEMhMCbWjx_UDVCEU_sQ-QnnCp9XmIsbAuNLa=
+wG2UhegNEukQG30-SQa17oh6dhv_dEj-fRS5ikpUYD9GdSlzRiF8N9VWqTRHSakR0zSHHFU1Aki=
+l3EeFahYtdbkxafXPsOv-n8ApXhm7J0aXFGqnkNY-7zAZdeN4Sre4axCtDfMGqK3aJCwG4rBT4z=
+TFSZxdZ6owm0UgXVc83PHlAiIX1PECKkgMEvog~~=0A)     (=0A=0Ahttps://clicks.mail=
+.flixbus.com/f/a/lp6Zv7jN-Wacm9HJrPTpGQ~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8c=
+wQeu29elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDp=
+AP1OJwhJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rT=
+tdzqoXoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJaf=
+YvhmIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgr=
+mANq3bY1zcV3rGLtXeJBW209r5b0__nKK94nNm3yc6ePYtMpA-yxxnzLs-sotVZAh-lyZWwB1SL=
+tseXRqGn5LPWxhARMNop7FwlEjSR6B1TXA_5fAxyC1ShMt57rswzg8V3W6jn4fSAPdQrZadqhcT=
+tfARPg0k9Dz2r6bSmvCFMu-e8CG8zp4HNT0AZbhktorvPA5Ks5pvuyJTdgsXIxlQraaJWRrurnl=
+uxi54U3cW6hbYXUjbSEMhMCbWjx_UDVCEU_sQ-QnnCp9XmIsbAuNLawG2UhegNEukQG30-SQa17=
+oh6dhv_dEj-fRS5ikpUYD9GdSlzRiF8N9VWqTRHSakR0zSHHFU1Akil3EeFahYtdbkxafXPsOv-=
+n8ApXhaSaQ49seSfaJFVdu1r2UwVFn75DIGz83onqk8X0P4hMbPnFe4q_9ecfKeL2hsToRFeef4=
+USQohjbBuVSxmF46w~~=0A)Eine Insel im Abendblau=0A=0AZum Sonnenuntergang ver=
+wandelt sich der Bleder See in einen traumhaften Ort. Die kleine Insel und =
+die zauberhafte Kirche werden zu Silhouetten am Abendhimmel, w=C3=A4hrend d=
+ie letzten Sonnenstrahlen des Tages auf dem Wasser tanzen. Ein wahrhaftig m=
+agischer Anblick.Besuche Bled (=0A=0Ahttps://clicks.mail.flixbus.com/f/a/MP=
+KUGtIbbVEGNhbexNrC8g~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1=
+DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpx=
+N6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-=
+7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0=
+XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeJB=
+W209r5b0__nKK94nNm3yc6ePYtMpA-yxxnzLs-sotVZAh-lyZWwB1SLtseXRqGn5LPWxhARMNop=
+7FwlEjSR6B1TXA_5fAxyC1ShMt57rswzg8V3W6jn4fSAPdQrZadqhcTtfARPg0k9Dz2r6bSmvCF=
+Mu-e8CG8zp4HNT0AZbhktorvPA5Ks5pvuyJTdgsXIxlQraaJWRrurnluxi54U3cW6hbYXUjbSEM=
+hMCbWjx_UDVCEU_sQ-QnnCp9XmIsbAuNLawG2UhegNEukQG30-SQa17oh6dhv_dEj-fRS5ikpUY=
+D9GdSlzRiF8N9VWqTRHSakR0zSHHFU1Akil3EeFahYtdbkxafXPsOv-n8ApXhP4joxz-H_yO5X5=
+i8C_nWCKDGxF3WWfybWlCvtEky1DSxMuovKqPNZtASfyKWrjd9hAXqev1A1jm83Fgcsi7a4w~~=
+=0A)=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A (=0A=0Ahttps://clicks.mail.flixbus=
+.com/f/a/x38jb3baY6Y3n1VPTq7XJw~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29el=
+BM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJ=
+tDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoR=
+R_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQg=
+wuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1=
+zcV3rGLtXeMzDktTxpkrjUpJ53Uduo_1zi_q_SneFq1_588BrUidYwZD2rqXNEu3W8ATkuXwXgF=
+JMjvMZTdj5A9BRJDZ1Tq6i8Kf6paOyPA0oW1n2i4lqQ5rS8EgFDJJr47AS98Y8hy2dWM9LhgsZU=
+UqS7kIi48nfHIny3pOAq7NmcE55vb2F9L9DRuEy74XACUu3Wjjdn2b7YA4CyCzgat-OU74gkHyf=
+x81uuQFFS7OPjVIDV2ZFG0-Gopdt2eFJa7dPW8Uatk-5dH0itqZY1_M2vYXZOQnTxTQb2rg9jQb=
+EPFU1ehr9Imy986dYwASotOHZqSMS2doXetOhCQy12M-XaAhVE5uD-wcYin_rAZL64egP-U87XX=
+5S2iuPqF5ngv8BHDNOS7JpkD-A2F4GUFkpuLJvU2bHfJ5hFcbA6mSMqokuc6FcY3HnY8HT9yEl9=
+zwuey5Nsg~~=0A)     (=0A=0Ahttps://clicks.mail.flixbus.com/f/a/FXIWdOZ5CA_x=
+Z-z2ytMpqg~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVzGFV9T-=
+VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp3f1IH_=
+YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQSeTV4=
+skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1I69aI=
+wrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeMzDktTxpkrjU=
+pJ53Uduo_1zi_q_SneFq1_588BrUidYwZD2rqXNEu3W8ATkuXwXgFJMjvMZTdj5A9BRJDZ1Tq6i=
+8Kf6paOyPA0oW1n2i4lqQ5rS8EgFDJJr47AS98Y8hy2dWM9LhgsZUUqS7kIi48nfHIny3pOAq7N=
+mcE55vb2F9L9DRuEy74XACUu3Wjjdn2b7YA4CyCzgat-OU74gkHyfx81uuQFFS7OPjVIDV2ZFG0=
+-Gopdt2eFJa7dPW8Uatk-5dH0itqZY1_M2vYXZOQnTxTQb2rg9jQbEPFU1ehr9Imy986dYwASot=
+OHZqSMS2doXetOhCQy12M-XaAhVE5uD-wcYin_rAZL64egP-U87sDcj1YJXFRZJkLVOjSqMNNYQ=
+gAuHJke9BrAAck2OQcVWw--n4bTUe_BStxEoe8jz7ZJp0WXkXJdQhi8Wih1rIA~~=0A)F=C3=BC=
+r diesen Himmel lohnt sich der Blick nach oben=0A=0ADer Himmel =C3=BCber de=
+r Tatra f=C3=A4rbt sich bei Sonnenuntergang von Rosa zu tiefem Blau. Die Be=
+rgketten schaffen eine atemberaubende Kulisse, w=C3=A4hrend die Lichter von=
+ Zakopane darunter zu leuchten beginnen. Besuche Zakopane (=0A=0Ahttps://cl=
+icks.mail.flixbus.com/f/a/DkHI369M12MRs0KKK9Dh_A~~/AAAHahA~/ubpTt-OY6u-otfi=
+VkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP=
+_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE=
+9jW-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsT=
+lRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc=
+5IaRYVgrmANq3bY1zcV3rGLtXeMzDktTxpkrjUpJ53Uduo_1zi_q_SneFq1_588BrUidYwZD2rq=
+XNEu3W8ATkuXwXgFJMjvMZTdj5A9BRJDZ1Tq6i8Kf6paOyPA0oW1n2i4lqQ5rS8EgFDJJr47AS9=
+8Y8hy2dWM9LhgsZUUqS7kIi48nfHIny3pOAq7NmcE55vb2F9L9DRuEy74XACUu3Wjjdn2b7YA4C=
+yCzgat-OU74gkHyfx81uuQFFS7OPjVIDV2ZFG0-Gopdt2eFJa7dPW8Uatk-5dH0itqZY1_M2vYX=
+ZOQnTxTQb2rg9jQbEPFU1ehr9Imy986dYwASotOHZqSMS2doXetOhCQy12M-XaAhVE5uD-wcYin=
+_rAZL64egP-U87yt4AwHm5B2XeI2rxHu4y4XyeG_MqA5_dqbwcYPU2UoxAjaNvOyUU9etMI5s2l=
+8DrofQh2rcUEoDn7-vcMdh13Q~~=0A)=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A (=0A=0A=
+https://clicks.mail.flixbus.com/f/a/BP82nw3zE6WzSQ3hu3csHA~~/AAAHahA~/ubpTt=
+-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c66Cx=
+qTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHS=
+k9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CH=
+OaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8U=
+ChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeDf5i4BDNJ1yOOwrLg4FNa_BcwXfCBa3KWlYtBlQ=
+dQhi4Ie-BL-pkhyT-u601wlYbZx5dxzzOHt10K37D023nxO1VfWuy14mRHAiJOdOEAwtPpsmqsP=
+nQBruBXfqvSLpEVAZpo9YgT84Sc2D95QMlsOWYan7IxMJseEcoroWSHOls-ieFuplkuTFn2ZyyC=
+C37zuIwxt5WhrUd8fGp3EYtnIs0YSMpDrrVdBuA0g-cgx1eGeaOpYlqKKOJ31epytiOqreX1WeH=
+Pzr3KuQcMjJBNbUwmpg0oZXx7Dfq7iC8VWqTisBazEw3wuQsBVONlzNTnfMEptT5jUdlpYzHTsm=
+HuQq9YCE-gU2KFTHNZmcT_Rs18M0FFEc7HIPCB3moeDFcSZiVDC-eVqcWmc2Pv-2N-2_6VeQFfQ=
+YXrNZo8eN-gK2Brm5J8pBCxKa1_7ld8ZHqw~~=0A)     (=0A=0Ahttps://clicks.mail.fl=
+ixbus.com/f/a/TeeY11WLaZy5b_ElG30arQ~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu=
+29elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1O=
+JwhJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzq=
+oXoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhm=
+IiQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq=
+3bY1zcV3rGLtXeDf5i4BDNJ1yOOwrLg4FNa_BcwXfCBa3KWlYtBlQdQhi4Ie-BL-pkhyT-u601w=
+lYbZx5dxzzOHt10K37D023nxO1VfWuy14mRHAiJOdOEAwtPpsmqsPnQBruBXfqvSLpEVAZpo9Yg=
+T84Sc2D95QMlsOWYan7IxMJseEcoroWSHOls-ieFuplkuTFn2ZyyCC37zuIwxt5WhrUd8fGp3EY=
+tnIs0YSMpDrrVdBuA0g-cgx1eGeaOpYlqKKOJ31epytiOqreX1WeHPzr3KuQcMjJBNbUwmpg0oZ=
+Xx7Dfq7iC8VWqTisBazEw3wuQsBVONlzNTnfMEptT5jUdlpYzHTsmHuQq9YCE-gU2KFTHNZmcT_=
+RsB7IENhK-Z0x6ObRVoAAc4hwWpucn8r6RiX7S1wQEHHwLL8f0mdSKBk-CS-FtfkXsAszDQZh_6=
+BHH7rlYa_i5vw~~=0A)Hohe Gipfel, kleine Lichter=0A=0ABeobachte, wie das Lich=
+t hinter den Gipfeln der franz=C3=B6sischen Alpen langsam verschwindet. Dra=
+matische Bergsilhouetten zeichnen sich gegen einen farbintensiven Himmel ab=
+ und die Stra=C3=9Fen von Chamonix beginnen zu glitzern: ein malerischer Ab=
+end wartet!Besuche Chamonix (=0A=0Ahttps://clicks.mail.flixbus.com/f/a/g1me=
+lXnoCubIs7wt6AbcRg~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1Dl=
+VzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6=
+mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7O=
+eiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XM=
+PY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeDf5i=
+4BDNJ1yOOwrLg4FNa_BcwXfCBa3KWlYtBlQdQhi4Ie-BL-pkhyT-u601wlYbZx5dxzzOHt10K37=
+D023nxO1VfWuy14mRHAiJOdOEAwtPpsmqsPnQBruBXfqvSLpEVAZpo9YgT84Sc2D95QMlsOWYan=
+7IxMJseEcoroWSHOls-ieFuplkuTFn2ZyyCC37zuIwxt5WhrUd8fGp3EYtnIs0YSMpDrrVdBuA0=
+g-cgx1eGeaOpYlqKKOJ31epytiOqreX1WeHPzr3KuQcMjJBNbUwmpg0oZXx7Dfq7iC8VWqTisBa=
+zEw3wuQsBVONlzNTnfMEptT5jUdlpYzHTsmHuQq9YCE-gU2KFTHNZmcT_Rss7ZLaOX2IVzbPWO8=
+HlNFHZLH9PTJ90eWMlkeoZKc0-NsX3rsnBlPqjfFp_uJyM9Oo7utosb1Ffd34u9j2OWWSQ~~=0A=
+)=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A (=0A=0Ahttps://clicks.mail.flixbus.co=
+m/f/a/FKByOsUJVMVp5OPLxwr0kg~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_=
+rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRm=
+ft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5v=
+Mgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-=
+mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3=
+rGLtXeKCftNS__q76eSUld_VyCiZq7IcZH1E5lMoVb0Q3Ug_RUytpoJh3ZZWAf0SHr40ZjwQ0_4=
+DdD0OZr37zU7_wvj4eUSgJ2dAIjDup10E_2ZygbsBE56Xg3CKr4ahdYm5sxgFci_vBUcyrBmL8i=
+X91O7BTpqeuB0VLL5MauvDXjutRoGQNh29tSyF1SgevZyrzRWGN5oUJKZJXWlTpw1goQlMXdvmF=
+ey68Ihi3A3ue9EPu9vRoSwILlSKNRA9nR9Yei7yp0sdc6V4Bh_CFvmlIwgxpK34E5qfsXTlMPfH=
+dRHq1DJQfAFX1gJF-atbIvC_IxXqJNMN7hLqu1LrwHuyY-A_ts9PJfm8mHdEt6yZyFf4_QAtxdo=
+smYq5I_k4lmKWYE-z1r9ZxrEr5geGEN0QVK37cl-4KnYIooA3IzEEMAYEq0ZDTzSv94aoDsrcyF=
+QYAhA~~=0A)     (=0A=0Ahttps://clicks.mail.flixbus.com/f/a/CGobeeADh1bCePCe=
+JF89JQ~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVzGFV9T-VKy_=
+SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp3f1IH_YCpf=
+i9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQSeTV4skI0=
+ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOM=
+KBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeKCftNS__q76eSUld=
+_VyCiZq7IcZH1E5lMoVb0Q3Ug_RUytpoJh3ZZWAf0SHr40ZjwQ0_4DdD0OZr37zU7_wvj4eUSgJ=
+2dAIjDup10E_2ZygbsBE56Xg3CKr4ahdYm5sxgFci_vBUcyrBmL8iX91O7BTpqeuB0VLL5MauvD=
+XjutRoGQNh29tSyF1SgevZyrzRWGN5oUJKZJXWlTpw1goQlMXdvmFey68Ihi3A3ue9EPu9vRoSw=
+ILlSKNRA9nR9Yei7yp0sdc6V4Bh_CFvmlIwgxpK34E5qfsXTlMPfHdRHq1DJQfAFX1gJF-atbIv=
+C_IxXqJNMN7hLqu1LrwHuyY-A_ts9PJfm8mHdEt6yZyFf4_j694_MZEDceEFLJKCtIy1t_q1CO1=
+crXONhEXbQUuZU_x0G7Wa8V8DFKtvcGvo5oo39z0L04tf71gZPA7jmWXJg~~=0A)Das Schimme=
+rn der Nacht=0A=0AAbends wird der Comer See zu einer besonderen Sch=C3=B6nh=
+eit. Berge im Hintergrund und Lichter der D=C3=B6rfer, die auf dem Wasser s=
+chimmern. Sauge bei einem Spaziergang am Wasser die magischen Reflexionen e=
+in.Besuche Como (=0A=0Ahttps://clicks.mail.flixbus.com/f/a/_yh4hobIWctSBvPF=
+qaeF5g~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVzGFV9T-VKy_=
+SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp3f1IH_YCpf=
+i9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQSeTV4skI0=
+ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOM=
+KBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeKCftNS__q76eSUld=
+_VyCiZq7IcZH1E5lMoVb0Q3Ug_RUytpoJh3ZZWAf0SHr40ZjwQ0_4DdD0OZr37zU7_wvj4eUSgJ=
+2dAIjDup10E_2ZygbsBE56Xg3CKr4ahdYm5sxgFci_vBUcyrBmL8iX91O7BTpqeuB0VLL5MauvD=
+XjutRoGQNh29tSyF1SgevZyrzRWGN5oUJKZJXWlTpw1goQlMXdvmFey68Ihi3A3ue9EPu9vRoSw=
+ILlSKNRA9nR9Yei7yp0sdc6V4Bh_CFvmlIwgxpK34E5qfsXTlMPfHdRHq1DJQfAFX1gJF-atbIv=
+C_IxXqJNMN7hLqu1LrwHuyY-A_ts9PJfm8mHdEt6yZyFf4_1w1NZ6tWJrPnEUGA6-gx4kU_TCCC=
+kiu1S0_EebqSBQjF-GXAAVZeIFauH843hUYN2pzjJcFaJz79GOoyzGHCgQ~~=0A)=0A=0A=0A=
+=0A=0A=0A=0A=0A=0A=0A=0A=0A (=0A=0Ahttps://clicks.mail.flixbus.com/f/a/wI-h=
+c3Nbe3UNzxmvZZRZnA~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1Dl=
+VzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6=
+mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7O=
+eiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XM=
+PY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeHAJ_=
+kc6R9P_PXcL7yLL_DDAX6Pk4mu6cEoYxZbdLQPTU3nhvxfsH50rShX7joCBwxd7g8rg89Ss1hh9=
+9inetVaTl8wA_LcvHpvVdi1WpyFX2zGVKWQpsgNE_b3uYLWJRgVltcl188R-2TugldlD6wSQZe5=
+yT2EyPy-pRdw3XqfZm3b18UCE44BGilRZ_p6c-Szy2Jm0lZ4RZwawDd6JvpMkrQr5cyxERBdSFO=
+IojewwPZ25XWbMSc3E_Ywja8fQbJkaZJD-xdpdch-Gwd0_hHNC1N-TLPe47zbVMJEcPqSx8AN75=
+8BzU8Ov5CjlZcuKuFAkDYyP6HLoj28w8WO3IbEph2BR-ETHbmI5pZGVD-TLvwHvDpxsN8T1Yi8N=
+XBT_ZQBym3WCcDCw6SKNcfAWKUBqIcyD76KvotPBQVFwi8FJhd0ogyoiXjl_SnGBGcCCKQ~~=0A=
+)     (=0A=0Ahttps://clicks.mail.flixbus.com/f/a/qhCBZffpp-LDvRj_wI073A~~/A=
+AAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7=
+ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_=
+LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BG=
+qpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PM=
+jHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeHAJ_kc6R9P_PXcL7yLL_DDAX6P=
+k4mu6cEoYxZbdLQPTU3nhvxfsH50rShX7joCBwxd7g8rg89Ss1hh99inetVaTl8wA_LcvHpvVdi=
+1WpyFX2zGVKWQpsgNE_b3uYLWJRgVltcl188R-2TugldlD6wSQZe5yT2EyPy-pRdw3XqfZm3b18=
+UCE44BGilRZ_p6c-Szy2Jm0lZ4RZwawDd6JvpMkrQr5cyxERBdSFOIojewwPZ25XWbMSc3E_Ywj=
+a8fQbJkaZJD-xdpdch-Gwd0_hHNC1N-TLPe47zbVMJEcPqSx8AN758BzU8Ov5CjlZcuKuFAkDYy=
+P6HLoj28w8WO3IbEph2BR-ETHbmI5pZGVD-TLX4nMsAdd1r1WSwzIBUOVwZwYx_dJx4SyQCfg29=
+_i6heKiK_xFYR2ODK27mEe_qwuuQejPwyZP0FMm9caEeB1BQ~~=0A)Ein m=C3=A4rchenhafte=
+r Tagesabschluss=0A=0AMysteri=C3=B6se W=C3=A4lder und farbenfrohe Pal=C3=A4=
+ste: Sintra ist wie aus dem Bilderbuch. Wenn es dunkel wird, wird dieser Or=
+t noch magischer. Entdecke m=C3=A4rchenhafte Landschaften und wundervoll be=
+leuchtete Stra=C3=9Fen.Besuche Sintra (=0A=0Ahttps://clicks.mail.flixbus.co=
+m/f/a/2ejgT6lc4iBEzuRHgS_txg~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_=
+rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRm=
+ft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5v=
+Mgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-=
+mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3=
+rGLtXeHAJ_kc6R9P_PXcL7yLL_DDAX6Pk4mu6cEoYxZbdLQPTU3nhvxfsH50rShX7joCBwxd7g8=
+rg89Ss1hh99inetVaTl8wA_LcvHpvVdi1WpyFX2zGVKWQpsgNE_b3uYLWJRgVltcl188R-2Tugl=
+dlD6wSQZe5yT2EyPy-pRdw3XqfZm3b18UCE44BGilRZ_p6c-Szy2Jm0lZ4RZwawDd6JvpMkrQr5=
+cyxERBdSFOIojewwPZ25XWbMSc3E_Ywja8fQbJkaZJD-xdpdch-Gwd0_hHNC1N-TLPe47zbVMJE=
+cPqSx8AN758BzU8Ov5CjlZcuKuFAkDYyP6HLoj28w8WO3IbEph2BR-ETHbmI5pZGVD-TLBX_Eg-=
+wFP-oNLK8K8o12NMgDQkB440LBdr3melgS7I-73pSEq-AGvyUm40f8VzORu4Chq0vjoygvMaFmY=
+zl0-g~~=0A)=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A (=0A=0Ahttps://clicks.mail.=
+flixbus.com/f/a/tikbh4L8m1gZpc1Z85BoTg~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQ=
+eu29elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP=
+1OJwhJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtd=
+zqoXoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYv=
+hmIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmA=
+Nq3bY1zcV3rGLtXeKA5nlNnrhMyd1mGwdGiFzXOGBYN9I4zqVDTAU_d1Xe_9Z5agvF0n3opzv5v=
+6nm3Oloq-vBCaIZRWclWGJvR_gvaR4DMeUkk18Wfl8Vq7tzScTkn-JbKFgplXxsUICUiW38q1EJ=
+npb8d73zSs_AGm227P7Q0MGs91SDBkhjoqbYAcbe5ctbWr2ThuChk85g0kmk7aUxNIESycAJQWT=
+_dWo7DaxgxeeKqjwb1z3-ViEcJESNm_M2S9G_VTi8V2sUTw3VzwZyDQbeZDQINSg5LoD2fwR3aS=
+C0_jiYxIjPYnxHB5_awtHLifIWsBQAvGOW7q0vFdu8IqRckrfImW1-fDz_Kpi1ImTLr545lITzl=
+-9OloBO081RQAaPBUO84-MVLfr2VLhOOyGZBVjUWEYH7bN6vzwhx1zd0U5m94xIaddoMdKP3jt-=
+8YUDB5cMLSomg-w~~=0A)     (=0A=0Ahttps://clicks.mail.flixbus.com/f/a/bL01hq=
+RXjkwXtqSKfZBMkw~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVz=
+GFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp=
+3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7Oei=
+QSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY=
+1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeKA5nlN=
+nrhMyd1mGwdGiFzXOGBYN9I4zqVDTAU_d1Xe_9Z5agvF0n3opzv5v6nm3Oloq-vBCaIZRWclWGJ=
+vR_gvaR4DMeUkk18Wfl8Vq7tzScTkn-JbKFgplXxsUICUiW38q1EJnpb8d73zSs_AGm227P7Q0M=
+Gs91SDBkhjoqbYAcbe5ctbWr2ThuChk85g0kmk7aUxNIESycAJQWT_dWo7DaxgxeeKqjwb1z3-V=
+iEcJESNm_M2S9G_VTi8V2sUTw3VzwZyDQbeZDQINSg5LoD2fwR3aSC0_jiYxIjPYnxHB5_awtHL=
+ifIWsBQAvGOW7q0vFdu8IqRckrfImW1-fDz_Kpi1ImTLr545lITzl-9OlAta8s2TejG9CRejEYZ=
+5jpEfu6a1KNEIHHf0LnDIKaJwwepNCYgnfVJtCDpo-MMgesTGcazsRkBNWEZmOlxkTQA~~=0A)A=
+lpine Abendr=C3=B6te=0A=0AUmgeben von schneebedeckten Alpen wirkt diese bay=
+rische Stadt in der Abendd=C3=A4mmerung noch malerischer. Beobachte den Abe=
+ndhimmel und die warmen Lichter, die die traditionellen H=C3=A4user und Str=
+a=C3=9Fen strahlen lassen.Besuche Garmisch (=0A=0Ahttps://clicks.mail.flixb=
+us.com/f/a/6zPgPDscOYTPM4GhwwnhCQ~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29e=
+lBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwh=
+JtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXo=
+RR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQ=
+gwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY=
+1zcV3rGLtXeKA5nlNnrhMyd1mGwdGiFzXOGBYN9I4zqVDTAU_d1Xe_9Z5agvF0n3opzv5v6nm3O=
+loq-vBCaIZRWclWGJvR_gvaR4DMeUkk18Wfl8Vq7tzScTkn-JbKFgplXxsUICUiW38q1EJnpb8d=
+73zSs_AGm227P7Q0MGs91SDBkhjoqbYAcbe5ctbWr2ThuChk85g0kmk7aUxNIESycAJQWT_dWo7=
+DaxgxeeKqjwb1z3-ViEcJESNm_M2S9G_VTi8V2sUTw3VzwZyDQbeZDQINSg5LoD2fwR3aSC0_ji=
+YxIjPYnxHB5_awtHLifIWsBQAvGOW7q0vFdu8IqRckrfImW1-fDz_Kpi1ImTLr545lITzl-9OlP=
+yeb_WChj10ZFNQ7sPv-4q9y35lAXyyp2obrI5KxgGzhcjEdgwK1-aifHESo_nzAKm3sbG1vSKe5=
+MplKiYI7uA~~=0A)=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A (=0Ahttps://clicks.=
+mail.flixbus.com/f/a/XUlvzvR5qL0MMTi4DebwSg~~/AAAHahA~/4RtnJvl-6NalPy9lr_eU=
+HRZD3zoxXnqDdTJP3k2BM3Y1qn2rQ2HHTn2sepiHrkoRWroSLmfB9n2GVbYjbuAR0j2XfZvpJX6=
+CU00O7BTarh78TCuFrDvqG4h_4eYUwxR8lmyCBzno3GJpQBXrADWZK7p0-dcA4XhVHfWjb8pOV0=
+RvtAKqgfk018zr1I56klpgqNgIuBFTb0651fL4lWktpTYKBzjr4o7LZRtvfMRJqyeuBXfD9XXbc=
+_RC5T0nqU-ZmkYEadnZgVnic70kI7ttRpBS-QwByQkAFKdf5G3FlXtbE5_JjBIukn2fA57-03Kf=
+tVE537MTidB2Mz7i1do-FfvSEfu87jFxtrpYSX8OlqklVSt18XgpwgIf72y_ebyqByKMyvEsZRY=
+4_ckX8Jx-CE4P8-fmb9W0-xbCg9wM3zQkovlR1EnbPiFXf8D6zf0UBIbyQYDEyBI3zJWl2l5e7B=
+wkkf1KhEyQHcrgO8-ZK6nJ_EA6bJOgUyVH_dCKO9eqBfJoVQHm6k8D7DC88Brr__xtaVh2g1xnb=
+c1kbF9Vw-Z_OKPjVxTX7V6h_hHHWwWQyTzOMmZ-VuqTdcb_qIOiDYshqbYvJtl9prKJn7u_Oz8H=
+dnb7FcStG_cx1Lmrfg2pBXm2PlYqHirTCKz4IImQuVzNVvt2vdCNXQf0AAbFId54_tK-UAGl5my=
+6devHd_cFPjxclg6a4l62thjRAerU_lYh3sXrNJHAt8rRBLZsmO8QHjZJelNvu55jr8BONryp )=
+=0A=0ANoch nicht das Richtige gefunden=3F=0AEntdecke unser Streckennetz mit=
+ =C3=BCber 8.000 Zielen und triff Deine Wahl. (=0Ahttps://clicks.mail.flixb=
+us.com/f/a/TjDBQ1pqkHdBB37G0jkNog~~/AAAHahA~/4RtnJvl-6NalPy9lr_eUHRZD3zoxXn=
+qDdTJP3k2BM3Y1qn2rQ2HHTn2sepiHrkoRWroSLmfB9n2GVbYjbuAR0j2XfZvpJX6CU00O7BTar=
+h78TCuFrDvqG4h_4eYUwxR8lmyCBzno3GJpQBXrADWZK7p0-dcA4XhVHfWjb8pOV0RvtAKqgfk0=
+18zr1I56klpgqNgIuBFTb0651fL4lWktpTYKBzjr4o7LZRtvfMRJqyeuBXfD9XXbc_RC5T0nqU-=
+ZmkYEadnZgVnic70kI7ttRpBS-QwByQkAFKdf5G3FlXtbE5_JjBIukn2fA57-03KftVE537MTid=
+B2Mz7i1do-FfvSEfu87jFxtrpYSX8OlqklVSt18XgpwgIf72y_ebyqByKMyvEsZRY4_ckX8Jx-C=
+E4P8-fmb9W0-xbCg9wM3zQkovlR1EnbPiFXf8D6zf0UBIbyQYDEyBI3zJWl2l5e7Bwkkf1KhEyQ=
+HcrgO8-ZK6nJ_EA6bJOgUyVH_dCKO9eqBfJoVQHm6k8D7DC88Brr__xtaVh2g1xnbc1kbF9Vw-Z=
+_OKPjVxTX7V6h_hHHWwWQyTzOMmZ-VuqTdcb_qIOiDYshqbYvJtl9prKJn7u_Oz8Hdnb7FcStG_=
+cx1Lmrfg2pBXm2PlYqHirTCKz4IImQuVzNVvt2vdCNXQf0AAbFId6qVGNpnZgQiwylOWqbJTPOt=
+iHH7DrV71VC_22s7trURXlSXvhkjIhI_s3119YGCfxlJwMjBX2X7-UxGsZokQgr )=0A=0Aarro=
+w icon (=0Ahttps://clicks.mail.flixbus.com/f/a/eYMhoSWM5ufAsmudPs3v4Q~~/AAA=
+HahA~/4RtnJvl-6NalPy9lr_eUHRZD3zoxXnqDdTJP3k2BM3Y1qn2rQ2HHTn2sepiHrkoRWroSL=
+mfB9n2GVbYjbuAR0j2XfZvpJX6CU00O7BTarh78TCuFrDvqG4h_4eYUwxR8lmyCBzno3GJpQBXr=
+ADWZK7p0-dcA4XhVHfWjb8pOV0RvtAKqgfk018zr1I56klpgqNgIuBFTb0651fL4lWktpTYKBzj=
+r4o7LZRtvfMRJqyeuBXfD9XXbc_RC5T0nqU-ZmkYEadnZgVnic70kI7ttRpBS-QwByQkAFKdf5G=
+3FlXtbE5_JjBIukn2fA57-03KftVE537MTidB2Mz7i1do-FfvSEfu87jFxtrpYSX8OlqklVSt18=
+XgpwgIf72y_ebyqByKMyvEsZRY4_ckX8Jx-CE4P8-fmb9W0-xbCg9wM3zQkovlR1EnbPiFXf8D6=
+zf0UBIbyQYDEyBI3zJWl2l5e7Bwkkf1KhEyQHcrgO8-ZK6nJ_EA6bJOgUyVH_dCKO9eqBfJoVQH=
+m6k8D7DC88Brr__xtaVh2g1xnbc1kbF9Vw-Z_OKPjVxTX7V6h_hHHWwWQyTzOMmZ-VuqTdcb_qI=
+OiDYshqbYvJtl9prKJn7u_Oz8Hdnb7FcStG_cx1Lmrfg2pBXm2PlYqHirTCKz4IImQuVzNVvt2v=
+dCNXQf0AAbFId5xOSm2Yo6ZeVXNQgdXIH3DZTDIqblH9EiO7WTXbHcIHsTezv4OXTlMmuxO_wC7=
+tcR2972fM3AirJuKGJ5yzJhM )=0A=0A=0A=0AWir freuen uns, Dich an Bord begr=C3=
+=BC=C3=9Fen zu d=C3=BCrfen.<br>Dein Flix Team=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=
+=0A=0ALade die FlixBus App herunter!=0A=0AGoogle Store ( =0Ahttps://clicks.=
+mail.flixbus.com/f/a/jcFUEUpxgTQu5pRao5kGMw~~/AAAHahA~/T9CHnz_rkOQr58FHr4o1=
+oMvqkUbN5kMblbGMTb5QSgknpNV3BFz8S_JdhJuZT0Vtxbu27F89yPUhvUDG74YlYD_FlMrmfMD=
+ua7eI8zzPXKYTXZpaI1UmhbPQQHPTN3xQfmEFvGLAPv4v-EmFDtZvAdbnenqNXSfyGsvNsE_0gv=
+UgA-vI9DoFMFsLU6bvo3GgzgoKo-ui28bAQCWdofDi0vTycUnKexU0UM3hyuUj47K9nSrDhXVRY=
+si-R-yWd3NQCY9uCJAfzbV7IT5PWvECwmdkLpXYL9_jhSUmE8UkuiTy_6h9mwVGtTmN6QbPV71u=
+UTnBDZAYZFuTzzf2Fc4wF3gpA7dFASx4M2pyFoJk2gn5ymL_mVFG2cnVFyoJZtGNCRJVbH_Am0g=
+i_6EIshIyqBgsltN8C7_9oKfl7X01ERoybYGOnYm7H1AF2UwSSSVtO6jiPRFiRyQhm7Glt9u2Xp=
+oU1b2qL3jLV4MFDFrUYmSUOXdW_TLgQ-VGBYeOBmccSmsR83JAxTEZqUzvdmttZN2Dv6lPGlHoA=
+2nZ9i7jYiGX3cHsn3Llg1FvRIST0St8umVLNq-tshgie1hjGLDSZHSnjqHZZvOtxQY7Qq7XQmoc=
+KN-pIb9YIN4yDLkVYmciMbQgxocII6w4om8Xoo2NC-gVIzj5-UxC1aYXtinjXOmbwZVWETpLG_u=
+9EJSIRb9PRxDnP0I72lWR2KMK0IU-0w~~ )=0A=0AApple Store ( =0Ahttps://clicks.ma=
+il.flixbus.com/f/a/jcFUEUpxgTQu5pRao5kGMw~~/AAAHahA~/T9CHnz_rkOQr58FHr4o1oM=
+vqkUbN5kMblbGMTb5QSgknpNV3BFz8S_JdhJuZT0Vtxbu27F89yPUhvUDG74YlYD_FlMrmfMDua=
+7eI8zzPXKYTXZpaI1UmhbPQQHPTN3xQfmEFvGLAPv4v-EmFDtZvAdbnenqNXSfyGsvNsE_0gvUg=
+A-vI9DoFMFsLU6bvo3GgzgoKo-ui28bAQCWdofDi0vTycUnKexU0UM3hyuUj47K9nSrDhXVRYsi=
+-R-yWd3NQCY9uCJAfzbV7IT5PWvECwmdkLpXYL9_jhSUmE8UkuiTy_6h9mwVGtTmN6QbPV71uUT=
+nBDZAYZFuTzzf2Fc4wF3gpA7dFASx4M2pyFoJk2gn5ymL_mVFG2cnVFyoJZtGNCRJVbH_Am0gi_=
+6EIshIyqBgsltN8C7_9oKfl7X01ERoybYGOnYm7H1AF2UwSSSVtO6jiPRFiRyQhm7Glt9u2XpoU=
+1b2qL3jLV4MFDFrUYmSUOXdW_TLgQ-VGBYeOBmccSmsR83JAxTEZqUzvdmttZN2Dv6lPGlHoA2n=
+Z9i7jYiGX3cHsn3Llg1FvRIST0St8umVLNq-tshgie1hjGLDSZHSnjqHZZvOtxQY7Qq7XQmocKN=
+-pIb9YIN4yDLkVYmciMbQgxocII6w4om8Xoo2NC-gVIzj5-UxC1aYXtinjXOmbwZVWETpLG_u9E=
+JSIRb9PRxDnP0I72lWR2KMK0IU-0w~~ )Facebook (=0Ahttps://clicks.mail.flixbus.c=
+om/f/a/9SgRucbcSk3GZaar2WqF6Q~~/AAAHahA~/h6P1LeeCDNZIuFlii4vN6mHpQL3Jgavyid=
+IjX9vFypZg00qRWIJo2QbhIjpy7tX289FxJ_XkICj6b-qHyWG4EnpQkZUnRqz3TJC5Pf_mXzRz9=
+Uv3WA1yK7AKPFM3ApCbz-CMNybeVFD9eYxMztw_fw~~ )Instagram (=0Ahttps://clicks.m=
+ail.flixbus.com/f/a/PdxoBb71hX-EG_emL22yjQ~~/AAAHahA~/6E-VxNKdxZuE-9WS1Re3c=
+UswywuN4UOU1in7B7U9OBu1dWfxCdPvXG_0v8yhFf0w6HviYVbmsCysEj-RaOjqo9KH-fia8brb=
+kJPnS8I8kBAZBrgigY5Bw9-k9iDBPekuGvXYkqhtRdO4rP1mOgpbPQ~~ )Youtube (=0Ahttps=
+://clicks.mail.flixbus.com/f/a/yz49GTsJuWnrFTeij99OUw~~/AAAHahA~/V7b1F_pWOg=
+Sg-Ss67rC-6jYyHQz-x1ZIDygAkUgc2JMlZLRUzuCE2h9EczZce_lNfjP4QDZdjK5zM-N1KNgpH=
+SVCkR0qGur7n-MIMWC0QfQT1e4nUKXUxg0FmgQgJRMdRP7mzjXZdugEqXEs5oC1aZ-lvcaKAw3r=
+K2aExug4_5M~ )LinkedIn (=0Ahttps://clicks.mail.flixbus.com/f/a/otk3nkqdO1R8=
+UFSzhIrFdw~~/AAAHahA~/_85_9yRITXw70WOfEmkD_58JQqFkL3tL6HbOw5HEQGQgLp_WPwvbw=
+jmXCF_tT2cjJ-0fFVeBMZQ29GeAmVD9IgD-eQwOZo0zdp2m7HyrLKg0Hpz8NSZu5at9hs5ABShN=
+Qt9vBZn5T4v01fwYD-LqNX62rR73y1dDlmrNd-A2PyY~ )TikTok (=0Ahttps://clicks.mai=
+l.flixbus.com/f/a/DttujAfUCv-xRiQzeFMOvQ~~/AAAHahA~/lJ75mUxRsRZKa-ZPdLzKTjU=
+nrYW-oAcd-bTvjOlxCeyKFUpu9VBOMA-EuFbwt7PTf_OTl1pMON5_WhW1PEai9-CxQ2yU1d7aqM=
+sjjFEmOTrhjSEdirqVc9SrC4TQ2VBPEIBf_wSqJSQB31gM-9VQzg~~ )=0A=0A=0AWir schick=
+en unsere E-Mails an folgende E-Mail-Adresse:=0Akunde@example.com=0A=0A=0A=
+=0A=0A=0A=0A=0ADu erh=C3=A4ltst diese Produktempfehlungen auf Basis des =C2=
+=A7 7 Absatz 3 UWG und kannst der Verwendung Deiner E-Mail-Adresse jederzei=
+t durch eine=0A=0AAbmeldung (=0Ahttps://clicks.mail.flixbus.com/f/a/jNbndPC=
+IS925385qMpVNTw~~/AAAHahA~/CPKFGsL0qkN30B0Q4JI5bqLEJgCP-9eODkJR_JgtFVwgqsY8=
+TaMt1EmI3TXoDAM_DPwEv-5VI_RYgmN8etqMwNnYYBXNoUSH8OLofODqmNqLC-Q9iSD1RLeLBJT=
+7ABjs5S9fvGIWTGrooQ0bjvL4X41Yc2JRpziLtFfszbfaK9COk7kI6_AoTwMplb5FC1n0qKaaLG=
+TNieeWUOboMnElueXFKa_a6RwsLDcITNjAh764DCKlY30PDdkN9Y2aK-8G6DgJUTLiTxzK88QKA=
+Nf3p9quHpoh_wJ6FwnEjEIH_AZDqCVi8LX_NfV6D_FFxgBPpSa2g2cmUXR_5ooZZixYjotVttLQ=
+Js-WMpCPl4HZi5RBzuwk3le8MmqLmPiLuuT0H5OYRBde4dNYAalEUSmN4fbP1cRwbKBEtoGUIU_=
+l4yQ~ )=0A=0Aoder eine E-Mail an  unsubscribe@flixbus.com=0A widersprechen.=
+ Abgesehen von den =C3=9Cbermittlungskosten f=C3=BCr die E-Mail nach den Ba=
+sistarifen, also Deinem schon vorhandenen Internet-Vertrag, fallen keine Ko=
+sten an.=0A=0A=0A=0ABei Fragen unterst=C3=BCtzen wir Dich gerne =C3=BCber u=
+nseren=0AHilfebereich. (=0Ahttps://clicks.mail.flixbus.com/f/a/UmOfqWi8hfv3=
+ghjOB3ixlQ~~/AAAHahA~/wDfVn3G1hJB5NNGAP2PFRo_n6A8cOMYdqdQp3ocK7LvtFqE7F9Wsh=
+fxSdyveauK-ZfspYNk5FFYFi-8LuYnWlZoKFzHPoD_kM5n4ZXip4sD0X_bsUMmV51XQ2kWugnjl=
+ZHlXQo4GQK6VAkCEEtTNBw~~ )Copyright =C2=A9 2026 | Flix SE | Friedenheimer B=
+r=C3=BCcke 16, 80639 M=C3=BCnchen |  All rights reserved |=0AImpressum=0A( =
+https://clicks.mail.flixbus.com/f/a/5xoPGI7lFPjAvWh_3c4RyA~~/AAAHahA~/wDfVn=
+3G1hJB5NNGAP2PFRjx51chz040783Geo_zutf4LwWAxktom0MW2Qjt55As5OPF4zvIUCXmF_ymM=
+HsBDIY1RcFHLwJPvHCpCgZ_AACE9GgmyPxC7t5OhnYNx9RyMNi3huFbf0_lZ-tZypQkZxQ~~ )=
+=0A|=0ADatenschutz (=0Ahttps://clicks.mail.flixbus.com/f/a/4gEZkMn94oggMPF7=
+3vb-zw~~/AAAHahA~/h6P1LeeCDNZIuFlii4vN6kleYSVNhvBLsjKzdP2zTu2sy78YxbRuIwIC4=
+97XZN73RKB66eL__YkUvy55BlKcNtURjITSMJyxD4ma_r4ojvNur-SPJX1i1EpvxConsxqGkTwm=
+q47BVehQDwAKu4HQKg~~ )
+--_----cTH3NcbxVy5n2XVYZ+k/XA===_04/1E-24500-8CC74FA6
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html>=0D=0A<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=
+=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:off=
+ice:office" lang=3D"de">=0D=0A=0D=0A<head>=0D=0A</head>=0D=0A=0D=0A<head>=
+=0D=0A    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8">=0D=0A    <meta charset=3D"UTF-8">=0D=0A    <meta name=3D"viewpor=
+t" content=3D"width=3Ddevice-width, initial-scale=3D1">=0D=0A    <meta http=
+-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">=0D=0A    <meta name=3D"x-=
+apple-disable-message-reformatting" />=0D=0A    <meta name=3D"robots" conte=
+nt=3D"noindex, nofollow" />=0D=0A    <meta name=3D"referrer" content=3D"no-=
+referrer" />=0D=0A    <meta name=3D"format-detection" content=3D"telephone=
+=3Dno">=0D=0A    <meta name=3D"format-detection" content=3D"date=3Dno">=0D=
+=0A    <meta name=3D"format-detection" content=3D"address=3Dno">=0D=0A    <=
+meta name=3D"format-detection" content=3D"email=3Dno">=0D=0A    <meta name=
+=3D"color-scheme" content=3D"light dark">=0D=0A    <meta name=3D"supported-=
+color-schemes" content=3D"light dark">    =0D=0A=0D=0A        =0D=0A<link h=
+ref=3D"https://fonts.googleapis.com/css2=3Ffamily=3DRoboto:ital,wght@0,400;=
+0,500;0,700;1,400;1,500;1,700&display=3Dswap" rel=3D"stylesheet">=0D=0A=0D=
+=0A    <title></title>=0D=0A    =0D=0A=0D=0A    <style type=3D"text/css">=
+=0D=0A    :root {=0D=0A        color-scheme: light dark;=0D=0A        suppo=
+rted-color-schemes: light dark;=0D=0A    }=0D=0A    body {=0D=0A        mar=
+gin: 0;=0D=0A        padding: 0;=0D=0A        -ms-text-size-adjust: 100%;=
+=0D=0A        -webkit-text-size-adjust: 100%;=0D=0A        text-rendering: =
+optimizelegibility;=0D=0A        -webkit-font-smoothing: antialiased;=0D=0A=
+    }=0D=0A    =0D=0A    table {=0D=0A    border-spacing: 0;=0D=0A    margi=
+n: 0px !important;=0D=0A    }=0D=0A=0D=0A    table.center {=0D=0A    border=
+-spacing: 0;=0D=0A    margin: 0px auto !important;=0D=0A    }=0D=0A    =0D=
+=0A    table, td {=0D=0A    mso-table-lspace: 0pt;=0D=0A    mso-table-rspac=
+e: 0pt;=0D=0A    }=0D=0A    =0D=0A    .ExternalClass {=0D=0A        width: =
+100%;=0D=0A    }=0D=0A=0D=0A    div {=0D=0A        box-sizing: border-box;=
+=0D=0A    }=0D=0A    =0D=0A    .ExternalClass,=0D=0A    .ExternalClass p,=
+=0D=0A    .ExternalClass span,=0D=0A    .ExternalClass font,=0D=0A    .Exte=
+rnalClass td,=0D=0A    .ExternalClass div {=0D=0A        line-height: 100%;=
+=0D=0A    }=0D=0A    =0D=0A    a[x-apple-data-detectors] {=0D=0A        col=
+or: inherit !important;=0D=0A        text-decoration: none !important;=0D=
+=0A        font-size: inherit !important;=0D=0A        font-family: inherit=
+ !important;=0D=0A        font-weight: inherit !important;=0D=0A        lin=
+e-height: inherit !important;=0D=0A    }=0D=0A    =0D=0A    table {=0D=0A  =
+      mso-table-lspace: 0pt;=0D=0A        mso-table-rspace: 0pt;=0D=0A    }=
+=0D=0A    =0D=0A    img {=0D=0A        -ms-interpolation-mode: bicubic;=0D=
+=0A    }=0D=0A    =0D=0A    .yshortcuts a {=0D=0A        border-bottom: non=
+e !important;=0D=0A    }=0D=0A    =0D=0A    .hide {=0D=0A        visibility=
+: hidden;=0D=0A        display: none;=0D=0A        mso-hide: all;=0D=0A    =
+}=0D=0A    =0D=0A    .mbl-show {=0D=0A        display: none;=0D=0A        m=
+so-hide: all;=0D=0A    }=0D=0A    =0D=0A    =0D=0A    .AppleLinksBlack a {=
+=0D=0A        color: #000000 !important;=0D=0A        text-decoration: none=
+ !important;=0D=0A    }=0D=0A    =0D=0A    .AppleLinksGrey a {=0D=0A       =
+ color: #000000 !important;=0D=0A        text-decoration: none !important;=
+=0D=0A    }=0D=0A    =0D=0A    .AppleLinksWhite a {=0D=0A        color: #FF=
+FFFF !important;=0D=0A        text-decoration: none !important;=0D=0A    }=
+=0D=0A    =0D=0A    #outlook a {=0D=0A        padding: 0;=0D=0A    }=0D=0A =
+   =0D=0A    u+#body a {=0D=0A        color: inherit;=0D=0A        text-dec=
+oration: none;=0D=0A        font-size: inherit;=0D=0A        font-family: i=
+nherit;=0D=0A        font-weight: inherit;=0D=0A        line-height: inheri=
+t;=0D=0A    }=0D=0A    =0D=0A    .linkReset a {=0D=0A        color:inherit =
+!important; =0D=0A        text-decoration: none !important; =0D=0A    }=0D=
+=0A=0D=0A    .btn-primary:hover {=0D=0A       background-color: #98D83B !im=
+portant;=0D=0A       transition: all .2s ease-in-out;=0D=0A    }  =0D=0A   =
+ =0D=0A    .btn-secondary:hover {=0D=0A       background-color: #F0F0F0 !im=
+portant;=0D=0A       transition: all .2s ease-in-out;=0D=0A    }  =0D=0A=0D=
+=0A    .fade:hover {=0D=0A        opacity: 0.6;=0D=0A        transition: al=
+l .2s ease-in-out;=0D=0A    }=0D=0A    =0D=0A    sup {=0D=0A        font-si=
+ze: 64% !important;=0D=0A        line-height: 0 !important;=0D=0A    }=0D=
+=0A    =0D=0A=0D=0A    </style>=0D=0A    <style type=3D"text/css">=0D=0A   =
+ @media screen and (max-width: 389px) {=0D=0A        .three-col .column {=
+=0D=0A            max-width: 50% !important;=0D=0A        }=0D=0A=0D=0A    =
+    .three-col .column_pad {=0D=0A            padding: 0px 6px 18px !import=
+ant;=0D=0A        } =0D=0A    }=0D=0A=0D=0A    @media screen and (min-width=
+: 390px) and (max-width: 639px) {=0D=0A        .three-col .column {=0D=0A  =
+          max-width: 50% !important;=0D=0A        }=0D=0A=0D=0A        .thr=
+ee-col .column_pad {=0D=0A            padding: 0px 6px 18px !important;=0D=
+=0A        }=0D=0A    }=0D=0A    @media screen and (max-width: 639px) {=0D=
+=0A    =0D=0A        .force-row,=0D=0A        .container {=0D=0A           =
+ width: 100% !important;=0D=0A            max-width: 100% !important;=0D=0A=
+        }=0D=0A    =0D=0A        .mob-stack {=0D=0A            width: 100% =
+!important;=0D=0A            display: block !important;=0D=0A        }=0D=
+=0A    =0D=0A        .col {=0D=0A            width: 100% !important;=0D=0A =
+       }=0D=0A    =0D=0A        .mbl-50 {=0D=0A            width: 50% !impo=
+rtant;=0D=0A        }=0D=0A    =0D=0A        .cta-btn {=0D=0A            di=
+splay: block !important;=0D=0A            width: auto !important;=0D=0A    =
+    }=0D=0A    =0D=0A        .mbl-hide {=0D=0A            display: none !im=
+portant;=0D=0A            font-size: 0;=0D=0A            max-height: 0;=0D=
+=0A            line-height: 0;=0D=0A            padding: 0;=0D=0A          =
+  mso-hide: all;=0D=0A        }=0D=0A    =0D=0A        .mbl-show {=0D=0A   =
+         display: block !important;=0D=0A            max-height: none !impo=
+rtant;=0D=0A        }=0D=0A    =0D=0A        .mbl-show.inline {=0D=0A      =
+      display: inline-block !important;=0D=0A            max-height: none !=
+important;=0D=0A        }=0D=0A    =0D=0A        .mbl-show.inline img {=0D=
+=0A            display: inline-block !important;=0D=0A            border: 0=
+ !important;=0D=0A        }=0D=0A    =0D=0A        .mbl-show img {=0D=0A   =
+         display: block !important;=0D=0A            border: 0 !important;=
+=0D=0A        }=0D=0A    =0D=0A        .mbl-center {=0D=0A            text-=
+align: center !important;=0D=0A        }=0D=0A              =0D=0A        .=
+mbl-center-margin { =0D=0A          margin-left: auto !important;=0D=0A    =
+      margin-right: auto !important;=0D=0A        }=0D=0A    =0D=0A        =
+.mbl-left {=0D=0A            text-align: left !important;=0D=0A        }=
+=0D=0A    =0D=0A        .mbl-right {=0D=0A            text-align: right !im=
+portant;=0D=0A        }=0D=0A    =0D=0A        .mbl-float-none {=0D=0A     =
+       float: none !important;=0D=0A        }=0D=0A    =0D=0A        .px-0 =
+{=0D=0A            padding-right: 0 !important;=0D=0A            padding-le=
+ft: 0 !important=0D=0A        }=0D=0A        .mr-0 {=0D=0A            margi=
+n-right: 0 !important;=0D=0A            margin-left: 0 !important=0D=0A    =
+    }=0D=0A        =0D=0A        .pt-0 {padding-top:0px !important;}=0D=0A =
+       .pt-3 {padding-top:3px !important;}=0D=0A        .pt-6 {padding-top:=
+6px !important;}=0D=0A        .pt-12 {padding-top:12px !important;}=0D=0A  =
+      .pt-18 {padding-top:18px !important;}=0D=0A        .pt-24 {padding-to=
+p:24px !important;}=0D=0A        .pt-30 {padding-top:30px !important;}=0D=
+=0A        .pt-36 {padding-top:36px !important;}=0D=0A=0D=0A        .pb-0 {=
+padding-bottom:0px !important;}=0D=0A        .pb-3 {padding-bottom:3px !imp=
+ortant;}=0D=0A        .pb-6 {padding-bottom:6px !important;}=0D=0A        .=
+pb-12 {padding-bottom:12px !important;}=0D=0A        .pb-18 {padding-bottom=
+:18px !important;}=0D=0A        .pb-24 {padding-bottom:24px !important;}=0D=
+=0A        .pb-30 {padding-bottom:30px !important;}=0D=0A        .pb-36 {pa=
+dding-bottom:36px !important;}=0D=0A=0D=0A        .pl-0 {padding-left:0px !=
+important;}=0D=0A        .pl-3 {padding-left:3px !important;}=0D=0A        =
+.pl-6 {padding-left:6px !important;}=0D=0A        .pl-12 {padding-left:12p=
+x !important;}=0D=0A        .pl-18 {padding-left:18px !important;}=0D=0A   =
+     .pl-24 {padding-left:24px !important;}=0D=0A        .pl-30 {padding-le=
+ft:30px !important;}=0D=0A        .pl-36 {padding-left:36px !important;}=0D=
+=0A=0D=0A        .pr-0 {padding-right:0px !important;}=0D=0A        .pr-3 {=
+padding-right:3px !important;}=0D=0A        .pr-6 {padding-right:6px !impor=
+tant;}=0D=0A        .pr-12 {padding-right:12px !important;}=0D=0A        .p=
+r-18 {padding-right:18px !important;}=0D=0A        .pr-24 {padding-right:24=
+px !important;}=0D=0A        .pr-30 {padding-right:30px !important;}=0D=0A =
+       .pr-36 {padding-right:36px !important;}=0D=0A=0D=0A        .spacer-0=
+ {font-size:0px !important; line-height:0px !important;}=0D=0A        .spac=
+er-3 {font-size:3px !important; line-height:3px !important;}=0D=0A        .=
+spacer-6 {font-size:6px !important; line-height:6px !important;}=0D=0A     =
+   .spacer-12 {font-size:12px !important; line-height:12px !important;}=0D=
+=0A        .spacer-18 {font-size:18px !important; line-height:18px !importa=
+nt;}=0D=0A        .spacer-24 {font-size:24px !important; line-height:24px !=
+important;}=0D=0A        .spacer-30 {font-size:30px !important; line-height=
+:30px !important;}=0D=0A        .spacer-36 {font-size:36px !important; line=
+-height:36px !important;}=0D=0A        =0D=0A        =0D=0A        .pr-20 {=
+padding-right:20px !important;}=0D=0A  =0D=0A        .mbl-padding {=0D=0A  =
+          padding-left: 12px !important;=0D=0A            padding-right: 12=
+px !important;=0D=0A        }=0D=0A    =0D=0A        .mbl_nowrap {=0D=0A   =
+         white-space: nowrap;=0D=0A        }=0D=0A    =0D=0A        .mblaut=
+oWidth {=0D=0A            width: auto !important;=0D=0A        }=0D=0A     =
+ =0D=0A      .mbl-border_0 {=0D=0A         border: 0 !important;=0D=0A     =
+ }=0D=0A      =0D=0A      .mbl-border_lr0 {=0D=0A        border-left: 0 !im=
+portant;=0D=0A        border-right: 0 !important;=0D=0A      }=0D=0A      =
+=0D=0A      .mbl-radius_0 {=0D=0A         border-radius: 0 !important;=0D=
+=0A      }=0D=0A      =0D=0A        .mbl-noHeight {=0D=0A            height=
+: auto !important;=0D=0A        }=0D=0A=0D=0A        .survey_item {=0D=0A  =
+          min-width: 24px !important;=0D=0A            width: 24px !importa=
+nt;=0D=0A            max-width: 24px !important;=0D=0A            height: 2=
+4px !important;=0D=0A        }=0D=0A=0D=0A        .survey_item p {=0D=0A   =
+         font-size: 14px !important;=0D=0A        }=0D=0A=0D=0A        .sur=
+vey_item a {=0D=0A            width: 100% !important;=0D=0A            max-=
+width: 100% !important;=0D=0A            height: auto !important;=0D=0A    =
+        font-size: 14px !important;=0D=0A            line-height: 22px !imp=
+ortant;=0D=0A        }=0D=0A=0D=0A        .mbl-width_20p {=0D=0A           =
+ width: 20% !important;=0D=0A        }=0D=0A=0D=0A=0D=0A        div > u + .=
+body .btn-primary span { =0D=0A                color: #000000; =0D=0A      =
+      }}=0D=0A    =0D=0A    </style>=0D=0A    =0D=0A    =0D=0A    <style  t=
+ype=3D"text/css">=0D=0A    @media screen and (prefers-color-scheme: dark) {=
+=0D=0A        =0D=0A        .color_heading_font_DM:not([class^=3D"x_"]) { c=
+olor:  #ffffff !important;}=0D=0A        .color_link_DM:not([class^=3D"x_"]=
+) { color:  #3bd0de !important;}=0D=0A        .color_content_primary_DM:not=
+([class^=3D"x_"]) { color:  #ffffff !important; }=0D=0A        .color_butto=
+n_label_DM:not([class^=3D"x_"]) { color:  #353535 !important; }=0D=0A      =
+  .color_content_secondary_DM:not([class^=3D"x_"]) { color:  #c8c8c8 !impor=
+tant; }=0D=0A        .color_ui-primary-dark_DM:not([class^=3D"x_"]) { color=
+:  #cef38d !important; }=0D=0A        .color_ui-primary_DM:not([class^=3D"x=
+_"]) { color:  #97D700 !important; }=0D=0A        =0D=0A  =0D=0A        .bg=
+Color_bg_primary_DM:not([class^=3D"x_"]) { background-color:  #252525 !impo=
+rtant; }=0D=0A        .bgColor_bg_secondary_DM:not([class^=3D"x_"]) { backg=
+round-color:  #202020 !important; }=0D=0A        .bgColor_grayscale_10_DM:n=
+ot([class^=3D"x_"]) { background-color:  #353535 !important; }=0D=0A       =
+ .bgColor_grayscale_30_DM:not([class^=3D"x_"]) { background-color:  #444444=
+ !important; }=0D=0A        .bgColor_highlight_DM:not([class^=3D"x_"]) { ba=
+ckground-color:  #136b00 !important; }=0D=0A        .bgColor_box_bg_DM:not(=
+[class^=3D"x_"]) { background-color:  #353535 !important; }=0D=0A        .b=
+gColor_success-dimmed_DM:not([class^=3D"x_"]) { background-color:  #293621 =
+!important; }=0D=0A        .bgColor_neutral-dimmed_DM:not([class^=3D"x_"]) =
+{ background-color:  #22353B !important; }=0D=0A        .bgColor_warning-di=
+mmed_DM:not([class^=3D"x_"]) { background-color:  #403122 !important; }=0D=
+=0A        .bgColor_danger-dimmed_DM:not([class^=3D"x_"]) { background-colo=
+r:  #3F2C2C !important; }=0D=0A=0D=0A        .bgColor_label_kk {background-=
+color: #00003C !important;}=0D=0A        .bgColor_label_gh {background-colo=
+r: #003547 !important;}=0D=0A        .bgColor_label_flix {background-color:=
+ #136b00 !important;}=0D=0A        .bgColor_label_other {background-color: =
+#444444 !important;}=0D=0A  =0D=0A        .borderSolid_button_secondary_DM:=
+not([class^=3D"x_"]) { border: 1px solid  #97D700 !important; }=0D=0A      =
+  .borderSolid_line_primary_DM:not([class^=3D"x_"]) { border: 1px solid  #6=
+46464 !important; }=0D=0A        .borderTopSolid_line_primary_DM:not([class=
+^=3D"x_"]) { border-top: 1px solid  #646464 !important; }=0D=0A  =0D=0A    =
+    [data-ogsc] .color_heading_font_DM { color:  #ffffff !important;}=0D=0A=
+        [data-ogsc] .color_link_DM { color:  #3bd0de !important;}=0D=0A    =
+    [data-ogsc] .color_content_primary_DM { color:  #ffffff !important; }=
+=0D=0A        [data-ogsc] .color_button_label_DM { color:  #353535 !importa=
+nt; }=0D=0A        [data-ogsc] .color_content_secondary_DM { color:  #c8c8c=
+8 !important; }=0D=0A        [data-ogsc] .color_ui-primary-dark_DM { color:=
+  #cef38d !important; }=0D=0A        [data-ogsc] .color_ui-primary_DM { col=
+or:  #97D700 !important; }=0D=0A  =0D=0A        [data-ogsb] .bgColor_bg_pri=
+mary_DM { background-color:  #252525 !important; }=0D=0A        [data-ogsb]=
+ .bgColor_bg_secondary_DM { background-color:  #202020 !important; }=0D=0A =
+       [data-ogsb] .bgColor_grayscale_10_DM { background-color:  #353535 !i=
+mportant; }=0D=0A        [data-ogsb] .bgColor_grayscale_30_DM { background-=
+color:  #444444 !important; }=0D=0A        [data-ogsb] .bgColor_box_bg_DM {=
+ background-color:  #353535 !important; }=0D=0A        [data-ogsb] .bgColor=
+_success-dimmed_DM { background-color:  #293621 !important; }=0D=0A        =
+[data-ogsb] .bgColor_neutral-dimmed_DM { background-color:  #22353B !import=
+ant; }=0D=0A        [data-ogsb] .bgColor_warning-dimmed_DM { background-col=
+or:  #403122 !important; }=0D=0A        [data-ogsb] .bgColor_danger-dimmed_=
+DM { background-color:  #3F2C2C !important; }=0D=0A        [data-ogsb] .bgC=
+olor_highlight_DM { background-color:  #136b00 !important; }=0D=0A  =0D=0A =
+       [data-ogsb] .borderSolid_button_secondary_DM { border: 1px solid  #9=
+7D700 !important; }=0D=0A        [data-ogsb] .borderSolid_line_primary_DM {=
+ border: 1px solid  #646464 !important; }=0D=0A        [data-ogsb] .borderT=
+opSolid_line_primary_DM { border-top: 1px solid  #646464 !important; }=0D=
+=0A        =0D=0A        =0D=0A    }=0D=0A    </style>=0D=0A    =0D=0A    <=
+!--[if gte mso 9]>=0D=0A        <xml>  =0D=0A            <o:OfficeDocumentS=
+ettings>  =0D=0A                <o:AllowPNG/>  =0D=0A                <o:Pix=
+elsPerInch>96</o:PixelsPerInch> =0D=0A            </o:OfficeDocumentSetting=
+s> =0D=0A        </xml> =0D=0A        <style type=3D"text/css"> =0D=0A    =
+=0D=0A            body, table, td, div, p, span, a, strong, h1, h2, h3, h4,=
+ h5, h6 {=0D=0A                font-family: Arial, sans-serif !important;=
+=0D=0A                mso-hyphenate:none;=0D=0A            } =0D=0A    =0D=
+=0A            table {=0D=0A                border-spacing: 0;=0D=0A       =
+     }=0D=0A    =0D=0A            table, td {=0D=0A                border-c=
+ollapse: collapse !important;=0D=0A                mso-table-lspace: 0pt;=
+=0D=0A                mso-table-rspace: 0pt;=0D=0A            } =0D=0A    =
+=0D=0A            sup {=0D=0A                font-size:100% !important;=0D=
+=0A            }=0D=0A    =0D=0A            .resetUnderline a {=0D=0A      =
+          text-decoration: none !important;=0D=0A            }=0D=0A  =0D=
+=0A            .outlook-btn {=0D=0A                margin:9px !important;=
+=0D=0A            }=0D=0A=0D=0A            .linkReset a {=0D=0A            =
+    color:inherit !important; =0D=0A                text-decoration: none !=
+important; =0D=0A            }=0D=0A  =0D=0A            =0D=0A        </sty=
+le> =0D=0A    <![endif]-->=0D=0A=0D=0A</head>=0D=0A=0D=0A<body class=3D"bod=
+y bgColor_bg_secondary_DM" style=3D"margin:0; padding:0;" bgcolor=3D"#FFFFF=
+F" leftmargin=3D"0" topmargin=3D"0" marginwidth=3D"0" marginheight=3D"0">=
+=0D=0A    <div style=3D"display:none;font-size:1px;color:#484444;line-heigh=
+t:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">Glitzernde S=
+eeufer, Umrisse der Berge und St=C3=A4dte, die bei Eintritt der Dunkelheit =
+anfangen zu leuchten.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847; &#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847; &zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&=
+nbsp;&#847; &zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847; &zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847; &zwnj;&nbsp;&#847;&zwnj;&nbs=
+p;&#847;&zwnj;&nbsp;&#847; &zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;=
+&#847; &zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847; &zwnj;&nbsp;&=
+#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj; &nbsp;&#847;&zwnj;&nbsp;&#8=
+47;&zwnj;&nbsp;&#847;&zwnj;&nbsp; &#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847; &zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&=
+zwnj; &nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp; &#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847; &zwnj;&nbsp;&#847;&zwn=
+j;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj; &nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;=
+&nbsp;&#847;&zwnj;&nbsp; &#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847; &zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj; &nb=
+sp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj; &nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>=
+=0D=0A    <!-- 100% background wrapper -->=0D=0A    <table class=3D"bgColor=
+_bg_secondary_DM" role=3D"presentation" border=3D"0" width=3D"100%" cellpad=
+ding=3D"0" cellspacing=3D"0" bgcolor=3D"#FFFFFF"  lang=3D"de">=0D=0A       =
+ <tr>=0D=0A            <td class=3D"bgColor_bg_secondary_DM pt-0 pb-0" alig=
+n=3D"center" valign=3D"top" bgcolor=3D"#FFFFFF" style=3D"padding:24px 0px;b=
+ackground-color: #FFFFFF;">=0D=0A=0D=0A                =0D=0A              =
+  <!--[if mso]>=0D=0A                    <table role=3D"presentation" align=
+=3D"center" style=3D"width:642px;"><tr><td style=3D"padding: 0px;border:1px=
+ solid #c8c8c8;" width=3D"642">=0D=0A                <![endif]-->=0D=0A    =
+            <div dir=3D"ltr" class=3D"mbl-border_0" style=3D"width:100%;max=
+-width:640px;padding:0px;margin-top:0;margin-bottom:0;margin-right:auto;mar=
+gin-left:auto;font-size:0px;border:1px solid #c8c8c8;border-radius: 6px;ove=
+rflow:hidden;mso-border-alt: none;">=0D=0A                =0A=0A    <!-- He=
+ader Block -->=0D=0A=0D=0A  =0D=0A=0D=0A  =0D=0A    =0D=0A      =0D=0A    =
+=0D=0A  =0D=0A    =0D=0A      =0D=0A    =0D=0A  =0D=0A=0D=0A=0D=0A=0D=0A=0D=
+=0A=0D=0A  =0D=0A=0D=0A  =0D=0A    =0D=0A      =0D=0A    =0D=0A  =0D=0A    =
+=0D=0A      =0D=0A    =0D=0A  =0D=0A=0D=0A=0D=0A=0D=0A<table border=3D"0" w=
+idth=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"container" style=
+=3D"width: 640px; max-width: 640px;" align=3D"center" role=3D"presentation"=
+>=0D=0A    <tr>=0D=0A        =0D=0A        <td align=3D"center" class=3D"bg=
+Color_bg_primary_DM" style=3D"background-color:  #ffffff;padding:0px 0px 12=
+px;">=0D=0A            <table role=3D"presentation" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-spacing:0;font-fam=
+ily: 'Roboto', Arial, sans-serif;">=0D=0A                <tr>=0D=0A        =
+            <td class=3D"mbl-radius_0 mbl-padding bgColor_bg_primary_DM" st=
+yle=3D"padding:16px 24px 18px;width:100%;border-top: 3px solid  #97D700; bo=
+rder-top-left-radius: 5px; border-top-right-radius: 5px;background-color:  =
+#ffffff;">=0D=0A                        <a  href=3D"https://clicks.mail.fli=
+xbus.com/f/uni-flix/uUWF3cEj-fEGVIGGT0h_nA~~/AAAHahA~/rueg3ugEoNyrkpq1vORGD=
+z9BzUgf2kZmQkiE77qVhFt-5dcfNfMmRpqLpKL-iZw0jJA9z8PeQDL70ruJTpeVupVu3D0sILSM=
+znSKr2ZfZOxmkrnxgjGqoJY5tfM29TK83k0_fO0uca5q1R3ClWOMAJ6J8kgSwADDnaq_N5tp8Tn=
+7-lGcLTxExf2Xa_JHFDWd2hHjgsZBmEDw4XibVEqMY_ViAJLoSv9p23P4Es8QUN1f2PWWQeDHc1=
+0gkqFhUOw8jeCPeNxgixKyq-ySgTI0jyZ6GcvSUP4gKy_AMgkVQ2z8-cDf01yX_al1Z9NasUHqd=
+U1n9EgWNuGJCbEhRiJGHnu5AsYEcEjhFyzf33VNPIa8DPhJ8EuNnopHYrnUTXF_xdMeF5PDXSSg=
+Zty6hNd5TQxAmFYSlXEO0bD8Fwb1gaEhOyhI93xHP_9gAvRskPKB6AeBk4CzfCBK5SljBaJUyrP=
+M4pP1-cs_Zt1mm3nw3C2kmn7yESG1jRCOSQ4MPeRBh1D9P693_nV3F7jeswcXkm4UcvM4HyhEkW=
+mDBdcoJROriZ5n34YcGJ6oYSoXpEs6g_JJwy45S1RfVKLz-WLSKPerGBVDrkx8cJH5h9OsUr3x9=
+ZSyjHmaS4VgPfxiGwlXrGe60Ovh9uRE3Tue3auET___-aSDU2xcd_8Dd7MqSbMh2cUbwqb8j178=
+BBqGnvB-ckhdP0OSbGIqbLLKhqK0JmeLfu68E8kGC267akgS_vg~" target=3D"_blank" sty=
+le=3D"text-decoration: none;border: none;">=0D=0A                          =
+  =0D=0A                                =0D=0A                             =
+   <img src=3D"https://cdn.braze.eu/appboy/communication/assets/image_asset=
+s/images/670638d054d73f007405efa7/original.png=3F1728461008" alt=3D"FlixBus=
+ logo" style=3D"display: block; width: 119px; height: auto;outline:none;" w=
+idth=3D"119" border=3D"0">=0D=0A                                =0D=0A     =
+                       =0D=0A                        </a>                  =
+                                   =0D=0A                    </td>=0D=0A   =
+             </tr>                =0D=0A            </table>=0D=0A        <=
+/td>=0D=0A        =0D=0A    </tr>=0D=0A</table>=0A=0A    <!-- Start Content=
+ -->=0A=0A    <!-- H1 --><table border=3D"0" width=3D"100%" cellpadding=3D"=
+0" cellspacing=3D"0" class=3D"container" style=3D"width: 640px; max-width: =
+640px;" align=3D"center" role=3D"presentation">=0D=0A    <tr>=0D=0A        =
+<td class=3D"mbl-padding bgColor_bg_primary_DM" style=3D"padding:0px 24px;w=
+idth:100%; background-color: #ffffff;">=0D=0A            <table role=3D"pre=
+sentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">=
+=0D=0A                <tr>=0D=0A                    <td class=3D"color_head=
+ing_font_DM" style=3D"padding:0;font-family: 'Roboto', Arial, sans-serif;te=
+xt-align: left;font-size:27px;mso-line-height:33px;line-height:1.2!importan=
+t;color:#353535;">=0D=0A                        <h1 class=3D"color_heading_=
+font_DM" style=3D"margin:0;font-weight: 700;font-family: 'Roboto', Arial, s=
+ans-serif;font-size:27px;mso-line-height:33px;line-height:1.2!important;col=
+or:#353535;">Auch die Nacht hat ihren Charme </h1>=0D=0A                   =
+ </td>=0D=0A                </tr>=0D=0A            </table>=0D=0A        </=
+td>=0D=0A    </tr>=0D=0A</table>=0A=0A    <!-- Spacer_Dynamic -->=0A=0A    =
+    =0A        <div class=3D"bgColor_bg_primary_DM spacer-" style=3D"margin=
+:0px;padding:0px;font-size:20px;line-height:20px;mso-line-height-rule:exact=
+ly;background-color: #ffffff">=0D=0A    <p class=3D"spacer-" style=3D"margi=
+n:0px;font-size:20pxpx;line-height:20px;">&nbsp;</p>=0D=0A</div>=0A=0A    <=
+!-- Paragraph --><table border=3D"0" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" class=3D"container" style=3D"width: 640px; max-width: 640px;" =
+align=3D"center" role=3D"presentation">=0D=0A    <tr>=0D=0A        <td clas=
+s=3D"mbl-padding bgColor_bg_primary_DM" style=3D"padding:0px 24px;width:100=
+%; background-color: #ffffff;">=0D=0A            <table role=3D"presentatio=
+n" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">=0D=0A  =
+              <tr>=0D=0A                    <td class=3D"color_content_prim=
+ary_DM" style=3D"padding:0;font-family: 'Roboto', Arial, sans-serif;text-al=
+ign: left;font-size:16px;mso-line-height:24px;line-height:1.5!important;col=
+or:#353535;font-weight: 400;">=0D=0A                        <p class=3D"col=
+or_content_primary_DM" style=3D"margin:0;font-weight: 400;font-family: 'Rob=
+oto', Arial, sans-serif;font-size:16px;mso-line-height:24px;line-height:1.5=
+!important;color:#353535;">Die Tage werden zwar k=C3=BCrzer, aber die Aussi=
+chten fangen gerade erst an. Denk an glitzernde Seeufer, daran, wie sich Be=
+rgketten mit dem Abendhimmel vermischen und an bezaubernde St=C3=A4dte, die=
+ nach Sonnenuntergang anfangen zu leuchten. Bereit solch eine Sch=C3=B6nhei=
+t live zu sehen=3F =0D=0A                        </p>=0D=0A                =
+    </td>=0D=0A                </tr>=0D=0A            </table>=0D=0A       =
+ </td>=0D=0A    </tr>=0D=0A</table>=0A=0A    <!-- Spacer_Dynamic -->=0A=0A =
+       =0A        <div class=3D"bgColor_bg_primary_DM spacer-" style=3D"mar=
+gin:0px;padding:0px;font-size:20px;line-height:20px;mso-line-height-rule:ex=
+actly;background-color: #ffffff">=0D=0A    <p class=3D"spacer-" style=3D"ma=
+rgin:0px;font-size:20pxpx;line-height:20px;">&nbsp;</p>=0D=0A</div>=0A=0A  =
+  <!-- CTA_Primary -->=0A    =0A        =0D=0A=0D=0A  =0D=0A=0D=0A  =0D=0A =
+   =0D=0A      =0D=0A    =0D=0A  =0D=0A    =0D=0A      =0D=0A    =0D=0A  =
+=0D=0A=0D=0A=0D=0A=0D=0A<table border=3D"0" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" class=3D"container" style=3D"width: 640px; max-width: 6=
+40px;" align=3D"center" role=3D"presentation">=0D=0A    <tr>=0D=0A        <=
+td class=3D"mbl-padding mbl-border_0 bgColor_bg_primary_DM" style=3D"paddin=
+g:0px 24px;width:100%; background-color: #ffffff;">=0D=0A            <table=
+ role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wid=
+th=3D"100%">     =0D=0A                <tr>=0D=0A                    <td st=
+yle=3D"padding:0px;">=0D=0A                        <table class=3D"force-ro=
+w mbl-center" role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0">=0D=0A                            <tr>=0D=0A                     =
+           <td style=3D"padding:0px">=0D=0A                                =
+    <table class=3D"force-row mbl-center" role=3D"presentation" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">=0D=0A                               =
+         <tr>=0D=0A                                            <td style=3D=
+"padding: 0px;font-weight: 400;background-color: #97D700; color: #353535;bo=
+rder-radius:6px;font-family:Roboto,Arial,Sans-serif;text-align:center;font-=
+size:16px;mso-line-height-alt:16px;line-height:1.5!important;min-width:140p=
+x;">=0D=0A                                                <p class=3D"outlo=
+ok-btn btn-primary" style=3D"margin:0px;font-family:Roboto,Arial,Sans-serif=
+;font-size:16px;mso-line-height-alt:16px;line-height:1.5!important;border-r=
+adius:6px;">=0D=0A                                                    <span=
+ class=3D"resetUnderline">=0D=0A                                           =
+             <a   class=3D"cta-btn" target=3D"_blank" href=3D"https://click=
+s.mail.flixbus.com/f/uni-flix/xrHPrlbLvfU12jsKUfoo2A~~/AAAHahA~/rueg3ugEoNy=
+rkpq1vORGDz9BzUgf2kZmQkiE77qVhFt-5dcfNfMmRpqLpKL-iZw0jJA9z8PeQDL70ruJTpeVup=
+Vu3D0sILSMznSKr2ZfZOxmkrnxgjGqoJY5tfM29TK83k0_fO0uca5q1R3ClWOMAJ6J8kgSwADDn=
+aq_N5tp8Tn7-lGcLTxExf2Xa_JHFDWd2hHjgsZBmEDw4XibVEqMY_ViAJLoSv9p23P4Es8QUN1f=
+2PWWQeDHc10gkqFhUOw8jeCPeNxgixKyq-ySgTI0jyZ6GcvSUP4gKy_AMgkVQ2z8-cDf01yX_al=
+1Z9NasUHqdU1n9EgWNuGJCbEhRiJGHnu5AsYEcEjhFyzf33VNPIa8DPhJ8EuNnopHYrnUTXF_xd=
+MeF5PDXSSgZty6hNd5TQxAmFYSlXEO0bD8Fwb1gaEhOyhI93xHP_9gAvRskPKB6AeBk4CzfCBK5=
+SljBaJUyrPM4pP1-cs_Zt1mm3nw3C2kmn7yESG1jRCOSQ4MPeRBh1D9P693_nV3F7jeswcXkm4U=
+cvM4HyhEkWmDBdcoJROriZ5n34YcGJ6oYSoXpEs6g_JJwy45S1RfVKLz-WLSKPerGBVDrkx8cJH=
+5h9OsUr3x9ZSyjHmaS4VgPfxiGwlXrGe60Ovh9uRE3Tue3auET0_Mj8LrF8M4KomZBsOFQZd0IY=
+XOhSxeJNgp2V0f6jFSq2bKiKkdfe5AvCkjrD5w8hDzMyUz53d7-55f4_Kdkdo~" style=3D"te=
+xt-decoration: none; padding: 12px 12px; color: #353535; border-radius: 6px=
+; display:inline-block;">=0D=0A                                            =
+            <span class=3D"color_button_label_DM" style=3D"mso-border-alt: =
+4px solid #97D700;font-weight:500;">Jetzt buchen</span>=0D=0A              =
+                                          </a>=0D=0A                       =
+                             </span>=0D=0A                                 =
+               </p> =0D=0A                                            </td>=
+=0D=0A                                        </tr>=0D=0A                  =
+                      <!--[if mso]><tr><td style=3D"padding:0px;font-size: =
+1px;line-height: 1px;"><p style=3D"margin:0;font-size: 1px;line-height: 1px=
+;">&nbsp;</p></tr></td><![endif]-->=0D=0A                                  =
+  </table>=0D=0A                                </td>=0D=0A                =
+            </tr>=0D=0A                        </table>=0D=0A              =
+      </td>   =0D=0A                </tr>=0D=0A            </table>=0D=0A  =
+      </td>=0D=0A    </tr>=0D=0A</table>=0A=0A    <!-- Spacer_Dynamic -->=
+=0A=0A        =0A        <div class=3D"bgColor_bg_primary_DM spacer-" style=
+=3D"margin:0px;padding:0px;font-size:20px;line-height:20px;mso-line-height-=
+rule:exactly;background-color: #ffffff">=0D=0A    <p class=3D"spacer-" styl=
+e=3D"margin:0px;font-size:20pxpx;line-height:20px;">&nbsp;</p>=0D=0A</div>=
+=0A=0A    <!-- H2 --><table border=3D"0" width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"container" style=3D"width: 640px; max-width: 640p=
+x;" align=3D"center" role=3D"presentation">=0D=0A    <tr>=0D=0A        <td =
+class=3D"mbl-padding bgColor_bg_primary_DM" style=3D"padding:0px 24px;width=
+:100%; background-color: #ffffff;">=0D=0A            <table role=3D"present=
+ation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">=0D=
+=0A                <tr>=0D=0A                    <td class=3D"color_heading=
+_font_DM" style=3D"padding:0;font-family: 'Roboto', Arial, sans-serif;text-=
+align: left;font-size:21px;mso-line-height:27px;line-height:1.28!important;=
+color:#353535;">=0D=0A                        <h2 class=3D"color_heading_fo=
+nt_DM" style=3D"margin:0;font-weight: 700;font-family: 'Roboto', Arial, san=
+s-serif;font-size:21px;mso-line-height:27px;line-height:1.28!important;colo=
+r:#353535;">Entdecke Orte, die in der D=C3=A4mmerung anfangen zu strahlen:<=
+/h2>=0D=0A                    </td>=0D=0A                </tr>=0D=0A       =
+     </table>=0D=0A        </td>=0D=0A    </tr>=0D=0A</table>=0A=0A    <!--=
+ Spacer_Dynamic -->=0A    =0A        =0A        <div class=3D"bgColor_bg_pr=
+imary_DM spacer-" style=3D"margin:0px;padding:0px;font-size:20px;line-heigh=
+t:20px;mso-line-height-rule:exactly;background-color: #ffffff">=0D=0A    <p=
+ class=3D"spacer-" style=3D"margin:0px;font-size:20pxpx;line-height:20px;">=
+&nbsp;</p>=0D=0A</div>=0A=0A    <!-- Img__H3_Paragraph_CTAS__50x50_AutoAlig=
+n -->=0D=0A=0D=0A  =0D=0A=0D=0A  =0D=0A    =0D=0A      =0D=0A    =0D=0A  =
+=0D=0A    =0D=0A      =0D=0A    =0D=0A  =0D=0A=0D=0A=0D=0A=0D=0A<table bord=
+er=3D"0" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"contai=
+ner" style=3D"width: 640px; max-width: 640px;" align=3D"center" role=3D"pre=
+sentation">=0D=0A    <tr>=0D=0A        <td align=3D"center" class=3D"bgColo=
+r_bg_secondary_DM" style=3D"background-color: #f7f7f7;padding:0;">=0D=0A   =
+       <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" width=3D"100%" style=3D"border-spacing:0;font-family: 'Roboto', A=
+rial, sans-serif;">=0D=0A            <tr>=0D=0A                <td class=3D=
+"mbl-padding bgColor_bg_primary_DM" style=3D"padding:0px 24px;width:100%; b=
+ackground-color: #ffffff;">=0D=0A                    <table role=3D"present=
+ation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">=0D=
+=0A                        <tr>=0D=0A                            <td style=
+=3D"padding:0px;direction:  ltr ;" dir=3D" ltr ">=0D=0A                    =
+            <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" width=3D"100%">=0D=0A                                    <tr=
+>=0D=0A                                        <th class=3D"mob-stack" vali=
+gn=3D"top" style=3D"width:292px;vertical-align: top;font-weight: 400;paddin=
+g:0;" width=3D"292">=0D=0A                                            <tabl=
+e role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"force-row" style=3D"padding:0px;direction: ltr;">=0D=0A             =
+                                   <tr><td class=3D"fade pt-0" style=3D"pad=
+ding:2px 0px 0px;border-radius:6px;">=0D=0A                                =
+                        <span class=3D"mbl-hide">=0D=0A                    =
+                                        <a  href=3D"https://clicks.mail.fli=
+xbus.com/f/a/tZWo6fY8pmhEIluW8Hix3w~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu2=
+9elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJ=
+whJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqo=
+XoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmI=
+iQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3=
+bY1zcV3rGLtXeJBW209r5b0__nKK94nNm3yc6ePYtMpA-yxxnzLs-sotVZAh-lyZWwB1SLtseXR=
+qGn5LPWxhARMNop7FwlEjSR6B1TXA_5fAxyC1ShMt57rswzg8V3W6jn4fSAPdQrZadqhcTtfARP=
+g0k9Dz2r6bSmvCFMu-e8CG8zp4HNT0AZbhktorvPA5Ks5pvuyJTdgsXIxlQraaJWRrurnluxi54=
+U3cW6hbYXUjbSEMhMCbWjx_UDVCEU_sQ-QnnCp9XmIsbAuNLawG2UhegNEukQG30-SQa17oh6dh=
+v_dEj-fRS5ikpUYD9GdSlzRiF8N9VWqTRHSakR0zSHHFU1Akil3EeFahYtdbkxafXPsOv-n8ApX=
+hm7J0aXFGqnkNY-7zAZdeN4Sre4axCtDfMGqK3aJCwG4rBT4zTFSZxdZ6owm0UgXVc83PHlAiIX=
+1PECKkgMEvog~~" target=3D"_blank" style=3D"text-decoration: none;border: no=
+ne;">=0D=0A                                                                =
+<img class=3D"force-row" name=3D"Cont_4" src=3D"https://cdn.braze.eu/appboy=
+/communication/assets/image_assets/images/6ae0ce553e1af200d4d33099/original=
+.png=3F1793117781" width=3D"290" alt=3D"" style=3D"width:290px;height:auto=
+;display:block;margin:0px;border-radius: 6px;">=0D=0A                      =
+                                      </a>=0D=0A                           =
+                             </span>=0D=0A                                 =
+                       <!--[if !mso 9]><!-->=0D=0A                         =
+                               <span class=3D"mbl-show" style=3D"display:no=
+ne;">=0D=0A                                                            <a  =
+href=3D"https://clicks.mail.flixbus.com/f/a/lp6Zv7jN-Wacm9HJrPTpGQ~~/AAAHah=
+A~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBU=
+u10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnA=
+QQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk=
+7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJg=
+tqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeJBW209r5b0__nKK94nNm3yc6ePYtMpA=
+-yxxnzLs-sotVZAh-lyZWwB1SLtseXRqGn5LPWxhARMNop7FwlEjSR6B1TXA_5fAxyC1ShMt57r=
+swzg8V3W6jn4fSAPdQrZadqhcTtfARPg0k9Dz2r6bSmvCFMu-e8CG8zp4HNT0AZbhktorvPA5Ks=
+5pvuyJTdgsXIxlQraaJWRrurnluxi54U3cW6hbYXUjbSEMhMCbWjx_UDVCEU_sQ-QnnCp9XmIsb=
+AuNLawG2UhegNEukQG30-SQa17oh6dhv_dEj-fRS5ikpUYD9GdSlzRiF8N9VWqTRHSakR0zSHHF=
+U1Akil3EeFahYtdbkxafXPsOv-n8ApXhaSaQ49seSfaJFVdu1r2UwVFn75DIGz83onqk8X0P4hM=
+bPnFe4q_9ecfKeL2hsToRFeef4USQohjbBuVSxmF46w~~" target=3D"_blank" style=3D"t=
+ext-decoration: none;border: none;">=0D=0A                                 =
+                               <img class=3D"force-row" name=3D"Cont_4" src=
+=3D"https://cdn.braze.eu/appboy/communication/assets/image_assets/images/6a=
+e0ce553e1af200d4d33099/original.png=3F1793117781" alt=3D"" style=3D"width:1=
+00%;height:auto;display:block;margin:0px;border-radius: 6px;">=0D=0A       =
+                                                     </a>=0D=0A            =
+                                            </span>=0D=0A                  =
+                                      <!--<![endif]-->                     =
+                                   =0D=0A                                  =
+                  </td></tr>=0D=0A                                         =
+   </table>=0D=0A                                        </th>=0D=0A       =
+                                 <th class=3D"mob-stack bgColor_bg_primary_=
+DM" valign=3D"middle" style=3D"width:300px;padding:0;margin:0;background-co=
+lor: #ffffff;vertical-align: middle;font-weight: 400;" width=3D"300">=0D=0A=
+                                            <table role=3D"presentation" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0;fo=
+nt-family: 'Roboto', Arial, sans-serif;width:100%;direction: ltr;" dir=3D"l=
+tr">=0D=0A                                                <tr>=0D=0A       =
+                                             <td class=3D"px-0 pt-18 color_=
+content_primary_DM" valign=3D"center" style=3D"padding: 0px 0px 0px 24px ;w=
+idth:100%;color: #353535; font-family:Roboto,Arial,Sans-serif;font-size:16p=
+x;mso-line-height:24px;line-height:1.5!important; text-align:left;vertical-=
+align: center;">=0D=0A                                                     =
+   <p class=3D"color_heading_font_DM" style=3D"margin:0;margin-bottom:4px;f=
+ont-size:18px;line-height:1.3!important;font-weight: 700;color:#353535;">Ei=
+ne Insel im Abendblau</p>=0D=0A                                            =
+            <p class=3D"color_content_primary_DM" style=3D"margin:0;">Zum S=
+onnenuntergang verwandelt sich der Bleder See in einen traumhaften Ort. Die=
+ kleine Insel und die zauberhafte Kirche werden zu Silhouetten am Abendhimm=
+el, w=C3=A4hrend die letzten Sonnenstrahlen des Tages auf dem Wasser tanzen=
+. Ein wahrhaftig magischer Anblick.</p>=0D=0A                             =
+                       </td>=0D=0A                                         =
+       </tr><tr>=0D=0A                                                  <td=
+ class=3D"px-0 pt-18" style=3D"padding: 12px 0px 0 24px ;">=0D=0A          =
+                                            <table class=3D"force-row mbl-c=
+enter" role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">=0D=0A                                                          <tr>=0D=
+=0A                                                              <td class=
+=3D"color_content_primary_DM borderSolid_button_secondary_DM bgColor_bg_pri=
+mary_DM" style=3D"padding: 0px;font-weight: 400;background-color: #ffffff;b=
+order-radius:6px;border:1px solid #97D700;font-family:Roboto,Arial,Sans-ser=
+if;text-align:center;font-size:16px;mso-line-height-alt:16px;line-height:1.=
+5!important;min-width:140px;">=0D=0A                                       =
+                           <p class=3D"outlook-btn btn-secondary" style=3D"=
+margin:0px;font-family:Roboto,Arial,Sans-serif;font-size:16px;mso-line-heig=
+ht-alt:16px;line-height:1.5!important;border-radius:6px;">=0D=0A           =
+                                                         <span class=3D"res=
+etUnderline">=0D=0A                                                        =
+              <a  class=3D"cta-btn color_content_primary_DM" target=3D"_bla=
+nk" href=3D"https://clicks.mail.flixbus.com/f/a/MPKUGtIbbVEGNhbexNrC8g~~/AA=
+AHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7u=
+eCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_L=
+ZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGq=
+pVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMj=
+HuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeJBW209r5b0__nKK94nNm3yc6ePY=
+tMpA-yxxnzLs-sotVZAh-lyZWwB1SLtseXRqGn5LPWxhARMNop7FwlEjSR6B1TXA_5fAxyC1ShM=
+t57rswzg8V3W6jn4fSAPdQrZadqhcTtfARPg0k9Dz2r6bSmvCFMu-e8CG8zp4HNT0AZbhktorvP=
+A5Ks5pvuyJTdgsXIxlQraaJWRrurnluxi54U3cW6hbYXUjbSEMhMCbWjx_UDVCEU_sQ-QnnCp9X=
+mIsbAuNLawG2UhegNEukQG30-SQa17oh6dhv_dEj-fRS5ikpUYD9GdSlzRiF8N9VWqTRHSakR0z=
+SHHFU1Akil3EeFahYtdbkxafXPsOv-n8ApXhP4joxz-H_yO5X5i8C_nWCKDGxF3WWfybWlCvtEk=
+y1DSxMuovKqPNZtASfyKWrjd9hAXqev1A1jm83Fgcsi7a4w~~" style=3D"text-decoration=
+: none; padding: 12px 12px; color: #353535; border-radius: 6px; display:inl=
+ine-block;">=0D=0A                                                         =
+                 <span class=3D"color_content_primary_DM" style=3D"mso-bord=
+er-alt: 4px solid #ffffff;font-weight:500;">Besuche Bled</span>=0D=0A      =
+                                                                </a>=0D=0A =
+                                                                   </span>=
+=0D=0A                                                                  </p=
+> =0D=0A                                                              </td>=
+=0D=0A                                                          </tr>=0D=0A=
+                                                          <!--[if mso]><tr>=
+<td style=3D"padding:0px;font-size: 1px;line-height: 1px;"><p style=3D"marg=
+in:0;font-size: 1px;line-height: 1px;">&nbsp;</p></tr></td><![endif]-->=0D=
+=0A                                                      </table>=0D=0A    =
+                                              </td>=0D=0A                  =
+                             </tr></table>=0D=0A                           =
+               </th>=0D=0A                                    </tr>=0D=0A  =
+                              </table>=0D=0A                            </t=
+d>  =0D=0A                          </tr>=0D=0A                    </table>=
+=0D=0A                </td>=0D=0A            </tr>=0D=0A          </table>=
+=0D=0A        </td>=0D=0A      </tr>=0D=0A  </table><!-- Spacer -->=0A    =
+=0A        <div class=3D"bgColor_bg_primary_DM spacer-" style=3D"margin:0px=
+;padding:0px;font-size:20px;line-height:20px;mso-line-height-rule:exactly;b=
+ackground-color: #ffffff">=0D=0A    <p class=3D"spacer-" style=3D"margin:0p=
+x;font-size:20pxpx;line-height:20px;">&nbsp;</p>=0D=0A</div>=0A=0A    =0A=
+=0A    <!-- Img__H3_Paragraph_CTAS__50x50_AutoAlign -->=0D=0A=0D=0A  =0D=0A=
+=0D=0A  =0D=0A    =0D=0A      =0D=0A    =0D=0A  =0D=0A    =0D=0A      =0D=
+=0A    =0D=0A  =0D=0A=0D=0A=0D=0A=0D=0A<table border=3D"0" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"container" style=3D"width: 640p=
+x; max-width: 640px;" align=3D"center" role=3D"presentation">=0D=0A    <tr>=
+=0D=0A        <td align=3D"center" class=3D"bgColor_bg_secondary_DM" style=
+=3D"background-color: #f7f7f7;padding:0;">=0D=0A          <table role=3D"pr=
+esentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ style=3D"border-spacing:0;font-family: 'Roboto', Arial, sans-serif;">=0D=
+=0A            <tr>=0D=0A                <td class=3D"mbl-padding bgColor_b=
+g_primary_DM" style=3D"padding:0px 24px;width:100%; background-color: #ffff=
+ff;">=0D=0A                    <table role=3D"presentation" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100%">=0D=0A                    =
+    <tr>=0D=0A                            <td style=3D"padding:0px;directio=
+n:  rtl ;" dir=3D" rtl ">=0D=0A                                <table role=
+=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%">=0D=0A                                    <tr>=0D=0A                =
+                        <th class=3D"mob-stack" valign=3D"top" style=3D"wid=
+th:292px;vertical-align: top;font-weight: 400;padding:0;" width=3D"292">=0D=
+=0A                                            <table role=3D"presentation"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"force-row" style=
+=3D"padding:0px;direction: ltr;">=0D=0A                                    =
+            <tr><td class=3D"fade pt-0" style=3D"padding:2px 0px 0px;border=
+-radius:6px;">=0D=0A                                                       =
+ <span class=3D"mbl-hide">=0D=0A                                           =
+                 <a  href=3D"https://clicks.mail.flixbus.com/f/a/x38jb3baY6=
+Y3n1VPTq7XJw~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVzGFV9=
+T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp3f1I=
+H_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQSeT=
+V4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1I69=
+aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeMzDktTxpkr=
+jUpJ53Uduo_1zi_q_SneFq1_588BrUidYwZD2rqXNEu3W8ATkuXwXgFJMjvMZTdj5A9BRJDZ1Tq=
+6i8Kf6paOyPA0oW1n2i4lqQ5rS8EgFDJJr47AS98Y8hy2dWM9LhgsZUUqS7kIi48nfHIny3pOAq=
+7NmcE55vb2F9L9DRuEy74XACUu3Wjjdn2b7YA4CyCzgat-OU74gkHyfx81uuQFFS7OPjVIDV2ZF=
+G0-Gopdt2eFJa7dPW8Uatk-5dH0itqZY1_M2vYXZOQnTxTQb2rg9jQbEPFU1ehr9Imy986dYwAS=
+otOHZqSMS2doXetOhCQy12M-XaAhVE5uD-wcYin_rAZL64egP-U87XX5S2iuPqF5ngv8BHDNOS7=
+JpkD-A2F4GUFkpuLJvU2bHfJ5hFcbA6mSMqokuc6FcY3HnY8HT9yEl9zwuey5Nsg~~" target=
+=3D"_blank" style=3D"text-decoration: none;border: none;">=0D=0A           =
+                                                     <img class=3D"force-ro=
+w" name=3D"Cont_4" src=3D"https://cdn.braze.eu/appboy/communication/assets/=
+image_assets/images/6ae0ce573e1af200d4d3309a/original.png=3F1793117782" wid=
+th=3D"290" alt=3D"" style=3D"width:290px;height:auto;display:block;margin:0=
+px;border-radius: 6px;">=0D=0A                                             =
+               </a>=0D=0A                                                  =
+      </span>=0D=0A                                                        =
+<!--[if !mso 9]><!-->=0D=0A                                                =
+        <span class=3D"mbl-show" style=3D"display:none;">=0D=0A            =
+                                                <a  href=3D"https://clicks.=
+mail.flixbus.com/f/a/FXIWdOZ5CA_xZ-z2ytMpqg~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJ=
+Z8cwQeu29elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhk=
+rDpAP1OJwhJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g=
+0rTtdzqoXoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukm=
+JafYvhmIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRY=
+VgrmANq3bY1zcV3rGLtXeMzDktTxpkrjUpJ53Uduo_1zi_q_SneFq1_588BrUidYwZD2rqXNEu3=
+W8ATkuXwXgFJMjvMZTdj5A9BRJDZ1Tq6i8Kf6paOyPA0oW1n2i4lqQ5rS8EgFDJJr47AS98Y8hy=
+2dWM9LhgsZUUqS7kIi48nfHIny3pOAq7NmcE55vb2F9L9DRuEy74XACUu3Wjjdn2b7YA4CyCzga=
+t-OU74gkHyfx81uuQFFS7OPjVIDV2ZFG0-Gopdt2eFJa7dPW8Uatk-5dH0itqZY1_M2vYXZOQnT=
+xTQb2rg9jQbEPFU1ehr9Imy986dYwASotOHZqSMS2doXetOhCQy12M-XaAhVE5uD-wcYin_rAZL=
+64egP-U87sDcj1YJXFRZJkLVOjSqMNNYQgAuHJke9BrAAck2OQcVWw--n4bTUe_BStxEoe8jz7Z=
+Jp0WXkXJdQhi8Wih1rIA~~" target=3D"_blank" style=3D"text-decoration: none;bo=
+rder: none;">=0D=0A                                                        =
+        <img class=3D"force-row" name=3D"Cont_4" src=3D"https://cdn.braze.e=
+u/appboy/communication/assets/image_assets/images/6ae0ce573e1af200d4d3309a/=
+original.png=3F1793117782" alt=3D"" style=3D"width:100%;height:auto;display=
+:block;margin:0px;border-radius: 6px;">=0D=0A                              =
+                              </a>=0D=0A                                   =
+                     </span>=0D=0A                                         =
+               <!--<![endif]-->                                            =
+            =0D=0A                                                    </td>=
+</tr>=0D=0A                                            </table>=0D=0A      =
+                                  </th>=0D=0A                              =
+          <th class=3D"mob-stack bgColor_bg_primary_DM" valign=3D"middle" s=
+tyle=3D"width:300px;padding:0;margin:0;background-color: #ffffff;vertical-a=
+lign: middle;font-weight: 400;" width=3D"300">=0D=0A                       =
+                     <table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border-spacing:0;font-family: 'Roboto', A=
+rial, sans-serif;width:100%;direction: ltr;" dir=3D"ltr">=0D=0A            =
+                                    <tr>=0D=0A                             =
+                       <td class=3D"px-0 pt-18 color_content_primary_DM" va=
+lign=3D"center" style=3D"padding: 0 24px 0 0 ;width:100%;color: #353535; fo=
+nt-family:Roboto,Arial,Sans-serif;font-size:16px;mso-line-height:24px;line-=
+height:1.5!important; text-align:left;vertical-align: center;">=0D=0A      =
+                                                  <p class=3D"color_heading=
+_font_DM" style=3D"margin:0;margin-bottom:4px;font-size:18px;line-height:1.=
+3!important;font-weight: 700;color:#353535;">F=C3=BCr diesen Himmel lohnt s=
+ich der Blick nach oben</p>=0D=0A                                          =
+              <p class=3D"color_content_primary_DM" style=3D"margin:0;">Der=
+ Himmel =C3=BCber der Tatra f=C3=A4rbt sich bei Sonnenuntergang von Rosa zu=
+ tiefem Blau. Die Bergketten schaffen eine atemberaubende Kulisse, w=C3=A4h=
+rend die Lichter von Zakopane darunter zu leuchten beginnen. </p>=0D=0A    =
+                                                </td>=0D=0A                =
+                                </tr><tr>=0D=0A                            =
+                      <td class=3D"px-0 pt-18" style=3D"padding: 12px 24px =
+0 1px ;">=0D=0A                                                      <table=
+ class=3D"force-row mbl-center" role=3D"presentation" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0">=0D=0A                                         =
+                 <tr>=0D=0A                                                =
+              <td class=3D"color_content_primary_DM borderSolid_button_seco=
+ndary_DM bgColor_bg_primary_DM" style=3D"padding: 0px;font-weight: 400;back=
+ground-color: #ffffff;border-radius:6px;border:1px solid #97D700;font-famil=
+y:Roboto,Arial,Sans-serif;text-align:center;font-size:16px;mso-line-height-=
+alt:16px;line-height:1.5!important;min-width:140px;">=0D=0A                =
+                                                  <p class=3D"outlook-btn b=
+tn-secondary" style=3D"margin:0px;font-family:Roboto,Arial,Sans-serif;font-=
+size:16px;mso-line-height-alt:16px;line-height:1.5!important;border-radius:=
+6px;">=0D=0A                                                               =
+     <span class=3D"resetUnderline">=0D=0A                                 =
+                                     <a  class=3D"cta-btn color_content_pri=
+mary_DM" target=3D"_blank" href=3D"https://clicks.mail.flixbus.com/f/a/DkHI=
+369M12MRs0KKK9Dh_A~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1Dl=
+VzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6=
+mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7O=
+eiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XM=
+PY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeMzDk=
+tTxpkrjUpJ53Uduo_1zi_q_SneFq1_588BrUidYwZD2rqXNEu3W8ATkuXwXgFJMjvMZTdj5A9BR=
+JDZ1Tq6i8Kf6paOyPA0oW1n2i4lqQ5rS8EgFDJJr47AS98Y8hy2dWM9LhgsZUUqS7kIi48nfHIn=
+y3pOAq7NmcE55vb2F9L9DRuEy74XACUu3Wjjdn2b7YA4CyCzgat-OU74gkHyfx81uuQFFS7OPjV=
+IDV2ZFG0-Gopdt2eFJa7dPW8Uatk-5dH0itqZY1_M2vYXZOQnTxTQb2rg9jQbEPFU1ehr9Imy98=
+6dYwASotOHZqSMS2doXetOhCQy12M-XaAhVE5uD-wcYin_rAZL64egP-U87yt4AwHm5B2XeI2rx=
+Hu4y4XyeG_MqA5_dqbwcYPU2UoxAjaNvOyUU9etMI5s2l8DrofQh2rcUEoDn7-vcMdh13Q~~" s=
+tyle=3D"text-decoration: none; padding: 12px 12px; color: #353535; border-r=
+adius: 6px; display:inline-block;">=0D=0A                                  =
+                                        <span class=3D"color_content_primar=
+y_DM" style=3D"mso-border-alt: 4px solid #ffffff;font-weight:500;">Besuche =
+Zakopane</span>=0D=0A                                                      =
+                </a>=0D=0A                                                 =
+                   </span>=0D=0A                                           =
+                       </p> =0D=0A                                         =
+                     </td>=0D=0A                                           =
+               </tr>=0D=0A                                                 =
+         <!--[if mso]><tr><td style=3D"padding:0px;font-size: 1px;line-heig=
+ht: 1px;"><p style=3D"margin:0;font-size: 1px;line-height: 1px;">&nbsp;</p>=
+</tr></td><![endif]-->=0D=0A                                               =
+       </table>=0D=0A                                                  </td=
+>=0D=0A                                               </tr></table>=0D=0A  =
+                                        </th>=0D=0A                        =
+            </tr>=0D=0A                                </table>=0D=0A      =
+                      </td>  =0D=0A                          </tr>=0D=0A   =
+                 </table>=0D=0A                </td>=0D=0A            </tr>=
+=0D=0A          </table>=0D=0A        </td>=0D=0A      </tr>=0D=0A  </table=
+><!-- Spacer -->=0A    =0A        <div class=3D"bgColor_bg_primary_DM space=
+r-" style=3D"margin:0px;padding:0px;font-size:20px;line-height:20px;mso-lin=
+e-height-rule:exactly;background-color: #ffffff">=0D=0A    <p class=3D"spac=
+er-" style=3D"margin:0px;font-size:20pxpx;line-height:20px;">&nbsp;</p>=0D=
+=0A</div>=0A=0A    =0A=0A=0A     <!-- Img__H3_Paragraph_CTAS__50x50_AutoAli=
+gn -->=0D=0A=0D=0A  =0D=0A=0D=0A  =0D=0A    =0D=0A      =0D=0A    =0D=0A  =
+=0D=0A    =0D=0A      =0D=0A    =0D=0A  =0D=0A=0D=0A=0D=0A=0D=0A<table bord=
+er=3D"0" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"contai=
+ner" style=3D"width: 640px; max-width: 640px;" align=3D"center" role=3D"pre=
+sentation">=0D=0A    <tr>=0D=0A        <td align=3D"center" class=3D"bgColo=
+r_bg_secondary_DM" style=3D"background-color: #f7f7f7;padding:0;">=0D=0A   =
+       <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" width=3D"100%" style=3D"border-spacing:0;font-family: 'Roboto', A=
+rial, sans-serif;">=0D=0A            <tr>=0D=0A                <td class=3D=
+"mbl-padding bgColor_bg_primary_DM" style=3D"padding:0px 24px;width:100%; b=
+ackground-color: #ffffff;">=0D=0A                    <table role=3D"present=
+ation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">=0D=
+=0A                        <tr>=0D=0A                            <td style=
+=3D"padding:0px;direction:  ltr ;" dir=3D" ltr ">=0D=0A                    =
+            <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" width=3D"100%">=0D=0A                                    <tr=
+>=0D=0A                                        <th class=3D"mob-stack" vali=
+gn=3D"top" style=3D"width:292px;vertical-align: top;font-weight: 400;paddin=
+g:0;" width=3D"292">=0D=0A                                            <tabl=
+e role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"force-row" style=3D"padding:0px;direction: ltr;">=0D=0A             =
+                                   <tr><td class=3D"fade pt-0" style=3D"pad=
+ding:2px 0px 0px;border-radius:6px;">=0D=0A                                =
+                        <span class=3D"mbl-hide">=0D=0A                    =
+                                        <a  href=3D"https://clicks.mail.fli=
+xbus.com/f/a/BP82nw3zE6WzSQ3hu3csHA~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu2=
+9elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJ=
+whJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqo=
+XoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmI=
+iQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3=
+bY1zcV3rGLtXeDf5i4BDNJ1yOOwrLg4FNa_BcwXfCBa3KWlYtBlQdQhi4Ie-BL-pkhyT-u601wl=
+YbZx5dxzzOHt10K37D023nxO1VfWuy14mRHAiJOdOEAwtPpsmqsPnQBruBXfqvSLpEVAZpo9YgT=
+84Sc2D95QMlsOWYan7IxMJseEcoroWSHOls-ieFuplkuTFn2ZyyCC37zuIwxt5WhrUd8fGp3EYt=
+nIs0YSMpDrrVdBuA0g-cgx1eGeaOpYlqKKOJ31epytiOqreX1WeHPzr3KuQcMjJBNbUwmpg0oZX=
+x7Dfq7iC8VWqTisBazEw3wuQsBVONlzNTnfMEptT5jUdlpYzHTsmHuQq9YCE-gU2KFTHNZmcT_R=
+s18M0FFEc7HIPCB3moeDFcSZiVDC-eVqcWmc2Pv-2N-2_6VeQFfQYXrNZo8eN-gK2Brm5J8pBCx=
+Ka1_7ld8ZHqw~~" target=3D"_blank" style=3D"text-decoration: none;border: no=
+ne;">=0D=0A                                                                =
+<img class=3D"force-row" name=3D"Cont_4" src=3D"https://cdn.braze.eu/appboy=
+/communication/assets/image_assets/images/6ae0ce573e1af200d4d3309b/original=
+.png=3F1793117783" width=3D"290" alt=3D"" style=3D"width:290px;height:auto=
+;display:block;margin:0px;border-radius: 6px;">=0D=0A                      =
+                                      </a>=0D=0A                           =
+                             </span>=0D=0A                                 =
+                       <!--[if !mso 9]><!-->=0D=0A                         =
+                               <span class=3D"mbl-show" style=3D"display:no=
+ne;">=0D=0A                                                            <a  =
+href=3D"https://clicks.mail.flixbus.com/f/a/TeeY11WLaZy5b_ElG30arQ~~/AAAHah=
+A~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBU=
+u10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnA=
+QQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk=
+7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJg=
+tqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeDf5i4BDNJ1yOOwrLg4FNa_BcwXfCBa3=
+KWlYtBlQdQhi4Ie-BL-pkhyT-u601wlYbZx5dxzzOHt10K37D023nxO1VfWuy14mRHAiJOdOEAw=
+tPpsmqsPnQBruBXfqvSLpEVAZpo9YgT84Sc2D95QMlsOWYan7IxMJseEcoroWSHOls-ieFuplku=
+TFn2ZyyCC37zuIwxt5WhrUd8fGp3EYtnIs0YSMpDrrVdBuA0g-cgx1eGeaOpYlqKKOJ31epytiO=
+qreX1WeHPzr3KuQcMjJBNbUwmpg0oZXx7Dfq7iC8VWqTisBazEw3wuQsBVONlzNTnfMEptT5jUd=
+lpYzHTsmHuQq9YCE-gU2KFTHNZmcT_RsB7IENhK-Z0x6ObRVoAAc4hwWpucn8r6RiX7S1wQEHHw=
+LL8f0mdSKBk-CS-FtfkXsAszDQZh_6BHH7rlYa_i5vw~~" target=3D"_blank" style=3D"t=
+ext-decoration: none;border: none;">=0D=0A                                 =
+                               <img class=3D"force-row" name=3D"Cont_4" src=
+=3D"https://cdn.braze.eu/appboy/communication/assets/image_assets/images/6a=
+e0ce573e1af200d4d3309b/original.png=3F1793117783" alt=3D"" style=3D"width:1=
+00%;height:auto;display:block;margin:0px;border-radius: 6px;">=0D=0A       =
+                                                     </a>=0D=0A            =
+                                            </span>=0D=0A                  =
+                                      <!--<![endif]-->                     =
+                                   =0D=0A                                  =
+                  </td></tr>=0D=0A                                         =
+   </table>=0D=0A                                        </th>=0D=0A       =
+                                 <th class=3D"mob-stack bgColor_bg_primary_=
+DM" valign=3D"middle" style=3D"width:300px;padding:0;margin:0;background-co=
+lor: #ffffff;vertical-align: middle;font-weight: 400;" width=3D"300">=0D=0A=
+                                            <table role=3D"presentation" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0;fo=
+nt-family: 'Roboto', Arial, sans-serif;width:100%;direction: ltr;" dir=3D"l=
+tr">=0D=0A                                                <tr>=0D=0A       =
+                                             <td class=3D"px-0 pt-18 color_=
+content_primary_DM" valign=3D"center" style=3D"padding: 0px 0px 0px 24px ;w=
+idth:100%;color: #353535; font-family:Roboto,Arial,Sans-serif;font-size:16p=
+x;mso-line-height:24px;line-height:1.5!important; text-align:left;vertical-=
+align: center;">=0D=0A                                                     =
+   <p class=3D"color_heading_font_DM" style=3D"margin:0;margin-bottom:4px;f=
+ont-size:18px;line-height:1.3!important;font-weight: 700;color:#353535;">Ho=
+he Gipfel, kleine Lichter</p>=0D=0A                                        =
+                <p class=3D"color_content_primary_DM" style=3D"margin:0;">B=
+eobachte, wie das Licht hinter den Gipfeln der franz=C3=B6sischen Alpen lan=
+gsam verschwindet. Dramatische Bergsilhouetten zeichnen sich gegen einen fa=
+rbintensiven Himmel ab und die Stra=C3=9Fen von Chamonix beginnen zu glitze=
+rn: ein malerischer Abend wartet!</p>=0D=0A                                =
+                    </td>=0D=0A                                            =
+    </tr><tr>=0D=0A                                                  <td cl=
+ass=3D"px-0 pt-18" style=3D"padding: 12px 0px 0 24px ;">=0D=0A             =
+                                         <table class=3D"force-row mbl-cent=
+er" role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">=
+=0D=0A                                                          <tr>=0D=0A =
+                                                             <td class=3D"c=
+olor_content_primary_DM borderSolid_button_secondary_DM bgColor_bg_primary_=
+DM" style=3D"padding: 0px;font-weight: 400;background-color: #ffffff;border=
+-radius:6px;border:1px solid #97D700;font-family:Roboto,Arial,Sans-serif;te=
+xt-align:center;font-size:16px;mso-line-height-alt:16px;line-height:1.5!imp=
+ortant;min-width:140px;">=0D=0A                                            =
+                      <p class=3D"outlook-btn btn-secondary" style=3D"margi=
+n:0px;font-family:Roboto,Arial,Sans-serif;font-size:16px;mso-line-height-al=
+t:16px;line-height:1.5!important;border-radius:6px;">=0D=0A                =
+                                                    <span class=3D"resetUnd=
+erline">=0D=0A                                                             =
+         <a  class=3D"cta-btn color_content_primary_DM" target=3D"_blank" h=
+ref=3D"https://clicks.mail.flixbus.com/f/a/g1melXnoCubIs7wt6AbcRg~~/AAAHahA=
+~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu=
+10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQ=
+QUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7=
+DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgt=
+qXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeDf5i4BDNJ1yOOwrLg4FNa_BcwXfCBa3K=
+WlYtBlQdQhi4Ie-BL-pkhyT-u601wlYbZx5dxzzOHt10K37D023nxO1VfWuy14mRHAiJOdOEAwt=
+PpsmqsPnQBruBXfqvSLpEVAZpo9YgT84Sc2D95QMlsOWYan7IxMJseEcoroWSHOls-ieFuplkuT=
+Fn2ZyyCC37zuIwxt5WhrUd8fGp3EYtnIs0YSMpDrrVdBuA0g-cgx1eGeaOpYlqKKOJ31epytiOq=
+reX1WeHPzr3KuQcMjJBNbUwmpg0oZXx7Dfq7iC8VWqTisBazEw3wuQsBVONlzNTnfMEptT5jUdl=
+pYzHTsmHuQq9YCE-gU2KFTHNZmcT_Rss7ZLaOX2IVzbPWO8HlNFHZLH9PTJ90eWMlkeoZKc0-Ns=
+X3rsnBlPqjfFp_uJyM9Oo7utosb1Ffd34u9j2OWWSQ~~" style=3D"text-decoration: non=
+e; padding: 12px 12px; color: #353535; border-radius: 6px; display:inline-b=
+lock;">=0D=0A                                                              =
+            <span class=3D"color_content_primary_DM" style=3D"mso-border-al=
+t: 4px solid #ffffff;font-weight:500;">Besuche Chamonix</span>=0D=0A       =
+                                                               </a>=0D=0A  =
+                                                                  </span>=
+=0D=0A                                                                  </p=
+> =0D=0A                                                              </td>=
+=0D=0A                                                          </tr>=0D=0A=
+                                                          <!--[if mso]><tr>=
+<td style=3D"padding:0px;font-size: 1px;line-height: 1px;"><p style=3D"marg=
+in:0;font-size: 1px;line-height: 1px;">&nbsp;</p></tr></td><![endif]-->=0D=
+=0A                                                      </table>=0D=0A    =
+                                              </td>=0D=0A                  =
+                             </tr></table>=0D=0A                           =
+               </th>=0D=0A                                    </tr>=0D=0A  =
+                              </table>=0D=0A                            </t=
+d>  =0D=0A                          </tr>=0D=0A                    </table>=
+=0D=0A                </td>=0D=0A            </tr>=0D=0A          </table>=
+=0D=0A        </td>=0D=0A      </tr>=0D=0A  </table><!-- Spacer -->=0A    =
+=0A        <div class=3D"bgColor_bg_primary_DM spacer-" style=3D"margin:0px=
+;padding:0px;font-size:20px;line-height:20px;mso-line-height-rule:exactly;b=
+ackground-color: #ffffff">=0D=0A    <p class=3D"spacer-" style=3D"margin:0p=
+x;font-size:20pxpx;line-height:20px;">&nbsp;</p>=0D=0A</div>=0A=0A    =0A=
+=0A    =0A     <!-- Img__H3_Paragraph_CTAS__50x50_AutoAlign -->=0D=0A=0D=0A=
+  =0D=0A=0D=0A  =0D=0A    =0D=0A      =0D=0A    =0D=0A  =0D=0A    =0D=0A   =
+   =0D=0A    =0D=0A  =0D=0A=0D=0A=0D=0A=0D=0A<table border=3D"0" width=3D"1=
+00%" cellpadding=3D"0" cellspacing=3D"0" class=3D"container" style=3D"width=
+: 640px; max-width: 640px;" align=3D"center" role=3D"presentation">=0D=0A  =
+  <tr>=0D=0A        <td align=3D"center" class=3D"bgColor_bg_secondary_DM" =
+style=3D"background-color: #f7f7f7;padding:0;">=0D=0A          <table role=
+=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0;font-family: 'Roboto', Arial, sans-serif;"=
+>=0D=0A            <tr>=0D=0A                <td class=3D"mbl-padding bgCol=
+or_bg_primary_DM" style=3D"padding:0px 24px;width:100%; background-color: #=
+ffffff;">=0D=0A                    <table role=3D"presentation" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">=0D=0A                =
+        <tr>=0D=0A                            <td style=3D"padding:0px;dire=
+ction:  rtl ;" dir=3D" rtl ">=0D=0A                                <table r=
+ole=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">=0D=0A                                    <tr>=0D=0A             =
+                           <th class=3D"mob-stack" valign=3D"top" style=3D"=
+width:292px;vertical-align: top;font-weight: 400;padding:0;" width=3D"292">=
+=0D=0A                                            <table role=3D"presentati=
+on" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"force-row" st=
+yle=3D"padding:0px;direction: ltr;">=0D=0A                                 =
+               <tr><td class=3D"fade pt-0" style=3D"padding:2px 0px 0px;bor=
+der-radius:6px;">=0D=0A                                                    =
+    <span class=3D"mbl-hide">=0D=0A                                        =
+                    <a  href=3D"https://clicks.mail.flixbus.com/f/a/FKByOsU=
+JVMVp5OPLxwr0kg~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVzG=
+FV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp3=
+f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQ=
+SeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1=
+I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeKCftNS_=
+_q76eSUld_VyCiZq7IcZH1E5lMoVb0Q3Ug_RUytpoJh3ZZWAf0SHr40ZjwQ0_4DdD0OZr37zU7_=
+wvj4eUSgJ2dAIjDup10E_2ZygbsBE56Xg3CKr4ahdYm5sxgFci_vBUcyrBmL8iX91O7BTpqeuB0=
+VLL5MauvDXjutRoGQNh29tSyF1SgevZyrzRWGN5oUJKZJXWlTpw1goQlMXdvmFey68Ihi3A3ue9=
+EPu9vRoSwILlSKNRA9nR9Yei7yp0sdc6V4Bh_CFvmlIwgxpK34E5qfsXTlMPfHdRHq1DJQfAFX1=
+gJF-atbIvC_IxXqJNMN7hLqu1LrwHuyY-A_ts9PJfm8mHdEt6yZyFf4_QAtxdosmYq5I_k4lmKW=
+YE-z1r9ZxrEr5geGEN0QVK37cl-4KnYIooA3IzEEMAYEq0ZDTzSv94aoDsrcyFQYAhA~~" targ=
+et=3D"_blank" style=3D"text-decoration: none;border: none;">=0D=0A         =
+                                                       <img class=3D"force-=
+row" name=3D"Cont_4" src=3D"https://cdn.braze.eu/appboy/communication/asset=
+s/image_assets/images/6ae0ce583e1af200d4d3309c/original.png=3F1793117784" w=
+idth=3D"290" alt=3D"" style=3D"width:290px;height:auto;display:block;margin=
+:0px;border-radius: 6px;">=0D=0A                                           =
+                 </a>=0D=0A                                                =
+        </span>=0D=0A                                                      =
+  <!--[if !mso 9]><!-->=0D=0A                                              =
+          <span class=3D"mbl-show" style=3D"display:none;">=0D=0A          =
+                                                  <a  href=3D"https://click=
+s.mail.flixbus.com/f/a/CGobeeADh1bCePCeJF89JQ~~/AAAHahA~/ubpTt-OY6u-otfiVkE=
+HJZ8cwQeu29elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nY=
+hkrDpAP1OJwhJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW=
+-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRu=
+kmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5Ia=
+RYVgrmANq3bY1zcV3rGLtXeKCftNS__q76eSUld_VyCiZq7IcZH1E5lMoVb0Q3Ug_RUytpoJh3Z=
+ZWAf0SHr40ZjwQ0_4DdD0OZr37zU7_wvj4eUSgJ2dAIjDup10E_2ZygbsBE56Xg3CKr4ahdYm5s=
+xgFci_vBUcyrBmL8iX91O7BTpqeuB0VLL5MauvDXjutRoGQNh29tSyF1SgevZyrzRWGN5oUJKZJ=
+XWlTpw1goQlMXdvmFey68Ihi3A3ue9EPu9vRoSwILlSKNRA9nR9Yei7yp0sdc6V4Bh_CFvmlIwg=
+xpK34E5qfsXTlMPfHdRHq1DJQfAFX1gJF-atbIvC_IxXqJNMN7hLqu1LrwHuyY-A_ts9PJfm8mH=
+dEt6yZyFf4_j694_MZEDceEFLJKCtIy1t_q1CO1crXONhEXbQUuZU_x0G7Wa8V8DFKtvcGvo5oo=
+39z0L04tf71gZPA7jmWXJg~~" target=3D"_blank" style=3D"text-decoration: none;=
+border: none;">=0D=0A                                                      =
+          <img class=3D"force-row" name=3D"Cont_4" src=3D"https://cdn.braze=
+.eu/appboy/communication/assets/image_assets/images/6ae0ce583e1af200d4d330=
+9c/original.png=3F1793117784" alt=3D"" style=3D"width:100%;height:auto;disp=
+lay:block;margin:0px;border-radius: 6px;">=0D=0A                           =
+                                 </a>=0D=0A                                =
+                        </span>=0D=0A                                      =
+                  <!--<![endif]-->                                         =
+               =0D=0A                                                    </=
+td></tr>=0D=0A                                            </table>=0D=0A   =
+                                     </th>=0D=0A                           =
+             <th class=3D"mob-stack bgColor_bg_primary_DM" valign=3D"middle=
+" style=3D"width:300px;padding:0;margin:0;background-color: #ffffff;vertica=
+l-align: middle;font-weight: 400;" width=3D"300">=0D=0A                    =
+                        <table role=3D"presentation" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" style=3D"border-spacing:0;font-family: 'Roboto',=
+ Arial, sans-serif;width:100%;direction: ltr;" dir=3D"ltr">=0D=0A          =
+                                      <tr>=0D=0A                           =
+                         <td class=3D"px-0 pt-18 color_content_primary_DM" =
+valign=3D"center" style=3D"padding: 0 24px 0 0 ;width:100%;color: #353535; =
+font-family:Roboto,Arial,Sans-serif;font-size:16px;mso-line-height:24px;lin=
+e-height:1.5!important; text-align:left;vertical-align: center;">=0D=0A    =
+                                                    <p class=3D"color_headi=
+ng_font_DM" style=3D"margin:0;margin-bottom:4px;font-size:18px;line-height:=
+1.3!important;font-weight: 700;color:#353535;">Das Schimmern der Nacht</p>=
+=0D=0A                                                        <p class=3D"c=
+olor_content_primary_DM" style=3D"margin:0;">Abends wird der Comer See zu e=
+iner besonderen Sch=C3=B6nheit. Berge im Hintergrund und Lichter der D=C3=
+=B6rfer, die auf dem Wasser schimmern. Sauge bei einem Spaziergang am Wasse=
+r die magischen Reflexionen ein.</p>=0D=0A                                 =
+                   </td>=0D=0A                                             =
+   </tr><tr>=0D=0A                                                  <td cla=
+ss=3D"px-0 pt-18" style=3D"padding: 12px 24px 0 1px ;">=0D=0A              =
+                                        <table class=3D"force-row mbl-cente=
+r" role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">=
+=0D=0A                                                          <tr>=0D=0A =
+                                                             <td class=3D"c=
+olor_content_primary_DM borderSolid_button_secondary_DM bgColor_bg_primary_=
+DM" style=3D"padding: 0px;font-weight: 400;background-color: #ffffff;border=
+-radius:6px;border:1px solid #97D700;font-family:Roboto,Arial,Sans-serif;te=
+xt-align:center;font-size:16px;mso-line-height-alt:16px;line-height:1.5!imp=
+ortant;min-width:140px;">=0D=0A                                            =
+                      <p class=3D"outlook-btn btn-secondary" style=3D"margi=
+n:0px;font-family:Roboto,Arial,Sans-serif;font-size:16px;mso-line-height-al=
+t:16px;line-height:1.5!important;border-radius:6px;">=0D=0A                =
+                                                    <span class=3D"resetUnd=
+erline">=0D=0A                                                             =
+         <a  class=3D"cta-btn color_content_primary_DM" target=3D"_blank" h=
+ref=3D"https://clicks.mail.flixbus.com/f/a/_yh4hobIWctSBvPFqaeF5g~~/AAAHahA=
+~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu=
+10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQ=
+QUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7=
+DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgt=
+qXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeKCftNS__q76eSUld_VyCiZq7IcZH1E5l=
+MoVb0Q3Ug_RUytpoJh3ZZWAf0SHr40ZjwQ0_4DdD0OZr37zU7_wvj4eUSgJ2dAIjDup10E_2Zyg=
+bsBE56Xg3CKr4ahdYm5sxgFci_vBUcyrBmL8iX91O7BTpqeuB0VLL5MauvDXjutRoGQNh29tSyF=
+1SgevZyrzRWGN5oUJKZJXWlTpw1goQlMXdvmFey68Ihi3A3ue9EPu9vRoSwILlSKNRA9nR9Yei7=
+yp0sdc6V4Bh_CFvmlIwgxpK34E5qfsXTlMPfHdRHq1DJQfAFX1gJF-atbIvC_IxXqJNMN7hLqu1=
+LrwHuyY-A_ts9PJfm8mHdEt6yZyFf4_1w1NZ6tWJrPnEUGA6-gx4kU_TCCCkiu1S0_EebqSBQjF=
+-GXAAVZeIFauH843hUYN2pzjJcFaJz79GOoyzGHCgQ~~" style=3D"text-decoration: non=
+e; padding: 12px 12px; color: #353535; border-radius: 6px; display:inline-b=
+lock;">=0D=0A                                                              =
+            <span class=3D"color_content_primary_DM" style=3D"mso-border-al=
+t: 4px solid #ffffff;font-weight:500;">Besuche Como</span>=0D=0A           =
+                                                           </a>=0D=0A      =
+                                                              </span>=0D=0A=
+                                                                  </p> =0D=
+=0A                                                              </td>=0D=
+=0A                                                          </tr>=0D=0A   =
+                                                       <!--[if mso]><tr><td=
+ style=3D"padding:0px;font-size: 1px;line-height: 1px;"><p style=3D"margin:=
+0;font-size: 1px;line-height: 1px;">&nbsp;</p></tr></td><![endif]-->=0D=0A =
+                                                     </table>=0D=0A        =
+                                          </td>=0D=0A                      =
+                         </tr></table>=0D=0A                               =
+           </th>=0D=0A                                    </tr>=0D=0A      =
+                          </table>=0D=0A                            </td>  =
+=0D=0A                          </tr>=0D=0A                    </table>=0D=
+=0A                </td>=0D=0A            </tr>=0D=0A          </table>=0D=
+=0A        </td>=0D=0A      </tr>=0D=0A  </table><!-- Spacer -->=0A    =0A =
+       <div class=3D"bgColor_bg_primary_DM spacer-" style=3D"margin:0px;pad=
+ding:0px;font-size:20px;line-height:20px;mso-line-height-rule:exactly;backg=
+round-color: #ffffff">=0D=0A    <p class=3D"spacer-" style=3D"margin:0px;fo=
+nt-size:20pxpx;line-height:20px;">&nbsp;</p>=0D=0A</div>=0A=0A    =0A=0A   =
+  <!-- Img__H3_Paragraph_CTAS__50x50_AutoAlign -->=0D=0A=0D=0A  =0D=0A=0D=
+=0A  =0D=0A    =0D=0A      =0D=0A    =0D=0A  =0D=0A    =0D=0A      =0D=0A  =
+  =0D=0A  =0D=0A=0D=0A=0D=0A=0D=0A<table border=3D"0" width=3D"100%" cellpa=
+dding=3D"0" cellspacing=3D"0" class=3D"container" style=3D"width: 640px; ma=
+x-width: 640px;" align=3D"center" role=3D"presentation">=0D=0A    <tr>=0D=
+=0A        <td align=3D"center" class=3D"bgColor_bg_secondary_DM" style=3D"=
+background-color: #f7f7f7;padding:0;">=0D=0A          <table role=3D"presen=
+tation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" sty=
+le=3D"border-spacing:0;font-family: 'Roboto', Arial, sans-serif;">=0D=0A   =
+         <tr>=0D=0A                <td class=3D"mbl-padding bgColor_bg_prim=
+ary_DM" style=3D"padding:0px 24px;width:100%; background-color: #ffffff;">=
+=0D=0A                    <table role=3D"presentation" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" width=3D"100%">=0D=0A                        <=
+tr>=0D=0A                            <td style=3D"padding:0px;direction:  l=
+tr ;" dir=3D" ltr ">=0D=0A                                <table role=3D"pr=
+esentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+>=0D=0A                                    <tr>=0D=0A                      =
+                  <th class=3D"mob-stack" valign=3D"top" style=3D"width:292=
+px;vertical-align: top;font-weight: 400;padding:0;" width=3D"292">=0D=0A   =
+                                         <table role=3D"presentation" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"force-row" style=3D"pa=
+dding:0px;direction: ltr;">=0D=0A                                          =
+      <tr><td class=3D"fade pt-0" style=3D"padding:2px 0px 0px;border-radiu=
+s:6px;">=0D=0A                                                        <span=
+ class=3D"mbl-hide">=0D=0A                                                 =
+           <a  href=3D"https://clicks.mail.flixbus.com/f/a/wI-hc3Nbe3UNzxmv=
+ZZRZnA~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVzGFV9T-VKy_=
+SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp3f1IH_YCpf=
+i9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQSeTV4skI0=
+ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOM=
+KBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeHAJ_kc6R9P_PXcL7=
+yLL_DDAX6Pk4mu6cEoYxZbdLQPTU3nhvxfsH50rShX7joCBwxd7g8rg89Ss1hh99inetVaTl8wA=
+_LcvHpvVdi1WpyFX2zGVKWQpsgNE_b3uYLWJRgVltcl188R-2TugldlD6wSQZe5yT2EyPy-pRdw=
+3XqfZm3b18UCE44BGilRZ_p6c-Szy2Jm0lZ4RZwawDd6JvpMkrQr5cyxERBdSFOIojewwPZ25XW=
+bMSc3E_Ywja8fQbJkaZJD-xdpdch-Gwd0_hHNC1N-TLPe47zbVMJEcPqSx8AN758BzU8Ov5CjlZ=
+cuKuFAkDYyP6HLoj28w8WO3IbEph2BR-ETHbmI5pZGVD-TLvwHvDpxsN8T1Yi8NXBT_ZQBym3WC=
+cDCw6SKNcfAWKUBqIcyD76KvotPBQVFwi8FJhd0ogyoiXjl_SnGBGcCCKQ~~" target=3D"_bl=
+ank" style=3D"text-decoration: none;border: none;">=0D=0A                  =
+                                              <img class=3D"force-row" name=
+=3D"Cont_4" src=3D"https://cdn.braze.eu/appboy/communication/assets/image_a=
+ssets/images/6ae0ce593e1af200d4d3309d/original.png=3F1793117784." width=3D"=
+290" alt=3D"" style=3D"width:290px;height:auto;display:block;margin:0px;bor=
+der-radius: 6px;">=0D=0A                                                   =
+         </a>=0D=0A                                                        =
+</span>=0D=0A                                                        <!--[i=
+f !mso 9]><!-->=0D=0A                                                      =
+  <span class=3D"mbl-show" style=3D"display:none;">=0D=0A                  =
+                                          <a  href=3D"https://clicks.mail.f=
+lixbus.com/f/a/qhCBZffpp-LDvRj_wI073A~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQe=
+u29elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1=
+OJwhJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdz=
+qoXoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvh=
+mIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmAN=
+q3bY1zcV3rGLtXeHAJ_kc6R9P_PXcL7yLL_DDAX6Pk4mu6cEoYxZbdLQPTU3nhvxfsH50rShX7j=
+oCBwxd7g8rg89Ss1hh99inetVaTl8wA_LcvHpvVdi1WpyFX2zGVKWQpsgNE_b3uYLWJRgVltcl1=
+88R-2TugldlD6wSQZe5yT2EyPy-pRdw3XqfZm3b18UCE44BGilRZ_p6c-Szy2Jm0lZ4RZwawDd6=
+JvpMkrQr5cyxERBdSFOIojewwPZ25XWbMSc3E_Ywja8fQbJkaZJD-xdpdch-Gwd0_hHNC1N-TLP=
+e47zbVMJEcPqSx8AN758BzU8Ov5CjlZcuKuFAkDYyP6HLoj28w8WO3IbEph2BR-ETHbmI5pZGVD=
+-TLX4nMsAdd1r1WSwzIBUOVwZwYx_dJx4SyQCfg29_i6heKiK_xFYR2ODK27mEe_qwuuQejPwyZ=
+P0FMm9caEeB1BQ~~" target=3D"_blank" style=3D"text-decoration: none;border: =
+none;">=0D=0A                                                              =
+  <img class=3D"force-row" name=3D"Cont_4" src=3D"https://cdn.braze.eu/appb=
+oy/communication/assets/image_assets/images/6ae0ce593e1af200d4d3309d/origin=
+al.png=3F1793117784." alt=3D"" style=3D"width:100%;height:auto;display:bloc=
+k;margin:0px;border-radius: 6px;">=0D=0A                                   =
+                         </a>=0D=0A                                        =
+                </span>=0D=0A                                              =
+          <!--<![endif]-->                                                 =
+       =0D=0A                                                    </td></tr>=
+=0D=0A                                            </table>=0D=0A           =
+                             </th>=0D=0A                                   =
+     <th class=3D"mob-stack bgColor_bg_primary_DM" valign=3D"middle" style=
+=3D"width:300px;padding:0;margin:0;background-color: #ffffff;vertical-align=
+: middle;font-weight: 400;" width=3D"300">=0D=0A                           =
+                 <table role=3D"presentation" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" style=3D"border-spacing:0;font-family: 'Roboto', Arial,=
+ sans-serif;width:100%;direction: ltr;" dir=3D"ltr">=0D=0A                 =
+                               <tr>=0D=0A                                  =
+                  <td class=3D"px-0 pt-18 color_content_primary_DM" valign=
+=3D"center" style=3D"padding: 0px 0px 0px 24px ;width:100%;color: #353535; =
+font-family:Roboto,Arial,Sans-serif;font-size:16px;mso-line-height:24px;lin=
+e-height:1.5!important; text-align:left;vertical-align: center;">=0D=0A    =
+                                                    <p class=3D"color_headi=
+ng_font_DM" style=3D"margin:0;margin-bottom:4px;font-size:18px;line-height:=
+1.3!important;font-weight: 700;color:#353535;">Ein m=C3=A4rchenhafter Tages=
+abschluss</p>=0D=0A                                                        =
+<p class=3D"color_content_primary_DM" style=3D"margin:0;">Mysteri=C3=B6se W=
+=C3=A4lder und farbenfrohe Pal=C3=A4ste: Sintra ist wie aus dem Bilderbuch.=
+ Wenn es dunkel wird, wird dieser Ort noch magischer. Entdecke m=C3=A4rchen=
+hafte Landschaften und wundervoll beleuchtete Stra=C3=9Fen.</p>=0D=0A      =
+                                              </td>=0D=0A                  =
+                              </tr><tr>=0D=0A                              =
+                    <td class=3D"px-0 pt-18" style=3D"padding: 12px 0px 0 2=
+4px ;">=0D=0A                                                      <table c=
+lass=3D"force-row mbl-center" role=3D"presentation" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0">=0D=0A                                           =
+               <tr>=0D=0A                                                  =
+            <td class=3D"color_content_primary_DM borderSolid_button_second=
+ary_DM bgColor_bg_primary_DM" style=3D"padding: 0px;font-weight: 400;backgr=
+ound-color: #ffffff;border-radius:6px;border:1px solid #97D700;font-family:=
+Roboto,Arial,Sans-serif;text-align:center;font-size:16px;mso-line-height-al=
+t:16px;line-height:1.5!important;min-width:140px;">=0D=0A                  =
+                                                <p class=3D"outlook-btn btn=
+-secondary" style=3D"margin:0px;font-family:Roboto,Arial,Sans-serif;font-si=
+ze:16px;mso-line-height-alt:16px;line-height:1.5!important;border-radius:6p=
+x;">=0D=0A                                                                 =
+   <span class=3D"resetUnderline">=0D=0A                                   =
+                                   <a  class=3D"cta-btn color_content_prima=
+ry_DM" target=3D"_blank" href=3D"https://clicks.mail.flixbus.com/f/a/2ejgT6=
+lc4iBEzuRHgS_txg~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVz=
+GFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp=
+3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7Oei=
+QSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY=
+1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeHAJ_kc=
+6R9P_PXcL7yLL_DDAX6Pk4mu6cEoYxZbdLQPTU3nhvxfsH50rShX7joCBwxd7g8rg89Ss1hh99i=
+netVaTl8wA_LcvHpvVdi1WpyFX2zGVKWQpsgNE_b3uYLWJRgVltcl188R-2TugldlD6wSQZe5yT=
+2EyPy-pRdw3XqfZm3b18UCE44BGilRZ_p6c-Szy2Jm0lZ4RZwawDd6JvpMkrQr5cyxERBdSFOIo=
+jewwPZ25XWbMSc3E_Ywja8fQbJkaZJD-xdpdch-Gwd0_hHNC1N-TLPe47zbVMJEcPqSx8AN758B=
+zU8Ov5CjlZcuKuFAkDYyP6HLoj28w8WO3IbEph2BR-ETHbmI5pZGVD-TLBX_Eg-wFP-oNLK8K8o=
+12NMgDQkB440LBdr3melgS7I-73pSEq-AGvyUm40f8VzORu4Chq0vjoygvMaFmYzl0-g~~" sty=
+le=3D"text-decoration: none; padding: 12px 12px; color: #353535; border-rad=
+ius: 6px; display:inline-block;">=0D=0A                                    =
+                                      <span class=3D"color_content_primary_=
+DM" style=3D"mso-border-alt: 4px solid #ffffff;font-weight:500;">Besuche Si=
+ntra</span>=0D=0A                                                          =
+            </a>=0D=0A                                                     =
+               </span>=0D=0A                                               =
+                   </p> =0D=0A                                             =
+                 </td>=0D=0A                                               =
+           </tr>=0D=0A                                                     =
+     <!--[if mso]><tr><td style=3D"padding:0px;font-size: 1px;line-height: =
+1px;"><p style=3D"margin:0;font-size: 1px;line-height: 1px;">&nbsp;</p></tr=
+></td><![endif]-->=0D=0A                                                   =
+   </table>=0D=0A                                                  </td>=0D=
+=0A                                               </tr></table>=0D=0A      =
+                                    </th>=0D=0A                            =
+        </tr>=0D=0A                                </table>=0D=0A          =
+                  </td>  =0D=0A                          </tr>=0D=0A       =
+             </table>=0D=0A                </td>=0D=0A            </tr>=0D=
+=0A          </table>=0D=0A        </td>=0D=0A      </tr>=0D=0A  </table><!=
+-- Spacer -->=0A    =0A        <div class=3D"bgColor_bg_primary_DM spacer-"=
+ style=3D"margin:0px;padding:0px;font-size:20px;line-height:20px;mso-line-h=
+eight-rule:exactly;background-color: #ffffff">=0D=0A    <p class=3D"spacer-=
+" style=3D"margin:0px;font-size:20pxpx;line-height:20px;">&nbsp;</p>=0D=0A<=
+/div>=0A=0A    =0A=0A    <!-- Img__H3_Paragraph_CTAS__50x50_AutoAlign -->=
+=0D=0A=0D=0A  =0D=0A=0D=0A  =0D=0A    =0D=0A      =0D=0A    =0D=0A  =0D=0A =
+   =0D=0A      =0D=0A    =0D=0A  =0D=0A=0D=0A=0D=0A=0D=0A<table border=3D"0=
+" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"container" st=
+yle=3D"width: 640px; max-width: 640px;" align=3D"center" role=3D"presentati=
+on">=0D=0A    <tr>=0D=0A        <td align=3D"center" class=3D"bgColor_bg_se=
+condary_DM" style=3D"background-color: #f7f7f7;padding:0;">=0D=0A          =
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-spacing:0;font-family: 'Roboto', Arial, s=
+ans-serif;">=0D=0A            <tr>=0D=0A                <td class=3D"mbl-pa=
+dding bgColor_bg_primary_DM" style=3D"padding:0px 24px;width:100%; backgrou=
+nd-color: #ffffff;">=0D=0A                    <table role=3D"presentation" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">=0D=0A     =
+                   <tr>=0D=0A                            <td style=3D"paddi=
+ng:0px;direction:  rtl ;" dir=3D" rtl ">=0D=0A                             =
+   <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%">=0D=0A                                    <tr>=0D=0A =
+                                       <th class=3D"mob-stack" valign=3D"to=
+p" style=3D"width:292px;vertical-align: top;font-weight: 400;padding:0;" wi=
+dth=3D"292">=0D=0A                                            <table role=
+=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D=
+"force-row" style=3D"padding:0px;direction: ltr;">=0D=0A                   =
+                             <tr><td class=3D"fade pt-0" style=3D"padding:2=
+px 0px 0px;border-radius:6px;">=0D=0A                                      =
+                  <span class=3D"mbl-hide">=0D=0A                          =
+                                  <a  href=3D"https://clicks.mail.flixbus.c=
+om/f/a/tikbh4L8m1gZpc1Z85BoTg~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6=
+_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDR=
+mft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5=
+vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ=
+-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV=
+3rGLtXeKA5nlNnrhMyd1mGwdGiFzXOGBYN9I4zqVDTAU_d1Xe_9Z5agvF0n3opzv5v6nm3Oloq-=
+vBCaIZRWclWGJvR_gvaR4DMeUkk18Wfl8Vq7tzScTkn-JbKFgplXxsUICUiW38q1EJnpb8d73zS=
+s_AGm227P7Q0MGs91SDBkhjoqbYAcbe5ctbWr2ThuChk85g0kmk7aUxNIESycAJQWT_dWo7Daxg=
+xeeKqjwb1z3-ViEcJESNm_M2S9G_VTi8V2sUTw3VzwZyDQbeZDQINSg5LoD2fwR3aSC0_jiYxIj=
+PYnxHB5_awtHLifIWsBQAvGOW7q0vFdu8IqRckrfImW1-fDz_Kpi1ImTLr545lITzl-9OloBO08=
+1RQAaPBUO84-MVLfr2VLhOOyGZBVjUWEYH7bN6vzwhx1zd0U5m94xIaddoMdKP3jt-8YUDB5cML=
+Somg-w~~" target=3D"_blank" style=3D"text-decoration: none;border: none;">=
+=0D=0A                                                                <img =
+class=3D"force-row" name=3D"Cont_4" src=3D"https://cdn.braze.eu/appboy/comm=
+unication/assets/image_assets/images/6ae0ce593e1af200d4d3309e/original.png=
+=3F1793117785" width=3D"290" alt=3D"" style=3D"width:290px;height:auto;disp=
+lay:block;margin:0px;border-radius: 6px;">=0D=0A                           =
+                                 </a>=0D=0A                                =
+                        </span>=0D=0A                                      =
+                  <!--[if !mso 9]><!-->=0D=0A                              =
+                          <span class=3D"mbl-show" style=3D"display:none;">=
+=0D=0A                                                            <a  href=
+=3D"https://clicks.mail.flixbus.com/f/a/bL01hqRXjkwXtqSKfZBMkw~~/AAAHahA~/u=
+bpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVzGFV9T-VKy_SB60CfASk7ueCBUu10c=
+66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp3f1IH_YCpfi9zDgRaic_LZOnAQQUG=
+liHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQSeTV4skI0ca9W3Ai1BGqpVxk7DsT=
+t0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1I69aIwrOMKBI7lX75PMjHuJgtqXC=
+Oh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeKA5nlNnrhMyd1mGwdGiFzXOGBYN9I4zqVDT=
+AU_d1Xe_9Z5agvF0n3opzv5v6nm3Oloq-vBCaIZRWclWGJvR_gvaR4DMeUkk18Wfl8Vq7tzScTk=
+n-JbKFgplXxsUICUiW38q1EJnpb8d73zSs_AGm227P7Q0MGs91SDBkhjoqbYAcbe5ctbWr2ThuC=
+hk85g0kmk7aUxNIESycAJQWT_dWo7DaxgxeeKqjwb1z3-ViEcJESNm_M2S9G_VTi8V2sUTw3Vzw=
+ZyDQbeZDQINSg5LoD2fwR3aSC0_jiYxIjPYnxHB5_awtHLifIWsBQAvGOW7q0vFdu8IqRckrfIm=
+W1-fDz_Kpi1ImTLr545lITzl-9OlAta8s2TejG9CRejEYZ5jpEfu6a1KNEIHHf0LnDIKaJwwepN=
+CYgnfVJtCDpo-MMgesTGcazsRkBNWEZmOlxkTQA~~" target=3D"_blank" style=3D"text-=
+decoration: none;border: none;">=0D=0A                                     =
+                           <img class=3D"force-row" name=3D"Cont_4" src=3D"=
+https://cdn.braze.eu/appboy/communication/assets/image_assets/images/6ae0ce=
+593e1af200d4d3309e/original.png=3F1793117785" alt=3D"" style=3D"width:100%;=
+height:auto;display:block;margin:0px;border-radius: 6px;">=0D=0A           =
+                                                 </a>=0D=0A                =
+                                        </span>=0D=0A                      =
+                                  <!--<![endif]-->                         =
+                               =0D=0A                                      =
+              </td></tr>=0D=0A                                            <=
+/table>=0D=0A                                        </th>=0D=0A           =
+                             <th class=3D"mob-stack bgColor_bg_primary_DM" =
+valign=3D"middle" style=3D"width:300px;padding:0;margin:0;background-color:=
+ #ffffff;vertical-align: middle;font-weight: 400;" width=3D"300">=0D=0A    =
+                                        <table role=3D"presentation" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0;font-f=
+amily: 'Roboto', Arial, sans-serif;width:100%;direction: ltr;" dir=3D"ltr">=
+=0D=0A                                                <tr>=0D=0A           =
+                                         <td class=3D"px-0 pt-18 color_cont=
+ent_primary_DM" valign=3D"center" style=3D"padding: 0 24px 0 0 ;width:100%;=
+color: #353535; font-family:Roboto,Arial,Sans-serif;font-size:16px;mso-line=
+-height:24px;line-height:1.5!important; text-align:left;vertical-align: cen=
+ter;">=0D=0A                                                        <p clas=
+s=3D"color_heading_font_DM" style=3D"margin:0;margin-bottom:4px;font-size:1=
+8px;line-height:1.3!important;font-weight: 700;color:#353535;">Alpine Abend=
+r=C3=B6te</p>=0D=0A                                                        =
+<p class=3D"color_content_primary_DM" style=3D"margin:0;">Umgeben von schne=
+ebedeckten Alpen wirkt diese bayrische Stadt in der Abendd=C3=A4mmerung noc=
+h malerischer. Beobachte den Abendhimmel und die warmen Lichter, die die tr=
+aditionellen H=C3=A4user und Stra=C3=9Fen strahlen lassen.</p>=0D=0A       =
+                                             </td>=0D=0A                   =
+                             </tr><tr>=0D=0A                               =
+                   <td class=3D"px-0 pt-18" style=3D"padding: 12px 24px 0 1=
+px ;">=0D=0A                                                      <table cl=
+ass=3D"force-row mbl-center" role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0">=0D=0A                                            =
+              <tr>=0D=0A                                                   =
+           <td class=3D"color_content_primary_DM borderSolid_button_seconda=
+ry_DM bgColor_bg_primary_DM" style=3D"padding: 0px;font-weight: 400;backgro=
+und-color: #ffffff;border-radius:6px;border:1px solid #97D700;font-family:R=
+oboto,Arial,Sans-serif;text-align:center;font-size:16px;mso-line-height-alt=
+:16px;line-height:1.5!important;min-width:140px;">=0D=0A                   =
+                                               <p class=3D"outlook-btn btn-=
+secondary" style=3D"margin:0px;font-family:Roboto,Arial,Sans-serif;font-siz=
+e:16px;mso-line-height-alt:16px;line-height:1.5!important;border-radius:6px=
+;">=0D=0A                                                                  =
+  <span class=3D"resetUnderline">=0D=0A                                    =
+                                  <a  class=3D"cta-btn color_content_primar=
+y_DM" target=3D"_blank" href=3D"https://clicks.mail.flixbus.com/f/a/6zPgPDs=
+cOYTPM4GhwwnhCQ~~/AAAHahA~/ubpTt-OY6u-otfiVkEHJZ8cwQeu29elBM6_rh2Vhn_1DlVzG=
+FV9T-VKy_SB60CfASk7ueCBUu10c66CxqTWsKI5TfP_nYhkrDpAP1OJwhJtDRmft87sFpxN6mp3=
+f1IH_YCpfi9zDgRaic_LZOnAQQUGliHSk9K0AGsuhE9jW-g0rTtdzqoXoRR_5vMgkxyr1-7OeiQ=
+SeTV4skI0ca9W3Ai1BGqpVxk7DsTt0CHOaSJcHSHsTlRukmJafYvhmIiQgwuQ-mS8-Vlb0XMPY1=
+I69aIwrOMKBI7lX75PMjHuJgtqXCOh8UChXThtxdsc5IaRYVgrmANq3bY1zcV3rGLtXeKA5nlNn=
+rhMyd1mGwdGiFzXOGBYN9I4zqVDTAU_d1Xe_9Z5agvF0n3opzv5v6nm3Oloq-vBCaIZRWclWGJv=
+R_gvaR4DMeUkk18Wfl8Vq7tzScTkn-JbKFgplXxsUICUiW38q1EJnpb8d73zSs_AGm227P7Q0MG=
+s91SDBkhjoqbYAcbe5ctbWr2ThuChk85g0kmk7aUxNIESycAJQWT_dWo7DaxgxeeKqjwb1z3-Vi=
+EcJESNm_M2S9G_VTi8V2sUTw3VzwZyDQbeZDQINSg5LoD2fwR3aSC0_jiYxIjPYnxHB5_awtHLi=
+fIWsBQAvGOW7q0vFdu8IqRckrfImW1-fDz_Kpi1ImTLr545lITzl-9OlPyeb_WChj10ZFNQ7sPv=
+-4q9y35lAXyyp2obrI5KxgGzhcjEdgwK1-aifHESo_nzAKm3sbG1vSKe5MplKiYI7uA~~" styl=
+e=3D"text-decoration: none; padding: 12px 12px; color: #353535; border-radi=
+us: 6px; display:inline-block;">=0D=0A                                     =
+                                     <span class=3D"color_content_primary_D=
+M" style=3D"mso-border-alt: 4px solid #ffffff;font-weight:500;">Besuche Gar=
+misch</span>=0D=0A                                                         =
+             </a>=0D=0A                                                    =
+                </span>=0D=0A                                              =
+                    </p> =0D=0A                                            =
+                  </td>=0D=0A                                              =
+            </tr>=0D=0A                                                    =
+      <!--[if mso]><tr><td style=3D"padding:0px;font-size: 1px;line-height:=
+ 1px;"><p style=3D"margin:0;font-size: 1px;line-height: 1px;">&nbsp;</p></t=
+r></td><![endif]-->=0D=0A                                                  =
+    </table>=0D=0A                                                  </td>=
+=0D=0A                                               </tr></table>=0D=0A   =
+                                       </th>=0D=0A                         =
+           </tr>=0D=0A                                </table>=0D=0A       =
+                     </td>  =0D=0A                          </tr>=0D=0A    =
+                </table>=0D=0A                </td>=0D=0A            </tr>=
+=0D=0A          </table>=0D=0A        </td>=0D=0A      </tr>=0D=0A  </table=
+><!-- Spacer -->=0A    =0A        <div class=3D"bgColor_bg_primary_DM space=
+r-" style=3D"margin:0px;padding:0px;font-size:20px;line-height:20px;mso-lin=
+e-height-rule:exactly;background-color: #ffffff">=0D=0A    <p class=3D"spac=
+er-" style=3D"margin:0px;font-size:20pxpx;line-height:20px;">&nbsp;</p>=0D=
+=0A</div>=0A=0A    =0A=0A=0A    <!-- Box_Img96_H4_Paragraph -->=0A        =
+=0D=0A=0D=0A  =0D=0A=0D=0A  =0D=0A    =0D=0A      =0D=0A    =0D=0A  =0D=0A =
+   =0D=0A      =0D=0A    =0D=0A  =0D=0A=0D=0A=0D=0A=0D=0A<table border=3D"0=
+" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"container" st=
+yle=3D"width: 640px; max-width: 640px;" align=3D"center" role=3D"presentati=
+on">=0D=0A    <tr>=0D=0A        <td class=3D"mbl-padding bgColor_bg_primary=
+_DM" style=3D"padding:0px 24px;width:100%; background-color: #ffffff;">=0D=
+=0A            <table role=3D"presentation" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%">=0D=0A                <tr>=0D=0A          =
+          <td class=3D"borderSolid_line_primary_DM bgColor_bg_primary_DM fa=
+de" style=3D"padding:0px;border: 1px solid #c8c8c8;border-radius:6px;backgr=
+ound-color:#ffffff">=0D=0A                        <table role=3D"presentati=
+on" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">=0D=0A =
+                           <tr>=0D=0A                                <td va=
+lign=3D"top" style=3D"padding:0px;vertical-align: top;width:96px;border-top=
+-left-radius:6px;border-bottom-left-radius:6px;">=0D=0A                    =
+                <p style=3D"margin:0px;margin-top:12px;margin-left:12px;mar=
+gin-bottom:12px;">=0D=0A                                        <a  href=3D=
+"https://clicks.mail.flixbus.com/f/uni-flix/XUlvzvR5qL0MMTi4DebwSg~~/AAAHah=
+A~/4RtnJvl-6NalPy9lr_eUHRZD3zoxXnqDdTJP3k2BM3Y1qn2rQ2HHTn2sepiHrkoRWroSLmfB=
+9n2GVbYjbuAR0j2XfZvpJX6CU00O7BTarh78TCuFrDvqG4h_4eYUwxR8lmyCBzno3GJpQBXrADW=
+ZK7p0-dcA4XhVHfWjb8pOV0RvtAKqgfk018zr1I56klpgqNgIuBFTb0651fL4lWktpTYKBzjr4o=
+7LZRtvfMRJqyeuBXfD9XXbc_RC5T0nqU-ZmkYEadnZgVnic70kI7ttRpBS-QwByQkAFKdf5G3Fl=
+XtbE5_JjBIukn2fA57-03KftVE537MTidB2Mz7i1do-FfvSEfu87jFxtrpYSX8OlqklVSt18Xgp=
+wgIf72y_ebyqByKMyvEsZRY4_ckX8Jx-CE4P8-fmb9W0-xbCg9wM3zQkovlR1EnbPiFXf8D6zf0=
+UBIbyQYDEyBI3zJWl2l5e7Bwkkf1KhEyQHcrgO8-ZK6nJ_EA6bJOgUyVH_dCKO9eqBfJoVQHm6k=
+8D7DC88Brr__xtaVh2g1xnbc1kbF9Vw-Z_OKPjVxTX7V6h_hHHWwWQyTzOMmZ-VuqTdcb_qIOiD=
+YshqbYvJtl9prKJn7u_Oz8Hdnb7FcStG_cx1Lmrfg2pBXm2PlYqHirTCKz4IImQuVzNVvt2vdCN=
+XQf0AAbFId54_tK-UAGl5my6devHd_cFPjxclg6a4l62thjRAerU_lYh3sXrNJHAt8rRBLZsmO8=
+QHjZJelNvu55jr8BONryp" target=3D"_blank" style=3D"color:inherit;text-decora=
+tion:none;">=0D=0A                                            <img src=3D"h=
+ttps://cdn.braze.eu/appboy/communication/assets/image_assets/images/67fb8a0=
+fe543fa0075d0bfb3/original.png=3F1744538127" alt=3D"" style=3D"width:72px;m=
+in-width:72px;max-width:72px;height:auto;outline:none;border:none;display:i=
+nline-block;margin:0;border-top-left-radius:6px;border-bottom-left-radius:6=
+px;" width=3D"72">=0D=0A                                        </a>=0D=0A =
+                                   </p>=0D=0A                              =
+  </td>=0D=0A                                <td valign=3D"middle" class=3D=
+"color_content_primary_DM" style=3D"padding:0px 0px 0px 12px;vertical-align=
+:middle;font-family: 'Roboto', Arial, sans-serif;text-align: left;font-size=
+:16px;line-height:125%;line-height:1.5!important;color:#353535;width: 100%;=
+">=0D=0A                                    <p class=3D"color_content_prima=
+ry_DM" style=3D"margin:0;margin-top:12px;margin-bottom:12px;margin-right:12=
+px;">=0D=0A                                        <a class=3D"color_conten=
+t_primary_DM" href=3D"https://clicks.mail.flixbus.com/f/uni-flix/TjDBQ1pqkH=
+dBB37G0jkNog~~/AAAHahA~/4RtnJvl-6NalPy9lr_eUHRZD3zoxXnqDdTJP3k2BM3Y1qn2rQ2H=
+HTn2sepiHrkoRWroSLmfB9n2GVbYjbuAR0j2XfZvpJX6CU00O7BTarh78TCuFrDvqG4h_4eYUwx=
+R8lmyCBzno3GJpQBXrADWZK7p0-dcA4XhVHfWjb8pOV0RvtAKqgfk018zr1I56klpgqNgIuBFTb=
+0651fL4lWktpTYKBzjr4o7LZRtvfMRJqyeuBXfD9XXbc_RC5T0nqU-ZmkYEadnZgVnic70kI7tt=
+RpBS-QwByQkAFKdf5G3FlXtbE5_JjBIukn2fA57-03KftVE537MTidB2Mz7i1do-FfvSEfu87jF=
+xtrpYSX8OlqklVSt18XgpwgIf72y_ebyqByKMyvEsZRY4_ckX8Jx-CE4P8-fmb9W0-xbCg9wM3z=
+QkovlR1EnbPiFXf8D6zf0UBIbyQYDEyBI3zJWl2l5e7Bwkkf1KhEyQHcrgO8-ZK6nJ_EA6bJOgU=
+yVH_dCKO9eqBfJoVQHm6k8D7DC88Brr__xtaVh2g1xnbc1kbF9Vw-Z_OKPjVxTX7V6h_hHHWwWQ=
+yTzOMmZ-VuqTdcb_qIOiDYshqbYvJtl9prKJn7u_Oz8Hdnb7FcStG_cx1Lmrfg2pBXm2PlYqHir=
+TCKz4IImQuVzNVvt2vdCNXQf0AAbFId6qVGNpnZgQiwylOWqbJTPOtiHH7DrV71VC_22s7trURX=
+lSXvhkjIhI_s3119YGCfxlJwMjBX2X7-UxGsZokQgr" target=3D"_blank" style=3D"colo=
+r:#353535;text-decoration:none;width:100%; height:100%;display: block;">=0D=
+=0A                                            <strong class=3D"color_headi=
+ng_font_DM" style=3D"font-weight: 700;color:#353535;">Noch nicht das Richti=
+ge gefunden=3F</strong><br>=0D=0A                                          =
+  <span class=3D"color_content_primary_DM" style=3D"color:#353535;">Entdeck=
+e unser Streckennetz mit =C3=BCber 8.000 Zielen und triff Deine Wahl.</span=
+>=0D=0A                                        </a>=0D=0A                  =
+                  </p>=0D=0A                                </td>=0D=0A    =
+                            <td valign=3D"middle" style=3D"padding:0px;widt=
+h:36px;vertical-align: middle;border-top-right-radius:6px;border-bottom-rig=
+ht-radius:6px;">=0D=0A                                    <a  href=3D"https=
+://clicks.mail.flixbus.com/f/uni-flix/eYMhoSWM5ufAsmudPs3v4Q~~/AAAHahA~/4Rt=
+nJvl-6NalPy9lr_eUHRZD3zoxXnqDdTJP3k2BM3Y1qn2rQ2HHTn2sepiHrkoRWroSLmfB9n2GVb=
+YjbuAR0j2XfZvpJX6CU00O7BTarh78TCuFrDvqG4h_4eYUwxR8lmyCBzno3GJpQBXrADWZK7p0-=
+dcA4XhVHfWjb8pOV0RvtAKqgfk018zr1I56klpgqNgIuBFTb0651fL4lWktpTYKBzjr4o7LZRtv=
+fMRJqyeuBXfD9XXbc_RC5T0nqU-ZmkYEadnZgVnic70kI7ttRpBS-QwByQkAFKdf5G3FlXtbE5_=
+JjBIukn2fA57-03KftVE537MTidB2Mz7i1do-FfvSEfu87jFxtrpYSX8OlqklVSt18XgpwgIf72=
+y_ebyqByKMyvEsZRY4_ckX8Jx-CE4P8-fmb9W0-xbCg9wM3zQkovlR1EnbPiFXf8D6zf0UBIbyQ=
+YDEyBI3zJWl2l5e7Bwkkf1KhEyQHcrgO8-ZK6nJ_EA6bJOgUyVH_dCKO9eqBfJoVQHm6k8D7DC8=
+8Brr__xtaVh2g1xnbc1kbF9Vw-Z_OKPjVxTX7V6h_hHHWwWQyTzOMmZ-VuqTdcb_qIOiDYshqbY=
+vJtl9prKJn7u_Oz8Hdnb7FcStG_cx1Lmrfg2pBXm2PlYqHirTCKz4IImQuVzNVvt2vdCNXQf0AA=
+bFId5xOSm2Yo6ZeVXNQgdXIH3DZTDIqblH9EiO7WTXbHcIHsTezv4OXTlMmuxO_wC7tcR2972fM=
+3AirJuKGJ5yzJhM" target=3D"_blank" style=3D"color:inherit;text-decoration:n=
+one;">=0D=0A                                        <img src=3D"https://cdn=
+.braze.eu/appboy/communication/assets/image_assets/images/6702f8e9dc86d800=
+65bb4eb8/original.png=3F1728248040" alt=3D"arrow icon" style=3D"width:36px;=
+min-width:36px;max-width:36px;height:auto;outline:none;border:none;display:=
+inline-block;margin:0;border-top-right-radius:6px;border-bottom-right-radiu=
+s:6px;" width=3D"36">=0D=0A                                    </a>=0D=0A  =
+                              </td>=0D=0A                            </tr>=
+=0D=0A                        </table>=0D=0A                    </td>=0D=0A=
+                </tr>=0D=0A                <!--[if mso]><tr><td style=3D"pa=
+dding:0px;font-size: 1px;line-height: 1px;"><p style=3D"margin:0;font-size:=
+ 1px;line-height: 1px;">&nbsp;</p></tr></td><![endif]-->=0D=0A            <=
+/table>=0D=0A        </td>=0D=0A      </tr>=0D=0A</table>=0A=0A    <!-- Spa=
+cer_Dynamic -->=0A=0A        =0A        <div class=3D"bgColor_bg_primary_DM=
+ spacer-" style=3D"margin:0px;padding:0px;font-size:20px;line-height:20px;m=
+so-line-height-rule:exactly;background-color: #ffffff">=0D=0A    <p class=
+=3D"spacer-" style=3D"margin:0px;font-size:20pxpx;line-height:20px;">&nbsp;=
+</p>=0D=0A</div>=0A=0A    <!-- Signature -->=0A=0A        <table border=3D"=
+0" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"container" s=
+tyle=3D"width: 640px; max-width: 640px;" align=3D"center" role=3D"presentat=
+ion">=0D=0A  <tr>=0D=0A      <td align=3D"center" class=3D"bgColor_bg_secon=
+dary_DM" style=3D"padding:0;background-color: #f7f7f7;">=0D=0A        <tabl=
+e role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" style=3D"border-spacing:0;font-family: 'Roboto', Arial, sans-s=
+erif;">=0D=0A          <tr>=0D=0A              <td class=3D"mbl-padding bgC=
+olor_bg_primary_DM" style=3D"padding:0px 24px;width:100%; background-color:=
+ #ffffff;">=0D=0A                  <table role=3D"presentation" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">=0D=0A                =
+      <tr>=0D=0A                          <td class=3D"color_content_primar=
+y_DM" style=3D"padding:0;font-family: 'Roboto', Arial, sans-serif;text-alig=
+n: left;font-size:16px;mso-line-height:24px;line-height:1.5!important;color=
+:#353535;font-weight: 400;">=0D=0A                              <p class=3D=
+"color_content_primary_DM" style=3D"margin:0;font-weight: 400;font-family: =
+'Roboto', Arial, sans-serif;font-size:16px;mso-line-height:24px;line-height=
+:1.5!important;color:#353535;">=0D=0A                                  Wir =
+freuen uns, Dich an Bord begr=C3=BC=C3=9Fen zu d=C3=BCrfen.<br>Dein Flix Te=
+am=0D=0A                              </p>=0D=0A                          <=
+/td>=0D=0A                      </tr>=0D=0A                  </table>=0D=0A=
+              </td>=0D=0A          </tr>=0D=0A        </table>=0D=0A      <=
+/td>=0D=0A  </tr>=0D=0A</table>=0A=0A    <!-- End Content -->=0A=0A    <!--=
+ Mobile App -->=0D=0A=0D=0A  =0D=0A=0D=0A  =0D=0A    =0D=0A      =0D=0A    =
+=0D=0A  =0D=0A    =0D=0A      =0D=0A    =0D=0A  =0D=0A=0D=0A=0D=0A=0D=0A<ta=
+ble role=3D"presentation" border=3D"0" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" class=3D"container" style=3D"width: 640px; max-width: 640px;=
+" align=3D"center">=0D=0A    <tr>=0D=0A        <td align=3D"center" class=
+=3D"bgColor_bg_secondary_DM" style=3D"padding:0;background-color: #f7f7f7;w=
+idth:100%;">=0D=0A          <table role=3D"presentation" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"width:100%;border-sp=
+acing:0;font-family: 'Roboto', Arial, sans-serif;">=0D=0A            <tr>=
+=0D=0A                <td class=3D"mbl-padding bgColor_bg_primary_DM" style=
+=3D"padding:36px 24px 0;width:100%; background-color: #ffffff;">=0D=0A     =
+               <table role=3D"presentation" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" style=3D"border-spacing: 0; width: 100%;" width=3D"100%">=
+=0D=0A                        <tr>=0D=0A                            <td cla=
+ss=3D"bgColor_bg_secondary_DM" style=3D"padding: 24px 0; font-family: Robot=
+o, Arial, sans-serif; font-size:16px;line-height:125%;line-height:1.5!impor=
+tant; text-align: center; background-color: #f7f7f7;border-top-left-radius:=
+ 6px;border-radius:6px;">=0D=0A                                <table role=
+=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D=
+"border-spacing: 0; width: 100%;" width=3D"100%">=0D=0A                    =
+                <tr>=0D=0A                                        <td align=
+=3D"center" class=3D"color_heading_font_DM" style=3D"padding:0; font-family=
+: Roboto, Arial, sans-serif; font-size:16px;line-height:125%;line-height:1.=
+5!important; text-align: center; font-weight: 700; color:#353535;">=0D=0A  =
+                                          <p style=3D"margin:0;">Lade die F=
+lixBus App herunter!</p>                                            =0D=0A =
+                                       </td>=0D=0A                         =
+           </tr>=0D=0A                                    <tr>=0D=0A       =
+                                 <td align=3D"center" class=3D"bgColor_bg_s=
+econdary_DM" style=3D"padding: 5px 0;background-color: #f7f7f7;">=0D=0A    =
+                                        <table role=3D"presentation" align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"borde=
+r-spacing: 0;">                                               =0D=0A       =
+                                         <tr>=0D=0A                        =
+                            <td style=3D"padding:0;">=0D=0A                =
+                                        <a href=3D"https://clicks.mail.flix=
+bus.com/f/a/jcFUEUpxgTQu5pRao5kGMw~~/AAAHahA~/T9CHnz_rkOQr58FHr4o1oMvqkUbN5=
+kMblbGMTb5QSgknpNV3BFz8S_JdhJuZT0Vtxbu27F89yPUhvUDG74YlYD_FlMrmfMDua7eI8zzP=
+XKYTXZpaI1UmhbPQQHPTN3xQfmEFvGLAPv4v-EmFDtZvAdbnenqNXSfyGsvNsE_0gvUgA-vI9Do=
+FMFsLU6bvo3GgzgoKo-ui28bAQCWdofDi0vTycUnKexU0UM3hyuUj47K9nSrDhXVRYsi-R-yWd3=
+NQCY9uCJAfzbV7IT5PWvECwmdkLpXYL9_jhSUmE8UkuiTy_6h9mwVGtTmN6QbPV71uUTnBDZAYZ=
+FuTzzf2Fc4wF3gpA7dFASx4M2pyFoJk2gn5ymL_mVFG2cnVFyoJZtGNCRJVbH_Am0gi_6EIshIy=
+qBgsltN8C7_9oKfl7X01ERoybYGOnYm7H1AF2UwSSSVtO6jiPRFiRyQhm7Glt9u2XpoU1b2qL3j=
+LV4MFDFrUYmSUOXdW_TLgQ-VGBYeOBmccSmsR83JAxTEZqUzvdmttZN2Dv6lPGlHoA2nZ9i7jYi=
+GX3cHsn3Llg1FvRIST0St8umVLNq-tshgie1hjGLDSZHSnjqHZZvOtxQY7Qq7XQmocKN-pIb9YI=
+N4yDLkVYmciMbQgxocII6w4om8Xoo2NC-gVIzj5-UxC1aYXtinjXOmbwZVWETpLG_u9EJSIRb9P=
+RxDnP0I72lWR2KMK0IU-0w~~" target=3D"_blank">=0D=0A                         =
+                                   <img alt=3D"Google Store" border=3D"0" h=
+eight=3D"38" src=3D"https://cdn.braze.eu/appboy/communication/assets/image_=
+assets/images/66e813378408b72adedf76b8/original.png=3F1726485303" style=3D"=
+display: block; width: auto; height: 38px;" width=3D"auto">=0D=0A          =
+                                              </a>=0D=0A                   =
+                                 </td>=0D=0A                               =
+                     <td style=3D"padding:0;width:10px;" width=3D"10"><p st=
+yle=3D"margin:0;">&nbsp;</p></td>=0D=0A                                    =
+                <td style=3D"padding:0;">=0D=0A                            =
+                            <a href=3D"https://clicks.mail.flixbus.com/f/a/=
+jcFUEUpxgTQu5pRao5kGMw~~/AAAHahA~/T9CHnz_rkOQr58FHr4o1oMvqkUbN5kMblbGMTb5QS=
+gknpNV3BFz8S_JdhJuZT0Vtxbu27F89yPUhvUDG74YlYD_FlMrmfMDua7eI8zzPXKYTXZpaI1Um=
+hbPQQHPTN3xQfmEFvGLAPv4v-EmFDtZvAdbnenqNXSfyGsvNsE_0gvUgA-vI9DoFMFsLU6bvo3G=
+gzgoKo-ui28bAQCWdofDi0vTycUnKexU0UM3hyuUj47K9nSrDhXVRYsi-R-yWd3NQCY9uCJAfzb=
+V7IT5PWvECwmdkLpXYL9_jhSUmE8UkuiTy_6h9mwVGtTmN6QbPV71uUTnBDZAYZFuTzzf2Fc4wF=
+3gpA7dFASx4M2pyFoJk2gn5ymL_mVFG2cnVFyoJZtGNCRJVbH_Am0gi_6EIshIyqBgsltN8C7_9=
+oKfl7X01ERoybYGOnYm7H1AF2UwSSSVtO6jiPRFiRyQhm7Glt9u2XpoU1b2qL3jLV4MFDFrUYmS=
+UOXdW_TLgQ-VGBYeOBmccSmsR83JAxTEZqUzvdmttZN2Dv6lPGlHoA2nZ9i7jYiGX3cHsn3Llg1=
+FvRIST0St8umVLNq-tshgie1hjGLDSZHSnjqHZZvOtxQY7Qq7XQmocKN-pIb9YIN4yDLkVYmciM=
+bQgxocII6w4om8Xoo2NC-gVIzj5-UxC1aYXtinjXOmbwZVWETpLG_u9EJSIRb9PRxDnP0I72lWR=
+2KMK0IU-0w~~" target=3D"_blank">=0D=0A                                     =
+                       <img alt=3D"Apple Store" border=3D"0" height=3D"38" =
+src=3D"https://cdn.braze.eu/appboy/communication/assets/image_assets/images=
+/66e81337d2a09a2ec2ebc12f/original.png=3F1726485302" style=3D"display: bloc=
+k; width: auto; height: 38px;" width=3D"auto">=0D=0A                       =
+                                 </a>=0D=0A                                =
+                    </td>=0D=0A                                            =
+    </tr>=0D=0A                                            </table>=0D=0A  =
+                                      </td>=0D=0A                          =
+          </tr>=0D=0A                                    <tr>=0D=0A        =
+                                <td align=3D"center" class=3D"bgColor_bg_se=
+condary_DM" style=3D"padding: 10px 0 0 0;background-color: #f7f7f7;">=0D=0A=
+                                            <table role=3D"presentation" al=
+ign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"bo=
+rder-spacing: 0;">                                                =0D=0A   =
+                                             <tr><td style=3D"padding: 0 5p=
+x 0 0;">=0D=0A                                                        <a hr=
+ef=3D"https://clicks.mail.flixbus.com/f/a/9SgRucbcSk3GZaar2WqF6Q~~/AAAHahA~=
+/h6P1LeeCDNZIuFlii4vN6mHpQL3JgavyidIjX9vFypZg00qRWIJo2QbhIjpy7tX289FxJ_XkIC=
+j6b-qHyWG4EnpQkZUnRqz3TJC5Pf_mXzRz9Uv3WA1yK7AKPFM3ApCbz-CMNybeVFD9eYxMztw_f=
+w~~" target=3D"_blank">=0D=0A                                              =
+              <img alt=3D"Facebook" height=3D"36" src=3D"https://cdn.braze.=
+eu/appboy/communication/assets/image_assets/images/66e812f3c800a328ff25b6ea=
+/original.png=3F1726485235" style=3D"width: 36px; height: 36px; display: bl=
+ock; border: 0;" width=3D"36"> =0D=0A                                      =
+                  </a>=0D=0A                                               =
+     </td><td style=3D"padding: 0 5px 0 0;">=0D=0A                         =
+                               <a href=3D"https://clicks.mail.flixbus.com/f=
+/a/PdxoBb71hX-EG_emL22yjQ~~/AAAHahA~/6E-VxNKdxZuE-9WS1Re3cUswywuN4UOU1in7B7=
+U9OBu1dWfxCdPvXG_0v8yhFf0w6HviYVbmsCysEj-RaOjqo9KH-fia8brbkJPnS8I8kBAZBrgig=
+Y5Bw9-k9iDBPekuGvXYkqhtRdO4rP1mOgpbPQ~~" target=3D"_blank">=0D=0A          =
+                                                  <img alt=3D"Instagram" he=
+ight=3D"36" src=3D"https://cdn.braze.eu/appboy/communication/assets/image_a=
+ssets/images/66e812f3d2a09a2ec2ebbd04/original.png=3F1726485235" style=3D"w=
+idth: 36px; height: 36px; display: block; border: 0;" width=3D"36"> =0D=0A =
+                                                       </a>=0D=0A          =
+                                          </td><td style=3D"padding: 0 5px =
+0 0;">=0D=0A                                                        <a href=
+=3D"https://clicks.mail.flixbus.com/f/a/yz49GTsJuWnrFTeij99OUw~~/AAAHahA~/V=
+7b1F_pWOgSg-Ss67rC-6jYyHQz-x1ZIDygAkUgc2JMlZLRUzuCE2h9EczZce_lNfjP4QDZdjK5z=
+M-N1KNgpHSVCkR0qGur7n-MIMWC0QfQT1e4nUKXUxg0FmgQgJRMdRP7mzjXZdugEqXEs5oC1aZ-=
+lvcaKAw3rK2aExug4_5M~" target=3D"_blank">=0D=0A                            =
+                                <img alt=3D"Youtube" height=3D"36" src=3D"h=
+ttps://cdn.braze.eu/appboy/communication/assets/image_assets/images/66e812f=
+37dcd052e7a28b744/original.png=3F1726485235" style=3D"width: 36px; height: =
+36px; display: block; border: 0;" width=3D"36"> =0D=0A                     =
+                                   </a>=0D=0A                              =
+                      </td><td style=3D"padding: 0 5px 0 0;">=0D=0A        =
+                                                <a href=3D"https://clicks.m=
+ail.flixbus.com/f/a/otk3nkqdO1R8UFSzhIrFdw~~/AAAHahA~/_85_9yRITXw70WOfEmkD_=
+58JQqFkL3tL6HbOw5HEQGQgLp_WPwvbwjmXCF_tT2cjJ-0fFVeBMZQ29GeAmVD9IgD-eQwOZo0z=
+dp2m7HyrLKg0Hpz8NSZu5at9hs5ABShNQt9vBZn5T4v01fwYD-LqNX62rR73y1dDlmrNd-A2PyY=
+~" target=3D"_blank">=0D=0A                                                =
+            <img alt=3D"LinkedIn" height=3D"36" src=3D"https://cdn.braze.eu=
+/appboy/communication/assets/image_assets/images/66e812f31534d82d2d66624f/o=
+riginal.png=3F1726485235" style=3D"width: 36px; height: 36px; display: bloc=
+k; border: 0;" width=3D"36"> =0D=0A                                        =
+                </a>=0D=0A                                                 =
+   </td><td style=3D"padding: 0 5px 0 0;">=0D=0A                           =
+                             <a href=3D"https://clicks.mail.flixbus.com/f/a=
+/DttujAfUCv-xRiQzeFMOvQ~~/AAAHahA~/lJ75mUxRsRZKa-ZPdLzKTjUnrYW-oAcd-bTvjOlx=
+CeyKFUpu9VBOMA-EuFbwt7PTf_OTl1pMON5_WhW1PEai9-CxQ2yU1d7aqMsjjFEmOTrhjSEdirq=
+Vc9SrC4TQ2VBPEIBf_wSqJSQB31gM-9VQzg~~" target=3D"_blank">=0D=0A            =
+                                                <img alt=3D"TikTok" height=
+=3D"36" src=3D"https://cdn.braze.eu/appboy/communication/assets/image_asset=
+s/images/66e812f3a401dd2efe0958c6/original.png=3F1726485235" style=3D"width=
+: 36px; height: 36px; display: block; border: 0;" width=3D"36"> =0D=0A     =
+                                                   </a>=0D=0A              =
+                                      </td></tr>=0D=0A                     =
+                       </table>=0D=0A                                      =
+  </td>=0D=0A                                    </tr>=0D=0A               =
+                 </table>=0D=0A                            </td>=0D=0A     =
+                   </tr>=0D=0A  =0D=0A                    </table>=0D=0A   =
+             </td>=0D=0A            </tr>=0D=0A          </table>=0D=0A    =
+    </td>=0D=0A      </tr>=0D=0A  </table>=0A=0A    <!-- Footer -->=0A     =
+   =0D=0A=0D=0A=0D=0A=0D=0A<table border=3D"0" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"container" style=3D"width: 640px; max-wid=
+th: 640px;" align=3D"center" role=3D"presentation">=0D=0A  <tr>=0D=0A      =
+<td align=3D"center" class=3D"bgColor_bg_secondary_DM" style=3D"background-=
+color: #f7f7f7;padding:0px;">=0D=0A          <table role=3D"presentation" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"bor=
+der-spacing:0;font-family: 'Roboto', Arial, sans-serif;">=0D=0A            =
+  <tr>=0D=0A                  <td class=3D"mbl-padding pb-12 mbl-border_0 m=
+bl-radius_0 bgColor_bg_primary_DM" style=3D"padding:12px 24px;width:100%; b=
+ackground-color: #ffffff;border-bottom-left-radius: 6px; border-bottom-righ=
+t-radius: 6px;">=0D=0A                      <table role=3D"presentation" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">=0D=0A       =
+                   <tr>=0D=0A                              <td class=3D"col=
+or_content_secondary_DM bgColor_bg_secondary_DM mbl-padding" style=3D"paddi=
+ng: 24px;font-family: 'Roboto', Arial, sans-serif;text-align: center;font-s=
+ize:14px;line-height:114%;line-height:1.28!important;color:#646464;backgrou=
+nd-color: #f7f7f7;border-radius:6px;">=0D=0A                               =
+ =0D=0A                                  <p class=3D"color_content_secondar=
+y_DM" style=3D"margin:0;">Wir schicken unsere E-Mails an folgende E-Mail-Ad=
+resse: <span class=3D"linkReset"><a href=3D"mailto:kunde@example.com" targe=
+t=3D"_blank" name=3D"mailaddress" class=3D"linkReset color_content_secondar=
+y_DM" style=3D"color:#646464;text-decoration:none;">kunde@example.com</a></=
+span></p>=0D=0A=0D=0A=0D=0A=0D=0A=0D=0A                                   =
+=0D=0A                                  =0D=0A=0D=0A=0D=0A                 =
+                 =0D=0A=0D=0A                                  =0D=0A=0D=0A=
+                                  =0D=0A=0D=0A                             =
+=0D=0A=0D=0A                              =0D=0A                           =
+       <p class=3D"color_content_secondary_DM" style=3D"margin:0;">=0D=0A  =
+                                  Du erh=C3=A4ltst diese Produktempfehlunge=
+n auf Basis des =C2=A7 7 Absatz 3 UWG und kannst der Verwendung Deiner E-Ma=
+il-Adresse jederzeit durch eine=0D=0A                                   <a =
+href=3D"https://clicks.mail.flixbus.com/f/a/jNbndPCIS925385qMpVNTw~~/AAAHah=
+A~/CPKFGsL0qkN30B0Q4JI5bqLEJgCP-9eODkJR_JgtFVwgqsY8TaMt1EmI3TXoDAM_DPwEv-5V=
+I_RYgmN8etqMwNnYYBXNoUSH8OLofODqmNqLC-Q9iSD1RLeLBJT7ABjs5S9fvGIWTGrooQ0bjvL=
+4X41Yc2JRpziLtFfszbfaK9COk7kI6_AoTwMplb5FC1n0qKaaLGTNieeWUOboMnElueXFKa_a6R=
+wsLDcITNjAh764DCKlY30PDdkN9Y2aK-8G6DgJUTLiTxzK88QKANf3p9quHpoh_wJ6FwnEjEIH_=
+AZDqCVi8LX_NfV6D_FFxgBPpSa2g2cmUXR_5ooZZixYjotVttLQJs-WMpCPl4HZi5RBzuwk3le8=
+MmqLmPiLuuT0H5OYRBde4dNYAalEUSmN4fbP1cRwbKBEtoGUIU_l4yQ~" target=3D"_blank"=
+ name=3D"Unsubscribe link" class=3D"color_content_secondary_DM" style=3D"co=
+lor:#646464;text-decoration:underline;">Abmeldung</a> =0D=0A               =
+                       =0D=0A                                      oder ein=
+e E-Mail an  <a href=3D"mailto:unsubscribe@flixbus.com" target=3D"_blank" n=
+ame=3D"Unsubscribe mail" class=3D"color_content_secondary_DM" style=3D"colo=
+r:#646464;text-decoration:underline;">unsubscribe@flixbus.com</a>  widerspr=
+echen. Abgesehen von den =C3=9Cbermittlungskosten f=C3=BCr die E-Mail nach =
+den Basistarifen, also Deinem schon vorhandenen Internet-Vertrag, fallen ke=
+ine Kosten an.=0D=0A                                      =0D=0A           =
+                       </p>=0D=0A                                  =0D=0A  =
+                                <p class=3D"color_content_secondary_DM" sty=
+le=3D"margin:0;">Bei Fragen unterst=C3=BCtzen wir Dich gerne =C3=BCber unse=
+ren <a href=3D"https://clicks.mail.flixbus.com/f/a/UmOfqWi8hfv3ghjOB3ixlQ~~=
+/AAAHahA~/wDfVn3G1hJB5NNGAP2PFRo_n6A8cOMYdqdQp3ocK7LvtFqE7F9WshfxSdyveauK-Z=
+fspYNk5FFYFi-8LuYnWlZoKFzHPoD_kM5n4ZXip4sD0X_bsUMmV51XQ2kWugnjlZHlXQo4GQK6V=
+AkCEEtTNBw~~" target=3D"_blank" name=3D"Help section link" class=3D"color_c=
+ontent_secondary_DM" style=3D"color:#646464;text-decoration:underline;">Hil=
+febereich.</a></p>=0D=0A                                  <br><p class=3D"c=
+olor_content_secondary_DM" style=3D"margin:0;"> Copyright =C2=A9 2026 | Fli=
+x SE | Friedenheimer Br=C3=BCcke 16, 80639 M=C3=BCnchen |  All rights reser=
+ved | <a href=3D"https://clicks.mail.flixbus.com/f/a/5xoPGI7lFPjAvWh_3c4RyA=
+~~/AAAHahA~/wDfVn3G1hJB5NNGAP2PFRjx51chz040783Geo_zutf4LwWAxktom0MW2Qjt55As=
+5OPF4zvIUCXmF_ymMHsBDIY1RcFHLwJPvHCpCgZ_AACE9GgmyPxC7t5OhnYNx9RyMNi3huFbf0_=
+lZ-tZypQkZxQ~~" target=3D"_blank" class=3D"color_content_secondary_DM" styl=
+e=3D"color:#646464;text-decoration:underline;">Impressum</a> | <a href=3D"h=
+ttps://clicks.mail.flixbus.com/f/a/4gEZkMn94oggMPF73vb-zw~~/AAAHahA~/h6P1Le=
+eCDNZIuFlii4vN6kleYSVNhvBLsjKzdP2zTu2sy78YxbRuIwIC497XZN73RKB66eL__YkUvy55B=
+lKcNtURjITSMJyxD4ma_r4ojvNur-SPJX1i1EpvxConsxqGkTwmq47BVehQDwAKu4HQKg~~" ta=
+rget=3D"_blank" class=3D"color_content_secondary_DM" style=3D"color:#646464=
+;text-decoration:underline;">Datenschutz</a></p>=0D=0A                     =
+           </td>=0D=0A                          </tr>=0D=0A                =
+      </table>=0D=0A                  </td>=0D=0A              </tr>=0D=0A =
+         </table>=0D=0A      </td>=0D=0A  </tr>=0D=0A</table>=0A=0A        =
+        </div>=0D=0A                <!--[if mso]>=0D=0A                    =
+</table>=0D=0A                <![endif]-->=0D=0A            </td>=0D=0A    =
+    </tr>=0D=0A    </table>=0D=0A    <table role=3D"presentation" cellpaddi=
+ng=3D"0" cellspacing=3D"0" border=3D"0" class=3D"mbl-hide" style=3D"border-=
+spacing:0;font-family:Roboto,Helvetica,Arial,Sans-serif;color:#ffffff;">=0D=
+=0A        <tr>=0D=0A            <td height=3D"1" class=3D"mbl-hide" style=
+=3D"min-width:640px;font-size:0px;line-height:0px;padding-top:0;padding-bot=
+tom:0;padding-right:0;padding-left:0;">=0D=0A                <img class=3D"=
+mbl-hide" height=3D"1" src=3D"https://cdn.braze.eu/appboy/communication/ass=
+ets/image_assets/images/6780fb849941d50064491c27/original.png=3F1736506244"=
+ style=3D"min-width:640px;border:none;border-style:none;-ms-interpolation-m=
+ode:bicubic;border-width:0;" alt=3D"" />              =0D=0A            </t=
+d>=0D=0A        </tr>=0D=0A    </table>=0D=0A=0D=0A<img border=3D"0" width=
+=3D"1" height=3D"1" alt=3D"" src=3D"https://clicks.mail.flixbus.com/q/mQOMW=
+EaBcPMZxpXzwFfm4A~~/AAAHahA~/jUX0sfHip0_kVEMwjtMAguUgp5JwXD17Qbz_kPiwkL_eEi=
+-AUxEQ7jcf708Lgjtj99-dzEeXOJ_FmrFujnRugg~~">=0D=0A</body>=0D=0A=0D=0A</html=
+>
+--_----cTH3NcbxVy5n2XVYZ+k/XA===_04/1E-24500-8CC74FA6--
+

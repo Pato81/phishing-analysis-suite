@@ -1,0 +1,25 @@
+From: Example Store <orders@example-store.de>
+To: kunde@example.com
+Subject: Bestellbestaetigung 5001
+Date: Wed, 11 Nov 2026 09:00:00 +0100
+Authentication-Results: mx; spf=pass; dkim=pass; dmarc=pass
+Received: from mail.example-store.de (mail.example-store.de [8.8.4.4]) by mx;
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============2725232065432814549=="
+
+--===============2725232065432814549==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Danke fuer Ihre Bestellung 5001.
+
+--===============2725232065432814549==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body><p>Danke fuer Ihre Bestellung 5001.</p><p><a href=3D"https://www.=
+example-store.de/o/5001">Ansehen</a></p></body></html>
+
+--===============2725232065432814549==--

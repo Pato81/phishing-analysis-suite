@@ -1,0 +1,14 @@
+From: Mailer <mailer@site.example>
+To: opfer@example.com
+Subject: Versand
+Date: Wed, 11 Nov 2026 09:00:00 +0100
+Received: from site.example (site.example [8.8.8.8]) by mx.example.com; Wed,
+ 11 Nov 2026 09:00:00 +0100
+Received: from v6.site.example (IPv6:2606:4700:4700::1111) by site.example;
+ Wed, 11 Nov 2026 08:59:59 +0100
+X-PHP-Script: site.example/up/x.php for 1.1.1.1
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Text.

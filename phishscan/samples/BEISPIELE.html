@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<title>PhishScan - Beispielfälle</title>
+<style>
+ :root{--ink:#1f2430;--mut:#5b6472;--line:#d8dde5;--bg:#fff;}
+ *{box-sizing:border-box}
+ body{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+   color:var(--ink);background:#eef1f5;margin:0;padding:24px;line-height:1.5}
+ .wrap{max-width:820px;margin:0 auto}
+ h1{font-size:24px;margin:0 0 4px}
+ .intro{color:var(--mut);margin:0 0 24px;font-size:14px}
+ .case{background:var(--bg);border:1px solid var(--line);border-radius:10px;
+   padding:18px;margin:0 0 20px;page-break-inside:avoid}
+ .case h2{font-size:16px;margin:0 0 12px;color:#17324f}
+ .mail{border:1px solid var(--line);border-radius:8px;overflow:hidden}
+ .mh{padding:7px 12px;border-bottom:1px solid #eef1f5;font-size:13px;background:#f7f9fc}
+ .mh .lbl{display:inline-block;width:62px;color:var(--mut);font-weight:600}
+ .mb{padding:12px;font-size:13px;color:#23324a;white-space:pre-wrap}
+ .att,.hidden{padding:6px 12px;font-size:12px;border-top:1px solid #eef1f5}
+ .att{color:#7a4b00;background:#fff8ec}
+ .hidden{color:#7a0050;background:#fdf1f8}
+ .about{margin:12px 0 10px;font-size:13.5px}
+ .verdict{display:inline-block;font-weight:700;font-size:13px;padding:5px 12px;
+   border-radius:20px;color:#fff}
+ .v-high{background:#b42318} .v-susp{background:#c77700}
+ .v-low{background:#2e7d8f} .v-clean{background:#2e7d46}
+ .findings{list-style:none;padding:0;margin:12px 0 0}
+ .findings li{border-left:3px solid #ccc;padding:5px 10px;margin:6px 0;font-size:12.5px;background:#fafbfc}
+ .findings span{color:var(--mut)}
+ .s-high{border-color:#b42318} .s-med{border-color:#c77700}
+ .s-low{border-color:#2e7d8f} .s-info{border-color:#9aa4b2}
+ @media print{body{background:#fff;padding:0} .case{border-color:#bbb}}
+</style></head>
+<body><div class="wrap">
+<h1>PhishScan - Beispielfälle (14 Testmails)</h1>
+<p class="intro">Jede Testmail wird so dargestellt, wie sie im Postfach erschiene,
+dazu eine Erklärung und das tatsächliche PhishScan-Urteil. Alle Daten sind
+harmlos (Dokumentationsdomains, geschwärzte Empfänger). PhishScan 1.2.0.</p>
+
+<section class="case">
+  <h2>H1 - Punycode/IDN-Homograph im Absender</h2>
+  <div class="mail">
+    <div class="mh"><span class="lbl">Von</span> Service &lt;service@xn--pypal-4ve.example.com&gt;</div>
+    <div class="mh"><span class="lbl">An</span> opfer@example.com</div>
+    <div class="mh"><span class="lbl">Betreff</span> <b>Kontohinweis</b></div>
+    <div class="mb">Bitte pruefen.</div>
+    
+    
+  </div>
+  <div class="about"><b>Worum geht's:</b> Die Absenderdomain xn--pypal-4ve.example.com sieht dekodiert aus wie pаypal.example.com - das &#x27;a&#x27; ist ein kyrillisches а (U+0430). Optisch wirkt die Domain echt, technisch ist sie fremd.</div>
+  <div class="verdict v-susp">PhishScan-Urteil: SUSPICIOUS (Score 4)</div>
+  <ul class="findings"><li class="s-high"><b>[H1] HIGH</b> Punycode/IDN in Absenderdomain<br><span>Absenderdomain nutzt Punycode: xn--pypal-4ve.example.com -&gt; dekodiert: pаypal.example.com (konfusable Zeichen: а)</span></li><li class="s-low"><b>[H4] LOW</b> Keine Authentication-Results vorhanden<br><span>Mail enthaelt keinen Authentifizierungs-Header (SPF/DKIM/DMARC nicht pruefbar).</span></li></ul>
+</section>
+<section class="case">
+  <h2>H2 - Anzeigename täuscht Marke vor</h2>
+  <div class="mail">
+    <div class="mh"><span class="lbl">Von</span> PayPal Sicherheit &lt;noreply@secure-mail.example.net&gt;</div>
+    <div class="mh"><span class="lbl">An</span> opfer@example.com</div>
+    <div class="mh"><span class="lbl">Betreff</span> <b>Hinweis</b></div>
+    <div class="mb">Info.</div>
+    
+    
+  </div>
+  <div class="about"><b>Worum geht's:</b> Der Anzeigename behauptet &#x27;PayPal&#x27;, die echte Absenderdomain ist aber secure-mail.example.net. Klassische Marken-Impersonation über den Namen.</div>
+  <div class="verdict v-susp">PhishScan-Urteil: SUSPICIOUS (Score 4)</div>
+  <ul class="findings"><li class="s-high"><b>[H2] HIGH</b> Anzeigename nennt Marke, Domain passt nicht<br><span>Anzeigename enthaelt &#x27;paypal&#x27;, Domain ist &#x27;example.net&#x27;</span></li><li class="s-low"><b>[H4] LOW</b> Keine Authentication-Results vorhanden<br><span>Mail enthaelt keinen Authentifizierungs-Header (SPF/DKIM/DMARC nicht pruefbar).</span></li></ul>
+</section>
+<section class="case">
+  <h2>H3 - Reply-To / Return-Path umgeleitet</h2>
+  <div class="mail">
+    <div class="mh"><span class="lbl">Von</span> Support &lt;support@firma.example&gt;</div>
+    <div class="mh"><span class="lbl">An</span> opfer@example.com</div>
+    <div class="mh"><span class="lbl">Betreff</span> <b>Ticket</b></div>
+    <div class="mb">Antworten Sie bitte.</div>
+    
+    
+  </div>
+  <div class="about"><b>Worum geht's:</b> Die Mail kommt scheinbar von firma.example, aber Antworten und Bounces laufen zu einer fremden Domain (auszahlung.example.org). Typisch, um Antworten unbemerkt umzuleiten.</div>
+  <div class="verdict v-susp">PhishScan-Urteil: SUSPICIOUS (Score 5)</div>
+  <ul class="findings"><li class="s-med"><b>[H3] MEDIUM</b> Reply-To weicht von Absenderdomain ab<br><span>Reply-To: kasse@auszahlung.example.org (Domain example.org) != From firma.example</span></li><li class="s-med"><b>[H3] MEDIUM</b> Return-Path weicht von Absenderdomain ab<br><span>Return-Path: bounce@auszahlung.example.org (Domain example.org) != From firma.example</span></li><li class="s-low"><b>[H4] LOW</b> Keine Authentication-Results vorhanden<br><span>Mail enthaelt keinen Authentifizierungs-Header (SPF/DKIM/DMARC nicht pruefbar).</span></li></ul>
+</section>
+<section class="case">
+  <h2>H4 - SPF/DKIM/DMARC fehlgeschlagen</h2>
+  <div class="mail">
+    <div class="mh"><span class="lbl">Von</span> Bank &lt;info@bank.example&gt;</div>
+    <div class="mh"><span class="lbl">An</span> opfer@example.com</div>
+    <div class="mh"><span class="lbl">Betreff</span> <b>Konto</b></div>
+    <div class="mb">Text.</div>
+    
+    
+  </div>
+  <div class="about"><b>Worum geht's:</b> Alle drei Prüfungen stehen auf &#x27;fail&#x27;. Zusätzlich wurde ein zweiter Auth-Header mit &#x27;pass&#x27; eingeschmuggelt - PhishScan wertet den schlechtesten Wert, ein gefälschter Zusatzheader schönt das Urteil also nicht.</div>
+  <div class="verdict v-susp">PhishScan-Urteil: SUSPICIOUS (Score 7)</div>
+  <ul class="findings"><li class="s-high"><b>[H4] HIGH</b> DMARC-Pruefung nicht bestanden<br><span>dmarc=fail (widerspruechliche Angaben in 2 Auth-Header(n): fail, pass - schlechtester Wert gewertet)</span></li><li class="s-med"><b>[H4] MEDIUM</b> DKIM-Pruefung nicht bestanden<br><span>dkim=fail (widerspruechliche Angaben in 2 Auth-Header(n): fail, pass - schlechtester Wert gewertet)</span></li><li class="s-med"><b>[H4] MEDIUM</b> SPF-Pruefung nicht bestanden<br><span>spf=fail (widerspruechliche Angaben in 2 Auth-Header(n): fail, pass - schlechtester Wert gewertet)</span></li></ul>
+</section>
+<section class="case">
+  <h2>H5 - mehrere Link-Verschleierungen</h2>
+  <div class="mail">
+    <div class="mh"><span class="lbl">Von</span> Shop &lt;shop@shop.example&gt;</div>
+    <div class="mh"><span class="lbl">An</span> opfer@example.com</div>
+    <div class="mh"><span class="lbl">Betreff</span> <b>Links</b></div>
+    <div class="mb">Bitte Browser oeffnen. Userinfo IP-Link Shortener Punycode www.ionos.de</div>
+    
+    
+  </div>
+  <div class="about"><b>Worum geht's:</b> Enthält gleich mehrere Tricks: einen Punycode-Link, einen Link direkt auf eine IP, einen URL-Shortener und einen Link, dessen sichtbarer Text eine andere Domain zeigt als das echte Ziel.</div>
+  <div class="verdict v-high">PhishScan-Urteil: HIGH RISK (Score 10)</div>
+  <ul class="findings"><li class="s-high"><b>[H5] HIGH</b> Punycode-Domain in Link<br><span>xn--pypal-4ve.example.com -&gt; dekodiert: pаypal.example.com (konfusable Zeichen: а)</span></li><li class="s-med"><b>[H5] MEDIUM</b> IP-Adresse statt Domain im Link<br><span>8.8.8.8</span></li><li class="s-med"><b>[H5] MEDIUM</b> Link-Text zeigt andere Domain als das Ziel<br><span>Text: ionos.de  -&gt;  Ziel: evil.example</span></li><li class="s-med"><b>[H5] MEDIUM</b> URL-Shortener verschleiert Ziel<br><span>bit.ly</span></li><li class="s-low"><b>[H4] LOW</b> Keine Authentication-Results vorhanden<br><span>Mail enthaelt keinen Authentifizierungs-Header (SPF/DKIM/DMARC nicht pruefbar).</span></li></ul>
+</section>
+<section class="case">
+  <h2>H5 - Userinfo-Trick (@ im Link)</h2>
+  <div class="mail">
+    <div class="mh"><span class="lbl">Von</span> Bank &lt;info@bank.example&gt;</div>
+    <div class="mh"><span class="lbl">An</span> opfer@example.com</div>
+    <div class="mh"><span class="lbl">Betreff</span> <b>Login</b></div>
+    <div class="mb">Bitte einloggen. Sicher anmelden</div>
+    
+    
+  </div>
+  <div class="about"><b>Worum geht's:</b> Der Link https://sparkasse.de@zugang.example/login führt NICHT zu sparkasse.de. Alles vor dem @ ist nur &#x27;Benutzername&#x27; - das echte Ziel ist zugang.example.</div>
+  <div class="verdict v-susp">PhishScan-Urteil: SUSPICIOUS (Score 5)</div>
+  <ul class="findings"><li class="s-high"><b>[H5] HIGH</b> URL mit eingebettetem @ (Userinfo-Trick)<br><span>https://sparkasse.de@zugang.example/login</span></li><li class="s-low"><b>[H4] LOW</b> Keine Authentication-Results vorhanden<br><span>Mail enthaelt keinen Authentifizierungs-Header (SPF/DKIM/DMARC nicht pruefbar).</span></li><li class="s-low"><b>[H7] LOW</b> Dringlichkeits-/Credential-Sprache<br><span>Begriffe: login</span></li></ul>
+</section>
+<section class="case">
+  <h2>H6 - versteckter Text (hier harmlos)</h2>
+  <div class="mail">
+    <div class="mh"><span class="lbl">Von</span> News &lt;news@news.example&gt;</div>
+    <div class="mh"><span class="lbl">An</span> opfer@example.com</div>
+    <div class="mh"><span class="lbl">Betreff</span> <b>Newsletter</b></div>
+    <div class="mb">Guten Tag. Guten Tag.</div>
+    
+    <div class="hidden">👁 versteckter Text (58 Zeichen): „verborgener fuelltext zur filter evasion abcdefghij klmnop…“</div>
+  </div>
+  <div class="about"><b>Worum geht's:</b> Enthält unsichtbaren Text, aber ohne Link oder Drohsprache - also ein normaler Vorschautext (Preheader). PhishScan stuft das bewusst nur als LOW ein, um legitime Newsletter nicht fälschlich zu melden.</div>
+  <div class="verdict v-low">PhishScan-Urteil: LOW RISK (Score 2)</div>
+  <ul class="findings"><li class="s-low"><b>[H4] LOW</b> Keine Authentication-Results vorhanden<br><span>Mail enthaelt keinen Authentifizierungs-Header (SPF/DKIM/DMARC nicht pruefbar).</span></li><li class="s-low"><b>[H6] LOW</b> Versteckter Text im HTML (oft Preheader)<br><span>58 Zeichen unsichtbarer Text ohne Link/Dringlichkeit (haeufig legitimer Vorschautext). Auszug: verborgener fuelltext zur filter evasion abcdefghij klmnop</span></li></ul>
+</section>
+<section class="case">
+  <h2>H7 - Dringlichkeits-/Drohsprache</h2>
+  <div class="mail">
+    <div class="mh"><span class="lbl">Von</span> Sicherheit &lt;security@portal.example&gt;</div>
+    <div class="mh"><span class="lbl">An</span> opfer@example.com</div>
+    <div class="mh"><span class="lbl">Betreff</span> <b>Ihr Konto wurde gesperrt - sofort handeln</b></div>
+    <div class="mb">Dringend: Ihr Konto ist gesperrt. Bitte sofort das Passwort verifizieren und bestaetigen, sonst wird es deaktiviert.</div>
+    
+    
+  </div>
+  <div class="about"><b>Worum geht's:</b> Häuft Druckbegriffe wie &#x27;gesperrt&#x27;, &#x27;sofort&#x27;, &#x27;verifizieren&#x27;, &#x27;deaktiviert&#x27;. Psychologischer Druck ist ein Kernmerkmal von Phishing.</div>
+  <div class="verdict v-low">PhishScan-Urteil: LOW RISK (Score 3)</div>
+  <ul class="findings"><li class="s-med"><b>[H7] MEDIUM</b> Dringlichkeits-/Credential-Sprache<br><span>Auffaellige Begriffe: deaktiviert, dringend, gesperrt, ihr konto, passwort, sofort, verifizieren</span></li><li class="s-low"><b>[H4] LOW</b> Keine Authentication-Results vorhanden<br><span>Mail enthaelt keinen Authentifizierungs-Header (SPF/DKIM/DMARC nicht pruefbar).</span></li></ul>
+</section>
+<section class="case">
+  <h2>H8 - gefährliche Anhänge</h2>
+  <div class="mail">
+    <div class="mh"><span class="lbl">Von</span> Rechnung &lt;billing@billing.example&gt;</div>
+    <div class="mh"><span class="lbl">An</span> opfer@example.com</div>
+    <div class="mh"><span class="lbl">Betreff</span> <b>Rechnung</b></div>
+    <div class="mb">Siehe Anhang.</div>
+    <div class="att">📎 Anhänge: setup.exe, rechnung.pdf.exe, rechnung⁨&lt;RTLO&gt;⁩gpj.exe, unterlagen.zip</div>
+    
+  </div>
+  <div class="about"><b>Worum geht's:</b> Vier Anhänge: eine echte .exe, eine Doppelendung rechnung.pdf.exe, ein Dateiname mit RTLO-Steuerzeichen (zeigt im Explorer eine falsche Endung) und ein .zip. Je Anhang genau ein Finding.</div>
+  <div class="verdict v-high">PhishScan-Urteil: HIGH RISK (Score 13)</div>
+  <ul class="findings"><li class="s-high"><b>[H8] HIGH</b> Dateiname mit Richtungssteuerzeichen (RTLO-Tarnung)<br><span>rechnung&lt;U+202E&gt;gpj.exe (Unicode-Richtungssteuerzeichen (U+202E))</span></li><li class="s-high"><b>[H8] HIGH</b> Doppelte Dateiendung (Tarnung)<br><span>rechnung.pdf.exe (Tarn-Endung &#x27;.pdf&#x27; vor &#x27;.exe&#x27;)</span></li><li class="s-high"><b>[H8] HIGH</b> Potentiell gefaehrlicher Anhang<br><span>setup.exe (Endung &#x27;.exe&#x27;)</span></li><li class="s-med"><b>[H8] MEDIUM</b> Anhang mit beobachtenswertem Dateityp<br><span>unterlagen.zip (Endung &#x27;.zip&#x27;)</span></li><li class="s-low"><b>[H4] LOW</b> Keine Authentication-Results vorhanden<br><span>Mail enthaelt keinen Authentifizierungs-Header (SPF/DKIM/DMARC nicht pruefbar).</span></li><li class="s-low"><b>[H7] LOW</b> Dringlichkeits-/Credential-Sprache<br><span>Begriffe: rechnung</span></li></ul>
+</section>
+<section class="case">
+  <h2>H9 - Herkunft &amp; Versandweg</h2>
+  <div class="mail">
+    <div class="mh"><span class="lbl">Von</span> Mailer &lt;mailer@site.example&gt;</div>
+    <div class="mh"><span class="lbl">An</span> opfer@example.com</div>
+    <div class="mh"><span class="lbl">Betreff</span> <b>Versand</b></div>
+    <div class="mb">Text.</div>
+    
+    
+  </div>
+  <div class="about"><b>Worum geht's:</b> Der Header X-PHP-Script deutet auf Versand per PHP-Skript (oft ein gehackter Webserver). Zusätzlich extrahiert PhishScan die öffentlichen Absender-IPs (IPv4 und IPv6) zur manuellen Prüfung.</div>
+  <div class="verdict v-low">PhishScan-Urteil: LOW RISK (Score 3)</div>
+  <ul class="findings"><li class="s-med"><b>[H9] MEDIUM</b> Hinweis auf Versand per PHP-Skript<br><span>Header X-PHP-Script/X-PHP-Originating-Script deutet auf Skript-Versand (ggf. kompromittiertes Hosting) hin: site.example/up/x.php for 1.1.1.1</span></li><li class="s-low"><b>[H4] LOW</b> Keine Authentication-Results vorhanden<br><span>Mail enthaelt keinen Authentifizierungs-Header (SPF/DKIM/DMARC nicht pruefbar).</span></li><li class="s-info"><b>[H9] INFO</b> Urspruengliche Absender-IP(s) extrahiert<br><span>Zur manuellen Pruefung (whois/Geo, offline durchfuehren): 8.8.8.8, 2606:4700:4700::1111 | wahrscheinliche Ursprungs-IP: 2606:4700:4700::1111</span></li></ul>
+</section>
+<section class="case">
+  <h2>H10 - HTML-Struktur-Verschleierung</h2>
+  <div class="mail">
+    <div class="mh"><span class="lbl">Von</span> Promo &lt;promo@promo.example&gt;</div>
+    <div class="mh"><span class="lbl">An</span> opfer@example.com</div>
+    <div class="mh"><span class="lbl">Betreff</span> <b>Angebot</b></div>
+    <div class="mb">Nur HTML, base64-kodiert.</div>
+    
+    
+  </div>
+  <div class="about"><b>Worum geht's:</b> Die Mail hat nur einen HTML-Teil (kein Text), und dieser ist base64-kodiert - beides wird gern genutzt, um Signatur-Scanner zu umgehen.</div>
+  <div class="verdict v-low">PhishScan-Urteil: LOW RISK (Score 3)</div>
+  <ul class="findings"><li class="s-low"><b>[H4] LOW</b> Keine Authentication-Results vorhanden<br><span>Mail enthaelt keinen Authentifizierungs-Header (SPF/DKIM/DMARC nicht pruefbar).</span></li><li class="s-low"><b>[H10] LOW</b> HTML-Body base64-kodiert<br><span>HTML als base64 - kann Signatur-Scanner umgehen.</span></li><li class="s-low"><b>[H10] LOW</b> Nur HTML, kein Text-Teil<br><span>Reine HTML-Mail ohne text/plain-Alternative (haeufig bei Phishing).</span></li></ul>
+</section>
+<section class="case">
+  <h2>H11 - Marke im Betreff</h2>
+  <div class="mail">
+    <div class="mh"><span class="lbl">Von</span> Mitteilung &lt;info@kundenportal.example&gt;</div>
+    <div class="mh"><span class="lbl">An</span> opfer@example.com</div>
+    <div class="mh"><span class="lbl">Betreff</span> <b>Ihre IONOS Rechnung liegt bereit</b></div>
+    <div class="mb">Bitte im Konto pruefen.</div>
+    
+    
+  </div>
+  <div class="about"><b>Worum geht's:</b> Der Betreff nennt &#x27;IONOS&#x27;, die Absenderdomain ist aber kundenportal.example. Markennennung an prominenter Stelle (Betreff) bei fremder Domain.</div>
+  <div class="verdict v-susp">PhishScan-Urteil: SUSPICIOUS (Score 4)</div>
+  <ul class="findings"><li class="s-med"><b>[H11] MEDIUM</b> Markenimitation im Betreff<br><span>Betreff nennt &#x27;ionos&#x27;, Absenderdomain ist &#x27;kundenportal.example&#x27;.</span></li><li class="s-low"><b>[H4] LOW</b> Keine Authentication-Results vorhanden<br><span>Mail enthaelt keinen Authentifizierungs-Header (SPF/DKIM/DMARC nicht pruefbar).</span></li><li class="s-low"><b>[H7] LOW</b> Dringlichkeits-/Credential-Sprache<br><span>Begriffe: rechnung</span></li></ul>
+</section>
+<section class="case">
+  <h2>Referenz - sauber (CLEAN)</h2>
+  <div class="mail">
+    <div class="mh"><span class="lbl">Von</span> Example Store &lt;orders@example-store.de&gt;</div>
+    <div class="mh"><span class="lbl">An</span> kunde@example.com</div>
+    <div class="mh"><span class="lbl">Betreff</span> <b>Bestellbestaetigung 5001</b></div>
+    <div class="mb">Danke fuer Ihre Bestellung 5001. Danke fuer Ihre Bestellung 5001. Ansehen</div>
+    
+    
+  </div>
+  <div class="about"><b>Worum geht's:</b> Eine ganz normale Bestellbestätigung mit gültiger Authentifizierung. Dient als Negativtest: PhishScan muss hier CLEAN sagen.</div>
+  <div class="verdict v-clean">PhishScan-Urteil: CLEAN (Score 0)</div>
+  <ul class="findings"><li class="s-info"><b>[H9] INFO</b> Urspruengliche Absender-IP(s) extrahiert<br><span>Zur manuellen Pruefung (whois/Geo, offline durchfuehren): 8.8.4.4 | wahrscheinliche Ursprungs-IP: 8.8.4.4</span></li></ul>
+</section>
+<section class="case">
+  <h2>Realfall - legitimer Newsletter</h2>
+  <div class="mail">
+    <div class="mh"><span class="lbl">Von</span> FlixBus &lt;noreply@travel.mail.flixbus.com&gt;</div>
+    <div class="mh"><span class="lbl">An</span> kunde@example.com</div>
+    <div class="mh"><span class="lbl">Betreff</span> <b>Erlebe diese Ziele nach Sonnenuntergang 🌆🌠</b></div>
+    <div class="mb">96 body, table, td, div, p, span, a, strong, h1, h2, h3, h4, h5, h6 { font-family: Arial, sans-serif !important; mso-hyphenate:none; } table { border-spacing: 0; } table, td { border-collapse: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; } sup { font-size:100% !important; } .resetUnderline a { text-decoration: none !important; } .outlook-btn { margin:9px !important; } .linkReset a { color:inherit !important; text-decoration: none !important; } Glitzernde Seeufer, Umrisse der Berge und Städte, die bei Eintritt der Dunkelheit anfangen zu leuchten.͏‌ ͏‌ ͏ ͏‌ ͏‌ ͏ ‌ ͏‌ ͏‌ ͏ ‌ …</div>
+    
+    <div class="hidden">👁 versteckter Text (30597 Zeichen): „Glitzernde Seeufer, Umrisse der Berge und Städte, die bei Eintritt der Dunkelheit anfangen zu leuchten.͏‌ ͏‌ ͏ ͏‌ ͏‌ ͏ ‌ ͏‌ ͏‌ ͏ ‌ ͏‌ ͏‌ ͏ ‌ ͏‌ ͏‌ ͏ ‌ ͏‌ ͏‌ ͏ ‌…“</div>
+  </div>
+  <div class="about"><b>Worum geht's:</b> Eine echte FlixBus-Marketing-Mail (Empfänger geschwärzt). Genau dieser Fall deckte in v1.1.0 zwei Falsch-Positive auf (Preheader + &#x27;Apple Store&#x27;-Erwähnung). Seit v1.2.0 bleibt sie korrekt bei LOW RISK.</div>
+  <div class="verdict v-low">PhishScan-Urteil: LOW RISK (Score 1)</div>
+  <ul class="findings"><li class="s-low"><b>[H6] LOW</b> Versteckter Text im HTML (oft Preheader)<br><span>30597 Zeichen unsichtbarer Text ohne Link/Dringlichkeit (haeufig legitimer Vorschautext). Auszug: Glitzernde Seeufer, Umrisse der Berge und Städte, die bei Eintritt der Dunkelhei</span></li><li class="s-info"><b>[H9] INFO</b> Urspruengliche Absender-IP(s) extrahiert<br><span>Zur manuellen Pruefung (whois/Geo, offline durchfuehren): 137.22.240.161, 212.227.15.154, 5.3.0.37 | wahrscheinliche Ursprungs-IP: 5.3.0.37</span></li></ul>
+</section>
+</div></body></html>

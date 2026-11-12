@@ -14,6 +14,15 @@ Nutzung ausschliesslich zur Analyse eigener oder autorisiert erhaltener Mails.
 
 Changelog
 ---------
+1.2.0
+  * FP-FIX H6: Versteckter Text wird nur noch dann als MEDIUM gewertet, wenn er
+    selbst Link(s) oder >=2 Dringlichkeitsbegriffe enthaelt (echtes Salting).
+    Reiner Vorschautext (Preheader), wie ihn jede legitime Marketing-Mail nutzt,
+    faellt auf LOW. Verhindert Falsch-Positive bei serioeser Massenpost.
+  * FP-FIX H11: Markenimitation feuert nur noch, wenn die Marke im BETREFF oder
+    ANZEIGENAMEN steht (prominente Impersonation) - nicht mehr bei blosser
+    Erwaehnung im Fliesstext (z. B. "Apple Store"-Downloadlink in einer
+    legitimen Newsletter-Mail).
 1.1.0
   * BUGFIX H9: Private-/Sonder-Adressbereiche werden jetzt ueber das
     stdlib-Modul `ipaddress` korrekt aussortiert (vorher nur "172.16.",
@@ -55,7 +64,7 @@ from email.utils import parseaddr
 from html.parser import HTMLParser
 from pathlib import Path
 
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 
 # --------------------------------------------------------------------------
 # Harte Limits (DoS-Schutz gegen bewusst praeparierte Eingaben)
@@ -826,14 +835,34 @@ def h5_urls(bodies, rep: Report, links):
 
 
 def h6_hidden_text(bodies, rep: Report):
-    """H6: Unsichtbarer Text im HTML (Bayes-/Filter-Evasion)."""
+    """H6: Unsichtbarer Text im HTML (Bayes-/Filter-Evasion).
+
+    Reiner Vorschautext (Preheader) ist in legitimer Marketing-Mail Standard und
+    darf das Urteil nicht nach oben ziehen. Als MEDIUM (echtes Salting) wird daher
+    nur gewertet, wenn der versteckte Text selbst Link(s) oder mehrere
+    Dringlichkeitsbegriffe transportiert; sonst LOW.
+    """
     hidden = (bodies.get("hidden") or "").strip()
-    if len(hidden) >= 40:
-        preview = " ".join(hidden.split())[:80]
+    if len(hidden) < 40:
+        return
+    preview = " ".join(hidden.split())[:80]
+    has_link = bool(URL_RE.search(hidden))
+    urg = sorted({w for w in URGENCY_WORDS if w in hidden.lower()})
+    if has_link or len(urg) >= 2:
+        reason = []
+        if has_link:
+            reason.append("Link(s)")
+        if len(urg) >= 2:
+            reason.append(f"{len(urg)} Dringlichkeitsbegriffe")
         rep.findings.append(Finding(
-            "H6", "Versteckter Text im HTML (Filter-Evasion)", "medium",
-            f"{len(hidden)} Zeichen unsichtbarer Text "
-            f"(display:none/font-size:0 o.ae.). Auszug: {preview}"))
+            "H6", "Versteckter Text mit Link/Dringlichkeit (Filter-Evasion)", "medium",
+            f"{len(hidden)} Zeichen unsichtbarer Text, enthaelt "
+            f"{' und '.join(reason)}. Auszug: {preview}"))
+    else:
+        rep.findings.append(Finding(
+            "H6", "Versteckter Text im HTML (oft Preheader)", "low",
+            f"{len(hidden)} Zeichen unsichtbarer Text ohne Link/Dringlichkeit "
+            f"(haeufig legitimer Vorschautext). Auszug: {preview}"))
 
 
 def h7_urgency(bodies, rep: Report):
@@ -951,23 +980,26 @@ def h10_mime(msg, rep: Report, bodies):
 
 
 def h11_brand_impersonation(bodies, rep: Report):
-    """H11: Markenimitation im Text bei fremder Absenderdomain."""
-    text = ((bodies.get("text") or "") + " "
-            + (bodies.get("hidden") or "") + " "
-            + (bodies.get("subject") or "")).lower()[:MAX_TEXT_CHARS]
+    """H11: Markenimitation an prominenter Stelle bei fremder Absenderdomain.
+
+    Gewertet wird nur der BETREFF - dort behauptet eine Phishing-Mail, von der
+    Marke zu stammen. Der Anzeigename gehoert zu H2 (Doppelzaehlung vermeiden),
+    und eine blosse Erwaehnung im Fliesstext (z. B. ein 'Apple Store'-Downloadlink
+    in einem legitimen Newsletter) ist KEIN Impersonation-Signal.
+    """
+    subject = (rep.subject or "").lower()
     from_dom = ""
     if "@" in rep.from_addr:
         from_dom = _registrable(rep.from_addr.split("@")[-1])
-    if not from_dom or not text.strip():
+    if not from_dom or not subject.strip():
         return
     for brand in BRANDS:
         if brand in from_dom:
             continue
-        if _brand_in_text(text, brand):
-            # nur melden, wenn Marke prominent und Domain fremd
+        if _brand_in_text(subject, brand):
             rep.findings.append(Finding(
-                "H11", "Markenimitation im Text", "medium",
-                f"Text nennt '{brand}', Absenderdomain ist '{from_dom}'."))
+                "H11", "Markenimitation im Betreff", "medium",
+                f"Betreff nennt '{brand}', Absenderdomain ist '{from_dom}'."))
             break
 
 
@@ -1312,6 +1344,22 @@ def run_selftest(color: bool = True) -> int:
     demo.findings = [Finding("H1", "t", "high", "d"), Finding("H7", "t", "low", "d")]
     check("score: 3+1 = 4 -> SUSPICIOUS", (demo.score, demo.verdict), (4, "SUSPICIOUS"))
     check("verdict: leer -> CLEAN", Report(source="x").verdict, "CLEAN")
+
+    # --- FP-Fixes H6/H11 (v1.2.0) ---
+    r = Report(source="t")
+    h6_hidden_text({"hidden": "vorschautext ohne link " * 3}, r)
+    check("h6: reiner Preheader -> low",
+          (r.findings[0].severity if r.findings else ""), "low")
+    r = Report(source="t")
+    h6_hidden_text({"hidden": "versteckter koeder text http://evil.tld/login bitte"}, r)
+    check("h6: versteckter Link -> medium",
+          (r.findings[0].severity if r.findings else ""), "medium")
+    r = Report(source="t", subject="Ihre IONOS Rechnung", from_addr="x@fremd.example")
+    h11_brand_impersonation({}, r)
+    check("h11: Marke im Betreff feuert", bool(r.findings), True)
+    r = Report(source="t", subject="Newsletter", from_addr="x@fremd.example")
+    h11_brand_impersonation({"text": "jetzt im apple store laden"}, r)
+    check("h11: Marke nur im Body feuert NICHT", r.findings, [])
 
     failed = [c for c in checks if not c[1]]
     print(_c(f"PhishScan {VERSION} - Selftest", "bold", color))

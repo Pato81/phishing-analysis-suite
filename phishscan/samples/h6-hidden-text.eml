@@ -1,0 +1,23 @@
+From: News <news@news.example>
+To: opfer@example.com
+Subject: Newsletter
+Date: Wed, 11 Nov 2026 09:00:00 +0100
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============0448724145071565045=="
+
+--===============0448724145071565045==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Guten Tag.
+
+--===============0448724145071565045==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body><p>Guten Tag.</p><span style=3D"display:none">verborgener fuellte=
+xt zur filter evasion abcdefghij klmnop</span></body></html>
+
+--===============0448724145071565045==--
